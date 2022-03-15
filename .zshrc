@@ -99,7 +99,7 @@ source $ZSH/oh-my-zsh.sh
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
-fpath=($fpath "/Users/eashanc/.zfunctions")
+fpath=($fpath "~/.zfunctions")
 
 # Set typewritten ZSH as a prompt
 autoload -U promptinit; promptinit
