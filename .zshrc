@@ -112,4 +112,4 @@ export PATH=/opt/homebrew/bin:/Users/eashanc/.rvm/gems/ruby-3.0.0/bin:/Users/eas
 
 # Add RVM to PATH for scripting. Make sure this is the last PATH variable change.
 export PATH="$PATH:$HOME/.rvm/bin"
-alias config='/usr/bin/git --git-dir=/Users/eashanc/.cfg/ --work-tree=/Users/eashanc'
+alias config='/usr/bin/git --git-dir=~/.cfg/ --work-tree=/~'
