@@ -108,7 +108,7 @@ prompt typewritten
 eval $(thefuck --alias)
 eval "$(rbenv init - zsh)"
 # Add RVM to PATH for scripting. Make sure this is the last PATH variable change.
-export PATH=/opt/homebrew/bin:/Users/eashanc/.rvm/gems/ruby-3.0.0/bin:/Users/eashanc/.rvm/gems/ruby-3.0.0@global/bin:/Users/eashanc/.rvm/rubies/ruby-3.0.0/bin:/opt/local/bin:/opt/local/sbin:/Library/Frameworks/Python.framework/Versions/3.10/bin:/Library/Frameworks/Python.framework/Versions/3.9/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/Library/Apple/usr/bin:/Users/eashanc/.rvm/bin
+export PATH=/opt/homebrew/bin:~/.rvm/gems/ruby-3.0.0/bin:~/.rvm/gems/ruby-3.0.0@global/bin:~/.rvm/rubies/ruby-3.0.0/bin:/opt/local/bin:/opt/local/sbin:/Library/Frameworks/Python.framework/Versions/3.10/bin:/Library/Frameworks/Python.framework/Versions/3.9/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/Library/Apple/usr/bin:~/.rvm/bin
 
 # Add RVM to PATH for scripting. Make sure this is the last PATH variable change.
 export PATH="$PATH:$HOME/.rvm/bin"
