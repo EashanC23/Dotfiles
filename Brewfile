@@ -134,3 +134,9 @@ brew "koekeishiya/formulae/skhd"
 brew "koekeishiya/formulae/yabai"
 # Web browser focusing on privacy
 cask "brave-browser"
+# Desktop Automation application 
+cask "hammerspoon"
+# Application launcher and productivity software 
+cask "alfred"
+#Run commands and display their output on the desktop
+cask "ubersicht"
