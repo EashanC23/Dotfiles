@@ -101,6 +101,11 @@ source $ZSH/oh-my-zsh.sh
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 fpath=($fpath "~/.zfunctions")
 
+#macfeh cli integration
+function macfeh() {
+    open -b "drabweb.macfeh" "$@"
+}
+
 # Set typewritten ZSH as a prompt
 autoload -U promptinit; promptinit
 prompt typewritten
@@ -113,3 +118,9 @@ export PATH=/opt/homebrew/bin:~/.rvm/gems/ruby-3.0.0/bin:~/.rvm/gems/ruby-3.0.0@
 # Add RVM to PATH for scripting. Make sure this is the last PATH variable change.
 export PATH="$PATH:$HOME/.rvm/bin"
 alias config='/usr/bin/git --git-dir=~/.cfg/ --work-tree=/~'
+
+export PATH="$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:$PATH"
+
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
