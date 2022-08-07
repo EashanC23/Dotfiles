@@ -4,11 +4,12 @@
 # Path to your oh-my-zsh installation.
 export ZSH="$HOME/.oh-my-zsh"
 
+
 # Set name of the theme to load --- if set to "random", it will
 # load a random theme each time oh-my-zsh is loaded, in which case,
 # to know which specific one was loaded, run: echo $RANDOM_THEME
 # See https://github.com/ohmyzsh/ohmyzsh/wiki/Themes
-ZSH_THEME="robbyrussell"
+ZSH_THEME=""
 
 # Set list of themes to pick from when loading at random
 # Setting this variable when ZSH_THEME=random will cause zsh to load
@@ -96,22 +97,33 @@ source $ZSH/oh-my-zsh.sh
 # users are encouraged to define aliases within the ZSH_CUSTOM folder.
 # For a full list of active aliases, run `alias`.
 #
+#
+#
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 fpath=($fpath "~/.zfunctions")
+
+#User Export 
+# type written configs
+
+
+#User Aliases 
+alias startYabai="brew services start yabai"
+alias stopYabai="brew services stop yabai"
+alias songDL="sh ~/songDL.sh"
+alias tree="tree -h --sort size"
 
 #macfeh cli integration
 function macfeh() {
     open -b "drabweb.macfeh" "$@"
 }
 
-# Set typewritten ZSH as a prompt
-autoload -U promptinit; promptinit
-prompt typewritten
+export HISTCONTROL=ignoreboth
 
-eval $(thefuck --alias)
-eval "$(rbenv init - zsh)"
+
+#eval $(thefuck --alias)
+#eval "$(rbenv init - zsh)"
 # Add RVM to PATH for scripting. Make sure this is the last PATH variable change.
 export PATH=/opt/homebrew/bin:~/.rvm/gems/ruby-3.0.0/bin:~/.rvm/gems/ruby-3.0.0@global/bin:~/.rvm/rubies/ruby-3.0.0/bin:/opt/local/bin:/opt/local/sbin:/Library/Frameworks/Python.framework/Versions/3.10/bin:/Library/Frameworks/Python.framework/Versions/3.9/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/Library/Apple/usr/bin:~/.rvm/bin
 
@@ -124,3 +136,11 @@ export PATH="$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:$PATH"
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+pfetch
+
+
+# Set typewritten ZSH as a prompt
+autoload -U promptinit; promptinit
+prompt typewritten
+
+export TYPEWRITTEN_CURSOR="block"

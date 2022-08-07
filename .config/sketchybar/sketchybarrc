@@ -1,0 +1,212 @@
+# This is a demo config to bring across some of the most important commands more easily.
+# For a more advanced configuration example see https://github.com/FelixKratz/SketchyBar/discussions/47#discussion-3587958
+
+ITEM_DIR="~/.config/sketchybar/items" # Directory where the items are configured
+PLUGIN_DIR="~/.config/sketchybar/plugins/" # Directory where all the plugin scripts are stored
+
+############## BAR ############## 
+
+spaces=()
+for i in {1..4}
+do
+    spaces+=(--add space space$i left \
+      --set space$i associated_display=1 associated_space=$i icon=$i)
+done
+
+sketchybar -m --bar height=25        \
+                    blur_radius=50   \
+                    position=top     \
+                    padding_left=12  \
+                    padding_right=10 \
+                    color='#282A35'
+sketchybar --add event lock   "com.apple.screenIsLocked"   \
+           --add event unlock "com.apple.screenIsUnlocked" \
+                                                           \
+           --add item         animator left                \
+           --set animator     drawing=off                  \
+                              updates=on                   \
+                              script="$PLUGIN_DIR/wake.sh" \
+           --subscribe        animator lock unlock
+
+############## GLOBAL DEFAULTS ############## 
+sketchybar -m --default updates=when_shown                    \
+                        drawing=on                            \
+                        cache_scripts=on                      \
+                        icon.font="Hack Nerd Font:Regular:17.0"  \
+                        icon.color=0xffffffff                 \
+                        label.font="Hack Nerd Font:Regular:13.0" \
+                        label.color=0xffffffff
+
+############## SPACE DEFAULTS ############## 
+sketchybar -m --default label.padding_left=2  \
+                        label.padding_right=2 \
+                        icon.padding_left=4   \
+                        icon.padding_right=4
+
+############## PRIMARY DISPLAY SPACES ############## 
+## sketchybar -m --add space left                              \
+ 
+
+
+############## SECONDARY DISPLAY SPACES ############## 
+sketchybar -m --add space misc left                              \
+              --set misc associated_display=2                    \
+                         associated_space=5                      \
+                         icon.font="Hack Nerd Font:Bold:20.0"    \
+                         icon=                                  \
+                         icon.highlight_color=0xff48aa2a         \
+                         label=misc                              \
+                         click_script="yabai -m space --focus 5"
+
+############## ITEM DEFAULTS ###############
+sketchybar -m --default label.padding_left=2  \
+                        icon.padding_right=2  \
+                        icon.padding_left=6   \
+                        label.padding_right=6
+
+
+# ############## LEFT ITEMS ############## 
+# sketchybar -m --add item space_separator right                                                  \
+#               --set space_separator  icon=                                                    \
+#                                      associatedpace=1                                        \
+#                                      icon.padding_left=15                                      \
+#                                      label.padding_right=15                                    \
+#                                      icon.font="Hack Nerd Font:Bold:15.0"                      \
+#               --add item topmem left                                                           \
+#               --set topmem           associated_space=1                                        \
+#                                      icon.padding_left=10                                      \
+#                                      update_freq=15                                            \
+#                                      script="~/.config/sketchybar/plugins/topmem.sh"
+
+# APPLE LOGO THINGI
+sketchybar -m --bar blur_radius=50                                                            \
+                    height=32                                                                 \
+              --add item apple.logo left                                                      \
+              --set apple.logo icon=                                                         \
+                               icon.font="SF Pro:Black:20.0"                                  \
+                               label.drawing=off                                              \
+                               click_script="sketchybar -m --set \$NAME popup.drawing=toggle" \
+                               popup.background.border_width=2                                \
+                               popup.background.corner_radius=3                                \
+                               popup.background.border_color=0xff9dd274                       \
+                                                                                              \
+              --default background.padding_left=3                                             \
+                        background.padding_right=3                                            \
+                        icon.padding_right=3                                                  \
+                        icon.font="SF Pro:Bold:16.0"                                          \
+                        label.font="SF Pro:Semibold:13.0"                                     \
+                                                                                              \
+             --add item apple.preferences popup.apple.logo                                   \
+              --set apple.preferences icon=􀺽                                                  \
+                               label="Preferences"                                            \
+                               click_script="open -a 'System Preferences';                    
+                                             sketchybar -m --set apple.logo popup.drawing=off"\
+              --add item apple.activity popup.apple.logo                                      \
+              --set apple.activity icon=􀒓                                                     \
+                               label="Activity"                                               \
+                               click_script="open -a 'Activity Monitor';                       
+                                             sketchybar -m --set apple.logo popup.drawing=off"\
+              --add item apple.lock popup.apple.logo                                          \
+              --set apple.lock icon=􀒳                                                         \
+                               label="Lock Screen"                                            \
+                               click_script="pmset displaysleepnow;                           
+                                             sketchybar -m --set apple.logo popup.drawing=off"
+sketchybar -m \
+  --add item dummy left \
+  --set dummy script="~/.config/sketchybar/plugins/space.sh" \
+              icon.padding_right=3                           \
+              icon.padding_left=3                            \
+  --subscribe dummy space_change \
+  "${spaces[@]}"                                     
+
+############## RIGHT ITEMS ############## 
+
+sketchybar -m --add       item               time             right                                        \
+              --set       time               update_freq=2                                                 \
+                                             icon.padding_right=0                                          \
+                                             label.padding_left=0                                          \
+                                             script="~/.config/sketchybar/plugins/time.sh"                 \
+                                                                                                           \
+              --add       item               date             right                                        \
+              --set       date               update_freq=60                                                \
+                                             background.color=0xffe8e8e9                                   \
+                                             label.color=0xff000000                                        \
+                                             label.font="SF Pro:Semibold:12"                               \
+                                             icon.padding_right=0                                          \
+                                             label.padding_left=0                                          \
+                                             background.height=15                                          \
+                                             background.corner_radius=4                                    \
+                                             script="~/.config/sketchybar/plugins/date.sh"
+
+sketchybar -m --add item battery right                                     \
+              --set battery update_freq=3                                  \
+              --set battery icon=                                         \
+              --set battery script="~/.config/sketchybar/plugins/power.sh" \
+              --set battery icon.font="Hack Nerd Font Mono:Regular:12"     
+
+sketchybar --add item wifi right                         \
+           --set wifi    script="$PLUGIN_DIR/wifi.sh"    \
+                         background.padding_right=0      \
+                         update_freq=5
+                         font="Hack Nerd Font Mono:Bold:12"
+
+sketchybar -m --add       item               cpu_label right                                               \
+              --set       cpu_label          label.font="SF Pro:Semibold:7"                                \
+                                             label=CPU                                                     \
+                                             y_offset=7                                                    \
+                                             width=0                                                       \
+                                                                                                           \
+              --add       item               cpu_percent right                                             \
+              --set       cpu_percent        label.font="SF Pro:Heavy:12"                                  \
+                                             y_offset=-3                                                   \
+                                             update_freq=2                                                 \
+                                             script="~/.config/sketchybar/plugins/cpu.sh"
+
+
+sketchybar -m --add item ram_label right \
+              --set ram_label label.font="SF Pro:Semibold:7" \
+                               label=RAM \
+                               y_offset=7 \
+                               width=0 \
+                               icon.padding_right=5 \
+              --add item ram_percentage right \
+              --set ram_percentage label.font="SF Pro:Heavy:12" \
+                                    y_offset=-3 \
+                                    update_freq=1 \
+                                    script="~/.config/sketchybar/plugins/ram.sh"
+
+#sketchybar -m --add item weather right \
+#              --set weather update_freq=5 \
+#              --set weather script="~/.config/sketchybar/plugins/weather.sh" \
+#              --set weather click_script="open https://weather.com/weather/today/l/e1284a993c3a1b0782862e909882d8222546de604c711ab8bdcc4dccd5363ea7"
+
+# Creating Graphs
+# sketchybar -m --add graph cpu_user right 200                                        \
+#               --set cpu_user     graph.color=0xffffffff                             \
+#                                  update_freq=2                                      \
+#                                  width=0                                            \
+#                                  associated_space=1,2,3                                 \
+#                                  label.padding_left=0                               \
+#                                  icon=                                             \
+#                                  script="~/.config/sketchybar/plugins/cpu_graph.sh" \
+#                                  lazy=on                                            \
+#                                                                                     \
+#               --add graph cpu_sys right 200                                         \
+#               --set cpu_sys      label.padding_left=0                               \
+#                                                              \
+#                                  icon=                                             \
+#                                  graph.color=0xff48aa2a                             \
+#                                                                                     \
+#               --add item topproc right                                              \
+#               --set topproc      associated_space=1,2,3                             \
+#                                  label.padding_right=10                             \
+#                                  update_freq=15                                     \
+#                                  script="~/.config/sketchybar/plugins/topproc.sh"
+
+
+###################### CENTER ITEMS ###################
+############## FINALIZING THE SETUP ##############
+sketchybar -m --update
+
+echo "sketchybar configuration loaded.."
+#echo "$(locale)"

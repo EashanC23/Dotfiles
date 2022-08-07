@@ -49,7 +49,7 @@ yabai -m config mouse_modifier fn
 yabai -m config mouse_action1 move
 yabai -m config mouse_action2 resize
 yabai -m config mouse_drop_action swap
-yabai -m config external_bar all:25:25
+yabai -m config external_bar all:25:0
 
 # general space settings
 
@@ -58,7 +58,7 @@ yabai -m config top_padding 2
 yabai -m config bottom_padding 2
 yabai -m config left_padding 2
 yabai -m config right_padding 2
-yabai -m config window_gap 10
+yabai -m config window_gap 8
 
 # app settings
 
@@ -82,7 +82,6 @@ yabai -m rule --add app="^Finder$" manage=off
 yabai -m rule --add app="^Mail$" manage=off
 yabai -m rule --add app="^Molar$" manage=off
 yabai -m rule --add app="^Wondershare Filmora 11$" manage=off
-yabai -m rule --add app="^IntelliJ IDEA$" manage=off
 
 # Some Settings For Simple-Bar
 
