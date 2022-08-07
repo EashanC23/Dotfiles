@@ -1,0 +1,216 @@
+7/31/2022 3:00:59 PM OS Version: 10.16
+
+=======================================
+7/31/2022 3:00:59 PM Program.Start Product=dr.fone, Version=10.4.11.41
+7/31/2022 3:00:59 PM Program.InitLog...
+7/31/2022 3:00:59 PM Program.InitApp
+7/31/2022 3:00:59 PM <OnlineRatingSwitchHelper> 1
+7/31/2022 3:01:00 PM <OnlineRatingSwitchHelper> 2
+7/31/2022 3:01:00 PM <OnlineRatingSwitchHelper> 3
+7/31/2022 3:01:01 PM <USB DEBUG> start requesting...
+7/31/2022 3:01:01 PM RegisterUSBDevicesNotify handle:140508379341744
+MacMonitorTask start=============================
+7/31/2022 3:01:01 PM Add device: 000081010011483A2EFA001E
+7/31/2022 3:01:01 PM ConnectionHub OnDeviceArrival:IOService:/AppleARMPE/arm-io@10F00000/AppleT810xIO/usb-drd1@2280000/AppleT8103USBXHCI@01000000/usb-drd1-port-hs@01100000/iPhone@01100000
+7/31/2022 3:01:01 PM AddUSBConnection device: IOService:/AppleARMPE/arm-io@10F00000/AppleT810xIO/usb-drd1@2280000/AppleT8103USBXHCI@01000000/usb-drd1-port-hs@01100000/iPhone@01100000
+7/31/2022 3:01:01 PM <USB DEBUG> start parsing json...
+7/31/2022 3:01:01 PM <USB DEBUG> value compare: 1-1
+7/31/2022 3:01:01 PM ConnectionHub.AddConnection(IOService:/AppleARMPE/arm-io@10F00000/AppleT810xIO/usb-drd1@2280000/AppleT8103USBXHCI@01000000/usb-drd1-port-hs@01100000/iPhone@01100000, iOS, 000081010011483A2EFA001E)
+7/31/2022 3:01:01 PM Connection inserter Start
+7/31/2022 3:01:01 PM Connection inserter create new device
+7/31/2022 3:01:01 PM Connection inserter device is iOS
+7/31/2022 3:01:01 PM Connection inserter AddService
+7/31/2022 3:01:01 PM Device manager add device SerialNumber: 000081010011483A2EFA001E
+7/31/2022 3:01:02 PM RegisterUSBDevicesNotify handle:140508369379520
+MacMonitorTask start=============================
+7/31/2022 3:01:02 PM Add device: 000081010011483A2EFA001E
+7/31/2022 3:01:02 PM ConnectionHub OnDeviceArrival:IOService:/AppleARMPE/arm-io@10F00000/AppleT810xIO/usb-drd1@2280000/AppleT8103USBXHCI@01000000/usb-drd1-port-hs@01100000/iPhone@01100000
+7/31/2022 3:01:02 PM AddUSBConnection device: IOService:/AppleARMPE/arm-io@10F00000/AppleT810xIO/usb-drd1@2280000/AppleT8103USBXHCI@01000000/usb-drd1-port-hs@01100000/iPhone@01100000
+7/31/2022 3:01:02 PM SetSystemSleep start
+7/31/2022 3:01:02 PM SetSystemSleep end
+7/31/2022 3:01:02 PM ConnectionScanTask start
+7/31/2022 3:01:02 PM ConnectionScanTask rescan start
+7/31/2022 3:01:02 PM ...device: Apple iPhone insert...
+7/31/2022 3:01:02 PM ConnectionScanTask rescan end
+7/31/2022 3:01:02 PM ConnectionScanTask End
+7/31/2022 3:01:02 PM Connection begin IOService:/AppleARMPE/arm-io@10F00000/AppleT810xIO/usb-drd1@2280000/AppleT8103USBXHCI@01000000/usb-drd1-port-hs@01100000/iPhone@01100000
+7/31/2022 3:01:02 PM Download Driver DB Ok, Version=4.0.1428646627
+7/31/2022 3:01:02 PM Replace DriverDb Ok
+7/31/2022 3:01:02 PM [DC_UsbTask] try connect, Times: 1
+7/31/2022 3:01:02 PM [DC_IOSCOT] Initialize ios start.
+7/31/2022 3:01:02 PM [DC_Listener] DoCheckService result: True
+7/31/2022 3:01:02 PM [DC_IOSCOT] Initialize, ios service running
+7/31/2022 3:01:02 PM Connection step Checking
+7/31/2022 3:01:02 PM [DC_UsbTask] start wait system installing.
+7/31/2022 3:01:02 PM [DC_UsbTask] end wait system installing.
+7/31/2022 3:01:02 PM [DC_UsbTask] start wait FindExpectInterface
+7/31/2022 3:01:02 PM [DC_UsbTask] end wait FindExpectInterface.
+7/31/2022 3:01:02 PM [DC_UsbTask] start PrepareCheck.
+7/31/2022 3:01:02 PM [DC_UsbTask] end PrepareCheck.
+7/31/2022 3:01:02 PM [DC_UsbTask] start GetConnectTask
+7/31/2022 3:01:02 PM [DC-BSCOT] BC-DoConnection enter..
+7/31/2022 3:01:02 PM [DC-BSCOT] BC-GetWaitReadyTask skip..
+7/31/2022 3:01:02 PM [DC-BSCOT] BC-GetWaitReadyTask enter..
+7/31/2022 3:01:02 PM [DC-BSCOT] BC-WaitReadyWorker enter..
+7/31/2022 3:01:02 PM Connection step WaitReady
+7/31/2022 3:01:02 PM [DC_IOSCOT]DoWaitReady Start
+7/31/2022 3:01:02 PM [DC_IOSCOT] DoWaitReady before WaitDriverInstallDone
+7/31/2022 3:01:02 PM [DC_IOSCOT] DoWaitReady End WaitDriverInstallDone
+7/31/2022 3:01:02 PM [DC_IOSCOT] DoWaitReady before InitService
+7/31/2022 3:01:02 PM [DC_IOSCOT]InitService began
+7/31/2022 3:01:02 PM [DC_IOSCOT] Initialize ios start.
+7/31/2022 3:01:02 PM [DC_Listener] DoCheckService result: True
+7/31/2022 3:01:02 PM [DC_IOSCOT] Initialize, ios service running
+7/31/2022 3:01:02 PM [DC_IOSCOT] DoWaitReady end InitService
+7/31/2022 3:01:02 PM [DC_IOSCOT] start listen and wait.
+7/31/2022 3:01:02 PM [DC_IOSCOT] wait ready STEP_1
+7/31/2022 3:01:02 PM [DC_IOSCOT] service_listen: True
+7/31/2022 3:01:02 PM [DC_IOSCOT] wait ready STEP_2
+7/31/2022 3:01:02 PM Download apple name file path is: /Users/eashanc/.config/Wondershare/dr.fone/Drivers/AppleiOSNames.plist
+7/31/2022 3:01:02 PM start update apple name file
+7/31/2022 3:01:02 PM Old apple name path is: /Users/eashanc/Library/Application Support/DrFoneApps/com.wondershare.drfonemac.transfer/dr.fone-Phone Manager.app/Contents/MonoBundle/Resources/Drivers/AppleiOSNames.plist
+7/31/2022 3:01:02 PM Start download apple name file
+7/31/2022 3:01:02 PM DownloadFile completed
+7/31/2022 3:01:02 PM end update apple name file
+7/31/2022 3:01:02 PM Download apple name file success 
+7/31/2022 3:01:02 PM Load product plist is:/Users/eashanc/.config/Wondershare/dr.fone/Drivers/AppleiOSNames.plist
+7/31/2022 3:01:03 PM [DC_Listener] NotificationWaitHandles wait event: 00008101-0011483A2EFA001E
+7/31/2022 3:01:03 PM [DC_IOSCOT] wait_device: True
+7/31/2022 3:01:03 PM [DC_IOSCOT] listen and wait both ok.
+7/31/2022 3:01:03 PM [DC_IOSCOT]InitService began
+7/31/2022 3:01:03 PM [DC_IOSCOT] Initialize ios start.
+7/31/2022 3:01:03 PM [DC_Listener] DoCheckService result: True
+7/31/2022 3:01:03 PM [DC_IOSCOT] Initialize, ios service running
+7/31/2022 3:01:03 PM [DC_IOSCOT]DoWaitReady End DeviceListener 
+7/31/2022 3:01:03 PM [DC_IOSCOT] start WaitReady Task
+7/31/2022 3:01:03 PM WaitReadyTask start
+7/31/2022 3:01:03 PM WaitReadyState AllReady
+7/31/2022 3:01:03 PM Before WaitReady
+7/31/2022 3:01:03 PM Start WaitReady
+7/31/2022 3:01:03 PM Before HavePairedRecord
+7/31/2022 3:01:03 PM After HavePairedRecord
+7/31/2022 3:01:03 PM TypeInitializationException: The type initializer for 'OpenSSL.Core.Native' threw an exception.
+7/31/2022 3:01:03 PM   at WMM.Device.IOS.SslSocketStream.AuthenticateAsClient (System.String targetHost, System.Byte[] certPEMData, System.Byte[] privatePEMData, System.Security.Authentication.SslProtocols enabledSslProtocols, System.Boolean checkCertificateRevocation) [0x0000c] in <957be4f2bf924b60b579893d36413089>:0 
+  at (wrapper remoting-invoke-with-check) WMM.Device.IOS.SslSocketStream.AuthenticateAsClient(string,byte[],byte[],System.Security.Authentication.SslProtocols,bool)
+  at WMM.Device.IOS.Protocols.AppleSocket.StartSSL (WMM.Device.IOS.Protocols.PairRecordData pairRecord) [0x00064] in <957be4f2bf924b60b579893d36413089>:0 
+7/31/2022 3:01:03 PM InnerException:
+7/31/2022 3:01:03 PM DllNotFoundException: libcrypto_ws
+7/31/2022 3:01:03 PM   at (wrapper managed-to-native) OpenSSL.Core.Native.SSLeay()
+  at OpenSSL.Core.Version.get_Library () [0x00000] in <957be4f2bf924b60b579893d36413089>:0 
+  at OpenSSL.Core.Native..cctor () [0x00000] in <957be4f2bf924b60b579893d36413089>:0 
+7/31/2022 3:01:03 PM DllNotFoundException: libcrypto_ws
+7/31/2022 3:01:03 PM   at (wrapper managed-to-native) OpenSSL.Core.Native.SSLeay()
+  at OpenSSL.Core.Version.get_Library () [0x00000] in <957be4f2bf924b60b579893d36413089>:0 
+  at OpenSSL.Core.Native..cctor () [0x00000] in <957be4f2bf924b60b579893d36413089>:0 
+7/31/2022 3:01:03 PM Connection step Ready
+7/31/2022 3:01:03 PM [DC_IOSCOT]DoWaitReady End
+7/31/2022 3:01:03 PM [DC-BSCOT] BC-GetWaitReadyTask result: Online
+7/31/2022 3:01:03 PM Connection step StartSession
+7/31/2022 3:01:03 PM Connection step LoadInfo
+7/31/2022 3:01:03 PM Download apple name file path is: /Users/eashanc/.config/Wondershare/dr.fone/Drivers/AppleiOSNames.plist
+7/31/2022 3:01:03 PM start update apple name file
+7/31/2022 3:01:03 PM Old apple name path is: /Users/eashanc/Library/Application Support/DrFoneApps/com.wondershare.drfonemac.transfer/dr.fone-Phone Manager.app/Contents/MonoBundle/Resources/Drivers/AppleiOSNames.plist
+7/31/2022 3:01:03 PM end update apple name file
+7/31/2022 3:01:03 PM Download apple name file success 
+7/31/2022 3:01:03 PM Load product plist is:/Users/eashanc/.config/Wondershare/dr.fone/Drivers/AppleiOSNames.plist
+7/31/2022 3:01:04 PM Connection step Finished
+7/31/2022 3:01:04 PM [DC_UsbTask] end GetConnectTask : True
+7/31/2022 3:01:04 PM Manufacturer:Apple Inc.
+7/31/2022 3:01:04 PM Model:iPhone 12 mini
+7/31/2022 3:01:04 PM SerialNumber:F4GHX4MV0GR9
+7/31/2022 3:01:04 PM OSPlatform:iOS
+7/31/2022 3:01:04 PM OSVersion:15.5
+7/31/2022 3:01:04 PM Carrier:
+7/31/2022 3:01:04 PM Name:Eashan’s iPhone
+7/31/2022 3:01:04 PM Locale:en_US
+7/31/2022 3:01:04 PM Connection end IOService:/AppleARMPE/arm-io@10F00000/AppleT810xIO/usb-drd1@2280000/AppleT8103USBXHCI@01000000/usb-drd1-port-hs@01100000/iPhone@01100000 Online
+7/31/2022 3:01:04 PM Connection step Completed
+7/31/2022 3:01:05 PM ......device [Eashan’s iPhone] connected. info is... platform: iOS; version: 15.5; model: iPhone 12 mini; brand: ; manufacturer: Apple Inc.
+7/31/2022 3:01:06 PM Download apple name file path is: /Users/eashanc/.config/Wondershare/dr.fone/Drivers/AppleiOSNames.plist
+7/31/2022 3:01:06 PM start update apple name file
+7/31/2022 3:01:06 PM Old apple name path is: /Users/eashanc/Library/Application Support/DrFoneApps/com.wondershare.drfonemac.transfer/dr.fone-Phone Manager.app/Contents/MonoBundle/Resources/Drivers/AppleiOSNames.plist
+7/31/2022 3:01:06 PM end update apple name file
+7/31/2022 3:01:06 PM Download apple name file success 
+7/31/2022 3:01:06 PM Load product plist is:/Users/eashanc/.config/Wondershare/dr.fone/Drivers/AppleiOSNames.plist
+7/31/2022 3:01:06 PM Service  Receive Error System.AggregateException: One or more errors occurred. ---> System.ObjectDisposedException: Cannot access a disposed object.
+Object name: 'MobileAuthenticatedStream'.
+  at Mono.Net.Security.MobileAuthenticatedStream+<StartOperation>d__58.MoveNext () [0x001bf] in <cea77d7bab8b472da697a3b6e78ef65f>:0 
+   --- End of inner exception stack trace ---
+  at System.Threading.Tasks.Task.ThrowIfExceptional (System.Boolean includeTaskCanceledExceptions) [0x00011] in <51f721dfc41044e88d763e1711099fe3>:0 
+  at System.Threading.Tasks.Task`1[TResult].GetResultCore (System.Boolean waitCompletionNotification) [0x0002b] in <51f721dfc41044e88d763e1711099fe3>:0 
+  at System.Threading.Tasks.Task`1[TResult].get_Result () [0x0000f] in <51f721dfc41044e88d763e1711099fe3>:0 
+  at Mono.Net.Security.MobileAuthenticatedStream.Read (System.Byte[] buffer, System.Int32 offset, System.Int32 count) [0x00018] in <cea77d7bab8b472da697a3b6e78ef65f>:0 
+  at System.Net.Security.SslStream.Read (System.Byte[] buffer, System.Int32 offset, System.Int32 count) [0x00006] in <cea77d7bab8b472da697a3b6e78ef65f>:0 
+  at WMM.Device.IOS.Protocols.AppleSocket.FixSizeReceive (System.Byte[] buffer, System.Int32 offset, System.Int32 count, System.Int32 timeout) [0x0007c] in <957be4f2bf924b60b579893d36413089>:0 
+---> (Inner Exception #0) System.ObjectDisposedException: Cannot access a disposed object.
+Object name: 'MobileAuthenticatedStream'.
+  at Mono.Net.Security.MobileAuthenticatedStream+<StartOperation>d__58.MoveNext () [0x001bf] in <cea77d7bab8b472da697a3b6e78ef65f>:0 <---
+
+7/31/2022 3:01:20 PM ReadLeftTimesByKey:System.ArgumentNullException: Value cannot be null.
+Parameter name: String
+  at System.Number.StringToNumber (System.String str, System.Globalization.NumberStyles options, System.Number+NumberBuffer& number, System.Globalization.NumberFormatInfo info, System.Boolean parseDecimal) [0x00003] in <51f721dfc41044e88d763e1711099fe3>:0 
+  at System.Number.ParseInt32 (System.String s, System.Globalization.NumberStyles style, System.Globalization.NumberFormatInfo info) [0x00013] in <51f721dfc41044e88d763e1711099fe3>:0 
+  at System.Int32.Parse (System.String s) [0x00007] in <51f721dfc41044e88d763e1711099fe3>:0 
+  at WMM.UI.Main.TryUseHelper.ReadLeftTimes (System.String key) [0x00020] in <56a6aadc7a7f41ff8487cd3ebd67a598>:0 
+7/31/2022 3:01:50 PM ReadLeftTimesByKey:System.ArgumentNullException: Value cannot be null.
+Parameter name: String
+  at System.Number.StringToNumber (System.String str, System.Globalization.NumberStyles options, System.Number+NumberBuffer& number, System.Globalization.NumberFormatInfo info, System.Boolean parseDecimal) [0x00003] in <51f721dfc41044e88d763e1711099fe3>:0 
+  at System.Number.ParseInt32 (System.String s, System.Globalization.NumberStyles style, System.Globalization.NumberFormatInfo info) [0x00013] in <51f721dfc41044e88d763e1711099fe3>:0 
+  at System.Int32.Parse (System.String s) [0x00007] in <51f721dfc41044e88d763e1711099fe3>:0 
+  at WMM.UI.Main.TryUseHelper.ReadLeftTimes (System.String key) [0x00020] in <56a6aadc7a7f41ff8487cd3ebd67a598>:0 
+7/31/2022 3:04:21 PM Eashan’s iPhone PhotoManage Begin Load
+7/31/2022 3:04:21 PM Favorite Begin Load
+7/31/2022 3:04:21 PM Eashan’s iPhone PhotoManage End Load
+7/31/2022 3:04:21 PM ios photo folder...
+7/31/2022 3:04:21 PM folder...title: All Photos; category: Camera; photo count: 9; id: 7EEC2FA0-97FF-409B-80AB-E84EDF30DAF4; attr: CanModify, CanAdd, NeedDaemonAdd
+7/31/2022 3:04:21 PM folder...title: Photo Library; category: Library; photo count: 0; id: FB050240-FE32-4482-BE82-9588C5508407; attr: CanModify, CanAdd
+7/31/2022 3:04:21 PM folder...title: Family; category: SharedStream; photo count: 2; id: EA20D90A-E1B8-427A-AFFE-4AC21E36FF14; attr: None
+7/31/2022 3:04:21 PM folder...title: Recently Deleted; category: RecentlyDeleted; photo count: 6; id: 06BAF947-2ED4-43EE-9965-FAD7B53616AC; attr: None
+7/31/2022 3:04:21 PM folder...title: Hidden; category: Hidden; photo count: 0; id: 9565DAAC-0CA4-4425-B62E-1E745FA29091; attr: None
+7/31/2022 3:04:21 PM ios favorite folder...
+7/31/2022 3:04:21 PM favorite...title: Live Photos; category: Camera; photo count: 1; id: 41FB45A6-8AFA-4538-A24B-CB6EDBFFC8DC; subClass: LivePhotos; default folder id: 7EEC2FA0-97FF-409B-80AB-E84EDF30DAF4; attr: CanDelete
+7/31/2022 3:04:21 PM favorite...title: Imports; category: Camera; photo count: 5; id: 3F556EAE-B072-4055-B41E-BEDA118386C5; subClass: AllImport; default folder id: 7EEC2FA0-97FF-409B-80AB-E84EDF30DAF4; attr: CanDelete
+7/31/2022 3:04:21 PM favorite...title: Places; category: Camera; photo count: 0; id: 13A4349C-0597-416c-8A82-043D83AB3A54; subClass: Places; default folder id: 7EEC2FA0-97FF-409B-80AB-E84EDF30DAF4; attr: None
+7/31/2022 3:04:21 PM favorite...title: Portrait; category: Camera; photo count: 0; id: 695E1439-3C26-4d54-9AB3-488B86FED069; subClass: DepthEffect; default folder id: 7EEC2FA0-97FF-409B-80AB-E84EDF30DAF4; attr: None
+7/31/2022 3:04:26 PM FileManager.CreateDirectory /UDisk status = True
+7/31/2022 3:04:26 PM <TG_FileSystem> SetSelectLabelText....
+7/31/2022 3:04:26 PM <TG_FileSystem> SetSelectLabelText....
+7/31/2022 3:04:26 PM <TG_FileSystem> SetSelectLabelText1 ....
+7/31/2022 3:04:26 PM <TG_FileSystem> Phone:Phone
+7/31/2022 3:04:26 PM <TG_FileSystem> SetSelectLabelText....
+7/31/2022 3:04:26 PM <TG_FileSystem> SetSelectLabelText1 ....
+7/31/2022 3:04:26 PM <TG_FileSystem> Phone:Phone
+7/31/2022 3:04:31 PM <TG_FileSystem> SetSelectLabelText....
+7/31/2022 3:04:31 PM <TG_FileSystem> SetSelectLabelText1 ....
+7/31/2022 3:04:31 PM <TG_FileSystem> Phone:Phone
+7/31/2022 3:04:31 PM <TG_FileSystem> SetSelectLabelText....
+7/31/2022 3:04:31 PM <TG_FileSystem> SetSelectLabelText1 ....
+7/31/2022 3:04:31 PM <TG_FileSystem> Phone:Phone
+7/31/2022 3:04:32 PM <TG_FileSystem> SetSelectLabelText....
+7/31/2022 3:04:32 PM <TG_FileSystem> SetSelectLabelText1 ....
+7/31/2022 3:04:32 PM <TG_FileSystem> DCIM:Phone
+7/31/2022 3:04:32 PM <TG_FileSystem> SetSelectLabelText....
+7/31/2022 3:04:32 PM <TG_FileSystem> SetSelectLabelText1 ....
+7/31/2022 3:04:32 PM <TG_FileSystem> DCIM:Phone
+7/31/2022 3:04:36 PM <TG_FileSystem> SetSelectLabelText....
+7/31/2022 3:04:36 PM <TG_FileSystem> SetSelectLabelText1 ....
+7/31/2022 3:04:36 PM <TG_FileSystem> 100APPLE:Phone
+7/31/2022 3:04:39 PM <TG_FileSystem> SetSelectLabelText....
+7/31/2022 3:04:39 PM <TG_FileSystem> SetSelectLabelText1 ....
+7/31/2022 3:04:39 PM <TG_FileSystem> DCIM:Phone
+7/31/2022 3:04:40 PM <TG_FileSystem> SetSelectLabelText....
+7/31/2022 3:04:40 PM <TG_FileSystem> SetSelectLabelText1 ....
+7/31/2022 3:04:40 PM <TG_FileSystem> Phone:Phone
+7/31/2022 3:04:43 PM <TG_FileSystem> SetSelectLabelText....
+7/31/2022 3:04:43 PM <TG_FileSystem> SetSelectLabelText1 ....
+7/31/2022 3:04:43 PM <TG_FileSystem> Phone:Phone
+7/31/2022 3:04:43 PM <TG_FileSystem> SetSelectLabelText....
+7/31/2022 3:04:43 PM <TG_FileSystem> SetSelectLabelText1 ....
+7/31/2022 3:04:43 PM <TG_FileSystem> Phone:Phone
+7/31/2022 3:04:46 PM <TG_FileSystem> SetSelectLabelText....
+7/31/2022 3:04:46 PM <TG_FileSystem> SetSelectLabelText1 ....
+7/31/2022 3:04:46 PM <TG_FileSystem> Phone:Phone
+7/31/2022 3:04:52 PM SetSystemSleep start
+7/31/2022 3:04:52 PM SetSystemSleep end
+7/31/2022 3:04:52 PM Device manager remove device SerialNumber: F4GHX4MV0GR9
+7/31/2022 3:04:52 PM Connection IOService:/AppleARMPE/arm-io@10F00000/AppleT810xIO/usb-drd1@2280000/AppleT8103USBXHCI@01000000/usb-drd1-port-hs@01100000/iPhone@01100000 disposed.

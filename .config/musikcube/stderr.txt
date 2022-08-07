@@ -1,0 +1,30 @@
+[2022-07-31 14:38:06] [info] asio async_connect error: system:61 (Connection refused)
+[2022-07-31 14:38:06] [info] Error getting remote endpoint: system:22 (Invalid argument)
+[2022-07-31 14:38:06] [error] handle_connect error: Underlying Transport Error
+[mp3float @ 0x15180bee0] Could not update timestamps for skipped samples.
+[mp3float @ 0x15070ef00] Could not update timestamps for skipped samples.
+[mp3float @ 0x15070e8d0] Could not update timestamps for skipped samples.
+[mp3float @ 0x1506a15f0] Could not update timestamps for skipped samples.
+CoreAudioOut: draining...
+CoreAudioOut: drained.
+[mp3float @ 0x15070e1f0] Could not update timestamps for skipped samples.
+[mp3float @ 0x15070e1f0] overread, skip -8 enddists: -7 -7
+[mp3float @ 0x15070e1f0] overread, skip -5 enddists: -3 -3
+[mp3float @ 0x1507107a0] Could not update timestamps for skipped samples.
+[mp3float @ 0x15070e1f0] Could not update timestamps for discarded samples.
+[mp3float @ 0x13200ec80] Could not update timestamps for skipped samples.
+[mp3float @ 0x130704ac0] Could not update timestamps for skipped samples.
+[mp3 @ 0x151808a70] Estimating duration from bitrate, this may be inaccurate
+[mp3 @ 0x13070b480] Estimating duration from bitrate, this may be inaccurate
+[mp3float @ 0x15071c980] Could not update timestamps for skipped samples.
+[mp3float @ 0x13201be50] Could not update timestamps for skipped samples.
+[mp3float @ 0x1506a1f10] Could not update timestamps for skipped samples.
+[mp3float @ 0x132118fa0] Could not update timestamps for skipped samples.
+[mp3float @ 0x15071a860] Could not update timestamps for skipped samples.
+[mp3float @ 0x132218410] Could not update timestamps for skipped samples.
+[mp3float @ 0x150719220] Could not update timestamps for skipped samples.
+[mp3float @ 0x1322165f0] Could not update timestamps for skipped samples.
+[mp3float @ 0x150716f20] Could not update timestamps for skipped samples.
+[mp3float @ 0x130718ef0] Could not update timestamps for skipped samples.
+[mp3float @ 0x150716110] Could not update timestamps for skipped samples.
+[2022-07-31 14:42:21] [error] handle_read_frame error: websocketpp.transport:7 (End of File)

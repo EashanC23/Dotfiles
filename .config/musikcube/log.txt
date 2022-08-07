@@ -1,0 +1,310 @@
+14:38:06 [info] [LOG SESSION] ---------- START ----------
+14:38:06 [info] [PluginFactory] loading plugins
+14:38:06 [info] [PluginFactory] loaded: /opt/homebrew/share/musikcube/plugins/libsupereqdsp.dylib
+14:38:06 [info] [PluginFactory] loaded: /opt/homebrew/share/musikcube/plugins/libmacosmediakeys.dylib
+14:38:06 [info] [PluginFactory] loaded: /opt/homebrew/share/musikcube/plugins/libtaglibreader.dylib
+14:38:06 [info] [PluginFactory] loaded: /opt/homebrew/share/musikcube/plugins/libstockencoders.dylib
+14:38:06 [info] [PluginFactory] loaded: /opt/homebrew/share/musikcube/plugins/libserver.dylib
+14:38:06 [info] [PluginFactory] loaded: /opt/homebrew/share/musikcube/plugins/libopenmptdecoder.dylib
+14:38:06 [info] [PluginFactory] loaded: /opt/homebrew/share/musikcube/plugins/libhttpdatastream.dylib
+14:38:06 [info] [PluginFactory] loaded: /opt/homebrew/share/musikcube/plugins/libgmedecoder.dylib
+14:38:06 [info] [PluginFactory] loaded: /opt/homebrew/share/musikcube/plugins/libnullout.dylib
+14:38:06 [info] [PluginFactory] loaded: /opt/homebrew/share/musikcube/plugins/libffmpegdecoder.dylib
+14:38:06 [info] [PluginFactory] loaded: /opt/homebrew/share/musikcube/plugins/libcoreaudioout.dylib
+14:38:06 [info] [Indexer] indexer source 197490949 running...
+14:38:06 [info] [Indexer] indexer source 197490949 finished
+14:38:06 [info] [Indexer] indexer source 1859739243 running...
+14:38:06 [info] [Indexer] indexer source 1859739243 finished
+14:38:06 [info] [Indexer] scanning /Users/eashanc/Downloads/audio/
+14:38:06 [info] [LocalLibrary] query 'CategoryListQuery' enqueued
+14:38:06 [info] [LocalLibrary] query 'CategoryListQuery' running
+14:38:06 [info] [LocalLibrary] query 'CategoryListQuery' finished with status=4
+14:38:06 [info] [Indexer] scan completed successfully
+14:38:06 [info] [Indexer] cleanup 1/2
+14:38:06 [info] [Indexer] cleanup 2/2
+14:38:06 [info] [Indexer] optimizing
+14:38:06 [info] [LocalLibrary] query 'SearchTrackListQuery' enqueued
+14:38:06 [info] [Indexer] done!
+14:38:06 [info] [LocalLibrary] query 'SearchTrackListQuery' running
+14:38:06 [info] [LocalLibrary] query 'SearchTrackListQuery' finished with status=4
+14:38:07 [info] [LocalLibrary] query 'PersistedPlayQueueQuery' enqueued
+14:38:07 [info] [LocalLibrary] query 'PersistedPlayQueueQuery' running
+14:38:07 [info] [LocalLibrary] query 'PersistedPlayQueueQuery' finished with status=4
+14:38:07 [info] [macosmediakeys] listening to media keys
+14:38:07 [info] [LocalLibrary] query 'CategoryTrackListQuery' enqueued
+14:38:07 [info] [LocalLibrary] query 'CategoryTrackListQuery' running
+14:38:07 [info] [LocalLibrary] query 'CategoryTrackListQuery' enqueued
+14:38:07 [info] [LocalLibrary] query 'CategoryListQuery' enqueued
+14:38:07 [info] [LocalLibrary] query 'CategoryTrackListQuery' finished with status=4
+14:38:07 [info] [LocalLibrary] query 'CategoryTrackListQuery' running
+14:38:07 [info] [LocalLibrary] query 'CategoryTrackListQuery' finished with status=4
+14:38:07 [info] [LocalLibrary] query 'CategoryListQuery' running
+14:38:07 [info] [LocalLibrary] query 'CategoryListQuery' finished with status=4
+14:38:07 [info] [LocalLibrary] query 'CategoryListQuery' enqueued
+14:38:07 [info] [LocalLibrary] query 'CategoryListQuery' running
+14:38:07 [info] [LocalLibrary] query 'CategoryListQuery' enqueued
+14:38:07 [info] [LocalLibrary] query 'CategoryListQuery' finished with status=4
+14:38:07 [info] [LocalLibrary] query 'CategoryListQuery' running
+14:38:07 [info] [LocalLibrary] query 'CategoryListQuery' finished with status=4
+14:38:07 [info] [LocalLibrary] query 'TrackMetadataQuery' enqueued
+14:38:07 [info] [LocalLibrary] query 'TrackMetadataQuery' running
+14:38:07 [info] [LocalLibrary] query 'TrackMetadataQuery' finished with status=3
+14:38:07 [info] [LocalLibrary] query 'TrackMetadataBatchQuery' enqueued
+14:38:07 [info] [LocalLibrary] query 'TrackMetadataBatchQuery' running
+14:38:07 [info] [LocalLibrary] query 'TrackMetadataBatchQuery' finished with status=4
+14:38:07 [info] [LocalLibrary] query 'CategoryTrackListQuery' enqueued
+14:38:07 [info] [LocalLibrary] query 'CategoryTrackListQuery' running
+14:38:07 [info] [LocalLibrary] query 'CategoryTrackListQuery' finished with status=4
+14:38:07 [info] [LocalLibrary] query 'TrackMetadataBatchQuery' enqueued
+14:38:07 [info] [LocalLibrary] query 'TrackMetadataBatchQuery' running
+14:38:07 [info] [LocalLibrary] query 'TrackMetadataBatchQuery' finished with status=4
+14:38:12 [info] [LocalLibrary] query 'TrackMetadataBatchQuery' enqueued
+14:38:12 [info] [LocalLibrary] query 'TrackMetadataBatchQuery' running
+14:38:12 [info] [LocalLibrary] query 'TrackMetadataBatchQuery' finished with status=4
+14:38:12 [info] [LocalLibrary] query 'SearchTrackListQuery' enqueued
+14:38:12 [info] [LocalLibrary] query 'SearchTrackListQuery' running
+14:38:12 [info] [LocalLibrary] query 'SearchTrackListQuery' finished with status=4
+14:38:12 [info] [LocalLibrary] query 'TrackMetadataBatchQuery' enqueued
+14:38:12 [info] [LocalLibrary] query 'TrackMetadataBatchQuery' running
+14:38:12 [info] [LocalLibrary] query 'TrackMetadataBatchQuery' finished with status=4
+14:38:13 [info] [LocalLibrary] query 'TrackMetadataQuery' enqueued
+14:38:13 [info] [LocalLibrary] query 'TrackMetadataQuery' running
+14:38:13 [info] [LocalLibrary] query 'TrackMetadataQuery' finished with status=4
+14:38:13 [info] [CrossfadeTransport] trying to play /Users/eashanc/Downloads/audio/Katy Perry - E.T.mp3
+14:38:13 [info] [Player] new instance created
+14:38:13 [info] [Stream] opening /Users/eashanc/Downloads/audio/Katy Perry - E.T.mp3
+14:38:13 [info] [LocalFileStream] opening file: /Users/eashanc/Downloads/audio/Katy Perry - E.T.mp3
+14:38:13 [info] [ffmpegdecoder] parsing data stream...
+14:38:13 [info] [ffmpegdecoder] found audio stream!
+14:38:13 [info] [ffmpegdecoder] resolved codec: MP3 (MPEG audio layer 3)
+14:38:13 [info] [Streams] found a decoder for /Users/eashanc/Downloads/audio/Katy Perry - E.T.mp3
+14:38:13 [info] [LocalLibrary] query 'TrackMetadataQuery' enqueued
+14:38:13 [info] [LocalLibrary] query 'TrackMetadataQuery' running
+14:38:13 [info] [LocalLibrary] query 'TrackMetadataQuery' finished with status=4
+14:38:13 [info] [Player] new instance created
+14:38:13 [info] [Stream] opening /Users/eashanc/Downloads/audio/OVERDO$E.mp3
+14:38:13 [info] [LocalFileStream] opening file: /Users/eashanc/Downloads/audio/OVERDO$E.mp3
+14:38:13 [info] [ffmpegdecoder] parsing data stream...
+14:38:13 [info] [ffmpegdecoder] found audio stream!
+14:38:13 [info] [ffmpegdecoder] resolved codec: MP3 (MPEG audio layer 3)
+14:38:13 [info] [Streams] found a decoder for /Users/eashanc/Downloads/audio/OVERDO$E.mp3
+14:38:15 [info] [LocalLibrary] query 'TrackMetadataQuery' enqueued
+14:38:15 [info] [LocalLibrary] query 'TrackMetadataQuery' running
+14:38:15 [info] [LocalLibrary] query 'TrackMetadataQuery' finished with status=4
+14:38:15 [info] [Player] new instance created
+14:38:15 [info] [Stream] opening /Users/eashanc/Downloads/audio/XXXTENTACION - Yung Bratz .mp3
+14:38:15 [info] [LocalFileStream] opening file: /Users/eashanc/Downloads/audio/XXXTENTACION - Yung Bratz .mp3
+14:38:15 [info] [ffmpegdecoder] parsing data stream...
+14:38:15 [info] [ffmpegdecoder] found audio stream!
+14:38:15 [info] [ffmpegdecoder] resolved codec: MP3 (MPEG audio layer 3)
+14:38:15 [info] [Streams] found a decoder for /Users/eashanc/Downloads/audio/XXXTENTACION - Yung Bratz .mp3
+14:38:16 [info] [CrossfadeTransport] trying to play /Users/eashanc/Downloads/audio/XXXTENTACION - Yung Bratz .mp3
+14:38:16 [info] [LocalLibrary] query 'TrackMetadataQuery' enqueued
+14:38:16 [info] [LocalLibrary] query 'TrackMetadataQuery' running
+14:38:16 [info] [LocalLibrary] query 'TrackMetadataQuery' finished with status=4
+14:38:16 [info] [Player] new instance created
+14:38:16 [info] [Stream] opening /Users/eashanc/Downloads/audio/SKI MASK THE SLUMP GOD x XXXTENTACION - TAKE A STEP BACK (Bass Boosted) .mp3
+14:38:16 [info] [LocalFileStream] opening file: /Users/eashanc/Downloads/audio/SKI MASK THE SLUMP GOD x XXXTENTACION - TAKE A STEP BACK (Bass Boosted) .mp3
+14:38:16 [info] [ffmpegdecoder] parsing data stream...
+14:38:16 [info] [ffmpegdecoder] found audio stream!
+14:38:16 [info] [ffmpegdecoder] resolved codec: MP3 (MPEG audio layer 3)
+14:38:16 [info] [Streams] found a decoder for /Users/eashanc/Downloads/audio/SKI MASK THE SLUMP GOD x XXXTENTACION - TAKE A STEP BACK (Bass Boosted) .mp3
+14:38:34 [info] [GaplessTransport] stop
+14:38:34 [info] [GaplessTransport] stop
+14:38:34 [info] [GaplessTransport] starting track at /Users/eashanc/Downloads/audio/XXXTENTACION - Yung Bratz .mp3
+14:38:34 [info] [Player] new instance created
+14:38:34 [info] [GaplessTransport] stop
+14:38:34 [info] [Stream] opening /Users/eashanc/Downloads/audio/XXXTENTACION - Yung Bratz .mp3
+14:38:34 [info] [LocalFileStream] opening file: /Users/eashanc/Downloads/audio/XXXTENTACION - Yung Bratz .mp3
+14:38:34 [info] [ffmpegdecoder] parsing data stream...
+14:38:34 [info] [ffmpegdecoder] found audio stream!
+14:38:34 [info] [ffmpegdecoder] resolved codec: MP3 (MPEG audio layer 3)
+14:38:34 [info] [Streams] found a decoder for /Users/eashanc/Downloads/audio/XXXTENTACION - Yung Bratz .mp3
+14:38:34 [info] [Player] new instance created
+14:38:34 [info] [Stream] opening /Users/eashanc/Downloads/audio/SKI MASK THE SLUMP GOD x XXXTENTACION - TAKE A STEP BACK (Bass Boosted) .mp3
+14:38:34 [info] [LocalFileStream] opening file: /Users/eashanc/Downloads/audio/SKI MASK THE SLUMP GOD x XXXTENTACION - TAKE A STEP BACK (Bass Boosted) .mp3
+14:38:34 [info] [ffmpegdecoder] parsing data stream...
+14:38:34 [info] [ffmpegdecoder] found audio stream!
+14:38:34 [info] [ffmpegdecoder] resolved codec: MP3 (MPEG audio layer 3)
+14:38:34 [info] [Streams] found a decoder for /Users/eashanc/Downloads/audio/SKI MASK THE SLUMP GOD x XXXTENTACION - TAKE A STEP BACK (Bass Boosted) .mp3
+14:39:01 [info] [LocalLibrary] query 'MarkTrackPlayedQuery' enqueued
+14:39:01 [info] [LocalLibrary] query 'MarkTrackPlayedQuery' running
+14:39:01 [info] [LocalLibrary] query 'MarkTrackPlayedQuery' finished with status=4
+14:40:03 [info] [ffmpegdecoder] finished decoding.
+14:40:05 [info] [GaplessTransport] stop
+14:40:06 [info] [LocalLibrary] query 'TrackMetadataQuery' enqueued
+14:40:06 [info] [LocalLibrary] query 'TrackMetadataQuery' running
+14:40:06 [info] [LocalLibrary] query 'TrackMetadataQuery' finished with status=4
+14:40:06 [info] [Player] new instance created
+14:40:06 [info] [Stream] opening /Users/eashanc/Downloads/audio/Phuture Noize - The Aftershock (Official HQ Preview) [Prk244f-RHA].mp3
+14:40:06 [info] [LocalFileStream] opening file: /Users/eashanc/Downloads/audio/Phuture Noize - The Aftershock (Official HQ Preview) [Prk244f-RHA].mp3
+14:40:06 [info] [ffmpegdecoder] parsing data stream...
+14:40:06 [info] [ffmpegdecoder] found audio stream!
+14:40:06 [info] [ffmpegdecoder] resolved codec: MP3 (MPEG audio layer 3)
+14:40:06 [info] [Streams] found a decoder for /Users/eashanc/Downloads/audio/Phuture Noize - The Aftershock (Official HQ Preview) [Prk244f-RHA].mp3
+14:40:56 [info] [LocalLibrary] query 'MarkTrackPlayedQuery' enqueued
+14:40:56 [info] [LocalLibrary] query 'MarkTrackPlayedQuery' running
+14:40:56 [info] [LocalLibrary] query 'MarkTrackPlayedQuery' finished with status=4
+14:41:18 [info] [GaplessTransport] pause
+14:41:23 [info] [LocalLibrary] query 'SearchTrackListQuery' enqueued
+14:41:23 [info] [LocalLibrary] query 'SearchTrackListQuery' running
+14:41:23 [info] [LocalLibrary] query 'SearchTrackListQuery' finished with status=4
+14:41:23 [info] [LocalLibrary] query 'TrackMetadataBatchQuery' enqueued
+14:41:23 [info] [LocalLibrary] query 'TrackMetadataBatchQuery' running
+14:41:23 [info] [LocalLibrary] query 'TrackMetadataBatchQuery' finished with status=4
+14:41:26 [info] [GaplessTransport] starting track at /Users/eashanc/Downloads/audio/Phuture Noize - The Aftershock (Official HQ Preview) [Prk244f-RHA].mp3
+14:41:26 [info] [Player] new instance created
+14:41:26 [info] [Stream] opening /Users/eashanc/Downloads/audio/Phuture Noize - The Aftershock (Official HQ Preview) [Prk244f-RHA].mp3
+14:41:26 [info] [LocalFileStream] opening file: /Users/eashanc/Downloads/audio/Phuture Noize - The Aftershock (Official HQ Preview) [Prk244f-RHA].mp3
+14:41:26 [info] [GaplessTransport] stop
+14:41:26 [info] [ffmpegdecoder] parsing data stream...
+14:41:26 [info] [ffmpegdecoder] found audio stream!
+14:41:26 [info] [ffmpegdecoder] resolved codec: MP3 (MPEG audio layer 3)
+14:41:26 [info] [Streams] found a decoder for /Users/eashanc/Downloads/audio/Phuture Noize - The Aftershock (Official HQ Preview) [Prk244f-RHA].mp3
+14:41:26 [info] [LocalLibrary] query 'TrackMetadataBatchQuery' enqueued
+14:41:26 [info] [LocalLibrary] query 'TrackMetadataBatchQuery' running
+14:41:26 [info] [LocalLibrary] query 'TrackMetadataBatchQuery' finished with status=4
+14:41:26 [info] [LocalLibrary] query 'TrackMetadataQuery' enqueued
+14:41:26 [info] [LocalLibrary] query 'TrackMetadataQuery' running
+14:41:26 [info] [LocalLibrary] query 'TrackMetadataQuery' finished with status=4
+14:41:26 [info] [Player] new instance created
+14:41:26 [info] [Stream] opening /Users/eashanc/Downloads/audio/Ghostemane/Hexada/04 Mercury_ Retrograde.mp3
+14:41:26 [info] [LocalFileStream] opening file: /Users/eashanc/Downloads/audio/Ghostemane/Hexada/04 Mercury_ Retrograde.mp3
+14:41:26 [info] [ffmpegdecoder] parsing data stream...
+14:41:26 [info] [ffmpegdecoder] found audio stream!
+14:41:26 [info] [ffmpegdecoder] resolved codec: MP3 (MPEG audio layer 3)
+14:41:26 [info] [Streams] found a decoder for /Users/eashanc/Downloads/audio/Ghostemane/Hexada/04 Mercury_ Retrograde.mp3
+14:41:26 [warning] [ffmpegdecoder] invalid packet detected, discarding.
+14:41:27 [info] [GaplessTransport] starting track at /Users/eashanc/Downloads/audio/Ghostemane/Hexada/04 Mercury_ Retrograde.mp3
+14:41:27 [info] [Player] new instance created
+14:41:27 [info] [Stream] opening /Users/eashanc/Downloads/audio/Ghostemane/Hexada/04 Mercury_ Retrograde.mp3
+14:41:27 [info] [LocalFileStream] opening file: /Users/eashanc/Downloads/audio/Ghostemane/Hexada/04 Mercury_ Retrograde.mp3
+14:41:27 [info] [GaplessTransport] stop
+14:41:27 [info] [ffmpegdecoder] parsing data stream...
+14:41:27 [info] [ffmpegdecoder] found audio stream!
+14:41:27 [info] [ffmpegdecoder] resolved codec: MP3 (MPEG audio layer 3)
+14:41:27 [info] [Streams] found a decoder for /Users/eashanc/Downloads/audio/Ghostemane/Hexada/04 Mercury_ Retrograde.mp3
+14:41:27 [warning] [ffmpegdecoder] invalid packet detected, discarding.
+14:41:27 [info] [LocalLibrary] query 'TrackMetadataQuery' enqueued
+14:41:27 [info] [LocalLibrary] query 'TrackMetadataQuery' running
+14:41:27 [info] [LocalLibrary] query 'TrackMetadataQuery' finished with status=4
+14:41:27 [info] [Player] new instance created
+14:41:27 [info] [Stream] opening /Users/eashanc/Downloads/audio/Unlucky Morpheus - Knight of Sword.mp3
+14:41:27 [info] [LocalFileStream] opening file: /Users/eashanc/Downloads/audio/Unlucky Morpheus - Knight of Sword.mp3
+14:41:27 [info] [ffmpegdecoder] parsing data stream...
+14:41:27 [info] [ffmpegdecoder] found audio stream!
+14:41:27 [info] [ffmpegdecoder] resolved codec: MP3 (MPEG audio layer 3)
+14:41:27 [info] [Streams] found a decoder for /Users/eashanc/Downloads/audio/Unlucky Morpheus - Knight of Sword.mp3
+14:41:28 [info] [GaplessTransport] starting track at /Users/eashanc/Downloads/audio/Unlucky Morpheus - Knight of Sword.mp3
+14:41:28 [info] [Player] new instance created
+14:41:28 [info] [GaplessTransport] stop
+14:41:28 [info] [Stream] opening /Users/eashanc/Downloads/audio/Unlucky Morpheus - Knight of Sword.mp3
+14:41:28 [info] [LocalFileStream] opening file: /Users/eashanc/Downloads/audio/Unlucky Morpheus - Knight of Sword.mp3
+14:41:28 [info] [ffmpegdecoder] parsing data stream...
+14:41:28 [info] [ffmpegdecoder] found audio stream!
+14:41:28 [info] [ffmpegdecoder] resolved codec: MP3 (MPEG audio layer 3)
+14:41:28 [info] [Streams] found a decoder for /Users/eashanc/Downloads/audio/Unlucky Morpheus - Knight of Sword.mp3
+14:41:28 [info] [LocalLibrary] query 'TrackMetadataBatchQuery' enqueued
+14:41:28 [info] [LocalLibrary] query 'TrackMetadataBatchQuery' running
+14:41:28 [info] [LocalLibrary] query 'TrackMetadataBatchQuery' finished with status=4
+14:41:28 [info] [LocalLibrary] query 'TrackMetadataBatchQuery' enqueued
+14:41:28 [info] [LocalLibrary] query 'TrackMetadataBatchQuery' running
+14:41:28 [info] [LocalLibrary] query 'TrackMetadataBatchQuery' finished with status=4
+14:41:28 [info] [LocalLibrary] query 'TrackMetadataQuery' enqueued
+14:41:28 [info] [LocalLibrary] query 'TrackMetadataQuery' running
+14:41:28 [info] [LocalLibrary] query 'TrackMetadataQuery' finished with status=4
+14:41:28 [info] [Player] new instance created
+14:41:28 [info] [Stream] opening /Users/eashanc/Downloads/audio/東方 Vocal Phosphene UNDEAD CORPORATION.mp3
+14:41:28 [info] [LocalFileStream] opening file: /Users/eashanc/Downloads/audio/東方 Vocal Phosphene UNDEAD CORPORATION.mp3
+14:41:28 [info] [ffmpegdecoder] parsing data stream...
+14:41:28 [info] [ffmpegdecoder] found audio stream!
+14:41:28 [info] [ffmpegdecoder] resolved codec: MP3 (MPEG audio layer 3)
+14:41:28 [info] [Streams] found a decoder for /Users/eashanc/Downloads/audio/東方 Vocal Phosphene UNDEAD CORPORATION.mp3
+14:41:29 [info] [GaplessTransport] starting track at /Users/eashanc/Downloads/audio/東方 Vocal Phosphene UNDEAD CORPORATION.mp3
+14:41:29 [info] [Player] new instance created
+14:41:29 [info] [Stream] opening /Users/eashanc/Downloads/audio/東方 Vocal Phosphene UNDEAD CORPORATION.mp3
+14:41:29 [info] [LocalFileStream] opening file: /Users/eashanc/Downloads/audio/東方 Vocal Phosphene UNDEAD CORPORATION.mp3
+14:41:29 [info] [GaplessTransport] stop
+14:41:29 [info] [ffmpegdecoder] parsing data stream...
+14:41:29 [info] [ffmpegdecoder] found audio stream!
+14:41:29 [info] [ffmpegdecoder] resolved codec: MP3 (MPEG audio layer 3)
+14:41:29 [info] [Streams] found a decoder for /Users/eashanc/Downloads/audio/東方 Vocal Phosphene UNDEAD CORPORATION.mp3
+14:41:29 [info] [LocalLibrary] query 'TrackMetadataQuery' enqueued
+14:41:29 [info] [LocalLibrary] query 'TrackMetadataQuery' running
+14:41:29 [info] [LocalLibrary] query 'TrackMetadataQuery' finished with status=4
+14:41:29 [info] [Player] new instance created
+14:41:29 [info] [Stream] opening /Users/eashanc/Downloads/audio/UNDEAD CORPORATION - Frozen.mp3
+14:41:29 [info] [LocalFileStream] opening file: /Users/eashanc/Downloads/audio/UNDEAD CORPORATION - Frozen.mp3
+14:41:29 [info] [ffmpegdecoder] parsing data stream...
+14:41:29 [info] [ffmpegdecoder] found audio stream!
+14:41:29 [info] [ffmpegdecoder] resolved codec: MP3 (MPEG audio layer 3)
+14:41:29 [info] [Streams] found a decoder for /Users/eashanc/Downloads/audio/UNDEAD CORPORATION - Frozen.mp3
+14:41:29 [info] [GaplessTransport] starting track at /Users/eashanc/Downloads/audio/UNDEAD CORPORATION - Frozen.mp3
+14:41:29 [info] [Player] new instance created
+14:41:29 [info] [Stream] opening /Users/eashanc/Downloads/audio/UNDEAD CORPORATION - Frozen.mp3
+14:41:29 [info] [LocalFileStream] opening file: /Users/eashanc/Downloads/audio/UNDEAD CORPORATION - Frozen.mp3
+14:41:29 [info] [GaplessTransport] stop
+14:41:29 [info] [ffmpegdecoder] parsing data stream...
+14:41:29 [info] [ffmpegdecoder] found audio stream!
+14:41:29 [info] [ffmpegdecoder] resolved codec: MP3 (MPEG audio layer 3)
+14:41:29 [info] [Streams] found a decoder for /Users/eashanc/Downloads/audio/UNDEAD CORPORATION - Frozen.mp3
+14:41:29 [info] [LocalLibrary] query 'TrackMetadataBatchQuery' enqueued
+14:41:29 [info] [LocalLibrary] query 'TrackMetadataBatchQuery' running
+14:41:29 [info] [LocalLibrary] query 'TrackMetadataBatchQuery' finished with status=4
+14:41:30 [info] [LocalLibrary] query 'TrackMetadataQuery' enqueued
+14:41:30 [info] [LocalLibrary] query 'TrackMetadataQuery' running
+14:41:30 [info] [LocalLibrary] query 'TrackMetadataQuery' finished with status=4
+14:41:30 [info] [Player] new instance created
+14:41:30 [info] [Stream] opening /Users/eashanc/Downloads/audio/XXXTENTACION - Pistol .mp3
+14:41:30 [info] [LocalFileStream] opening file: /Users/eashanc/Downloads/audio/XXXTENTACION - Pistol .mp3
+14:41:30 [info] [ffmpegdecoder] parsing data stream...
+14:41:30 [info] [ffmpegdecoder] found audio stream!
+14:41:30 [info] [ffmpegdecoder] resolved codec: MP3 (MPEG audio layer 3)
+14:41:30 [info] [Streams] found a decoder for /Users/eashanc/Downloads/audio/XXXTENTACION - Pistol .mp3
+14:41:31 [info] [GaplessTransport] starting track at /Users/eashanc/Downloads/audio/XXXTENTACION - Pistol .mp3
+14:41:31 [info] [Player] new instance created
+14:41:31 [info] [Stream] opening /Users/eashanc/Downloads/audio/XXXTENTACION - Pistol .mp3
+14:41:31 [info] [LocalFileStream] opening file: /Users/eashanc/Downloads/audio/XXXTENTACION - Pistol .mp3
+14:41:31 [info] [GaplessTransport] stop
+14:41:31 [info] [ffmpegdecoder] parsing data stream...
+14:41:31 [info] [ffmpegdecoder] found audio stream!
+14:41:31 [info] [ffmpegdecoder] resolved codec: MP3 (MPEG audio layer 3)
+14:41:31 [info] [Streams] found a decoder for /Users/eashanc/Downloads/audio/XXXTENTACION - Pistol .mp3
+14:41:31 [info] [LocalLibrary] query 'TrackMetadataQuery' enqueued
+14:41:31 [info] [LocalLibrary] query 'TrackMetadataQuery' running
+14:41:31 [info] [LocalLibrary] query 'TrackMetadataQuery' finished with status=4
+14:41:31 [info] [Player] new instance created
+14:41:31 [info] [Stream] opening /Users/eashanc/Downloads/audio/Out My Body.mp3
+14:41:31 [info] [LocalFileStream] opening file: /Users/eashanc/Downloads/audio/Out My Body.mp3
+14:41:31 [info] [ffmpegdecoder] parsing data stream...
+14:41:31 [info] [ffmpegdecoder] found audio stream!
+14:41:31 [info] [ffmpegdecoder] resolved codec: MP3 (MPEG audio layer 3)
+14:41:31 [info] [Streams] found a decoder for /Users/eashanc/Downloads/audio/Out My Body.mp3
+14:41:33 [info] [GaplessTransport] starting track at /Users/eashanc/Downloads/audio/Out My Body.mp3
+14:41:33 [info] [Player] new instance created
+14:41:33 [info] [Stream] opening /Users/eashanc/Downloads/audio/Out My Body.mp3
+14:41:33 [info] [LocalFileStream] opening file: /Users/eashanc/Downloads/audio/Out My Body.mp3
+14:41:33 [info] [GaplessTransport] stop
+14:41:33 [info] [ffmpegdecoder] parsing data stream...
+14:41:33 [info] [ffmpegdecoder] found audio stream!
+14:41:33 [info] [ffmpegdecoder] resolved codec: MP3 (MPEG audio layer 3)
+14:41:33 [info] [Streams] found a decoder for /Users/eashanc/Downloads/audio/Out My Body.mp3
+14:41:33 [info] [LocalLibrary] query 'TrackMetadataQuery' enqueued
+14:41:33 [info] [LocalLibrary] query 'TrackMetadataQuery' running
+14:41:33 [info] [LocalLibrary] query 'TrackMetadataQuery' finished with status=4
+14:41:33 [info] [Player] new instance created
+14:41:33 [info] [Stream] opening /Users/eashanc/Downloads/audio/ZillaKami - CHEWING GUM! (Official Audio) .mp3
+14:41:33 [info] [LocalFileStream] opening file: /Users/eashanc/Downloads/audio/ZillaKami - CHEWING GUM! (Official Audio) .mp3
+14:41:33 [info] [ffmpegdecoder] parsing data stream...
+14:41:33 [info] [ffmpegdecoder] found audio stream!
+14:41:33 [info] [ffmpegdecoder] resolved codec: MP3 (MPEG audio layer 3)
+14:41:33 [info] [Streams] found a decoder for /Users/eashanc/Downloads/audio/ZillaKami - CHEWING GUM! (Official Audio) .mp3
+14:41:34 [info] [GaplessTransport] pause
+14:42:17 [info] [LocalLibrary] query 'MarkTrackPlayedQuery' enqueued
+14:42:17 [info] [LocalLibrary] query 'MarkTrackPlayedQuery' running
+14:42:17 [info] [LocalLibrary] query 'MarkTrackPlayedQuery' finished with status=4
+14:42:21 [info] [LocalLibrary] query 'PersistedPlayQueueQuery' enqueued
+14:42:21 [info] [LocalLibrary] query 'PersistedPlayQueueQuery' running
+14:42:21 [info] [LocalLibrary] query 'PersistedPlayQueueQuery' finished with status=4
+14:42:21 [info] [GaplessTransport] stop
+14:42:21 [info] [macosmediakeys] unregistered media keys

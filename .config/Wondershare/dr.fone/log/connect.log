@@ -1,0 +1,139 @@
+2022-07-31 14:42:58:537 -0 connect: begin moniter 
+2022-07-31 14:43:16:957 -0 connect: begin moniter 
+2022-07-31 14:43:42:239 -0 connect: ConnectClient::isInBlackList path:/Users/eashanc/Library/Application Support/DrFoneApps/com.wondershare.drfonemac.virtuallocation/dr.fone-Virtual Location.app/Contents/MacOS/DrFoneVirtualLocation
+2022-07-31 14:43:44:373 -0 connect: localdevice.plist == /Users/eashanc/Library/Preferences/Wondershare/DrFoneVirtualLocation/localdevice.plist
+2022-07-31 14:43:44:373 -0 connect: device arrived 000081010011483a2efa001e
+2022-07-31 14:43:51:283 -0 connect: begin trace device thread
+2022-07-31 14:43:51:283 -0 connect: begin connect to device 000081010011483a2efa001e with connect type 1
+2022-07-31 14:43:51:284 -0 connect: device mode is 0
+2022-07-31 14:43:51:284 -0 connect: Step: Init
+2022-07-31 14:43:51:284 -0 connect: Step: WaitDevice
+2022-07-31 14:43:52:287 -0 connect: device come from service with uuid 00008101-0011483a2efa001e ,connect_type:USB
+2022-07-31 14:43:52:287 -0 connect: device found from services 00008101-0011483a2efa001e
+2022-07-31 14:43:52:287 -0 connect: Step: Ready
+2022-07-31 14:43:52:492 -0 connect: lockdown return LOCKDOWN_E_SUCCESS -- id:2
+2022-07-31 14:43:52:856 -0 connect: Step: Finished
+2022-07-31 14:43:52:856 -0 connect: makeNode USB 
+2022-07-31 14:43:54:012 -0 connect: trace device exited
+2022-07-31 14:43:54:012 -0 connect: ~BaseConnection
+2022-07-31 14:43:54:119 -0 connect: GetIosBaseInfo :{
+   "ConnectType" : 0,
+   "DeviceClass" : "Apple Inc.",
+   "DeviceColor" : "1",
+   "DeviceName" : "Eashan’s iPhone",
+   "DiskTotalCapacity" : 64,
+   "IMEI" : "352420742453743",
+   "ProductType" : "iPhone13,1",
+   "ProductVersion" : "15.5",
+   "ScreenHeight" : 2340,
+   "ScreenWidth" : 1080,
+   "UUID" : "00008101-0011483A2EFA001E",
+   "WiFiAddress" : "18:e7:b0:70:b4:f7"
+}
+2022-07-31 14:44:07:305 -0 connect: begin connect to device 00008101-0011483a2efa001e with connect type 2
+2022-07-31 14:44:07:305 -0 connect: device mode is 0
+2022-07-31 14:44:07:305 -0 connect: Step: Init
+2022-07-31 14:44:07:305 -0 connect: Step: WaitDevice
+2022-07-31 14:44:08:373 -0 connect: device come from service with uuid 00008101-0011483a2efa001e ,connect_type:Network
+2022-07-31 14:44:08:373 -0 connect: device found from services 00008101-0011483a2efa001e
+2022-07-31 14:44:08:375 -0 connect: Step: Ready
+2022-07-31 14:44:08:664 -0 connect: lockdown return LOCKDOWN_E_SUCCESS -- id:3
+2022-07-31 14:44:09:143 -0 connect: Step: Finished
+2022-07-31 14:44:09:143 -0 connect: makeNode Network 
+2022-07-31 14:44:09:193 -0 connect: 
+2022-07-31 14:44:09:375 -0 connect: device come from service with uuid 00008101-0011483a2efa001e ,connect_type:USB
+2022-07-31 14:44:10:380 -0 connect: ~BaseConnection
+2022-07-31 14:44:49:070 -0 connect: begin moniter 
+2022-07-31 14:44:49:071 -0 connect: ConnectClient::isInBlackList path:/Users/eashanc/Library/Application Support/DrFoneApps/com.wondershare.drfonemac.virtuallocation/dr.fone-Virtual Location.app/Contents/MacOS/DrFoneVirtualLocation
+2022-07-31 14:44:50:597 -0 connect: localdevice.plist == /Users/eashanc/Library/Preferences/Wondershare/DrFoneVirtualLocation/localdevice.plist
+2022-07-31 14:44:50:597 -0 connect: device arrived 000081010011483a2efa001e
+2022-07-31 14:44:55:781 -0 connect: begin trace device thread
+2022-07-31 14:44:55:781 -0 connect: begin connect to device 000081010011483a2efa001e with connect type 1
+2022-07-31 14:44:55:781 -0 connect: device mode is 0
+2022-07-31 14:44:55:781 -0 connect: Step: Init
+2022-07-31 14:44:55:782 -0 connect: Step: WaitDevice
+2022-07-31 14:44:56:783 -0 connect: device come from service with uuid 00008101-0011483a2efa001e ,connect_type:Network
+2022-07-31 14:44:57:789 -0 connect: device come from service with uuid 00008101-0011483a2efa001e ,connect_type:USB
+2022-07-31 14:44:57:789 -0 connect: device found from services 00008101-0011483a2efa001e
+2022-07-31 14:44:57:789 -0 connect: Step: Ready
+2022-07-31 14:44:57:879 -0 connect: lockdown return LOCKDOWN_E_SUCCESS -- id:2
+2022-07-31 14:44:58:134 -0 connect: Step: Finished
+2022-07-31 14:44:58:134 -0 connect: makeNode USB 
+2022-07-31 14:44:58:507 -0 connect: trace device exited
+2022-07-31 14:44:58:792 -0 connect: ~BaseConnection
+2022-07-31 14:44:59:431 -0 connect: GetIosBaseInfo :{
+   "ConnectType" : 0,
+   "DeviceClass" : "Apple Inc.",
+   "DeviceColor" : "1",
+   "DeviceName" : "Eashan’s iPhone",
+   "DiskTotalCapacity" : 64,
+   "IMEI" : "352420742453743",
+   "ProductType" : "iPhone13,1",
+   "ProductVersion" : "15.5",
+   "ScreenHeight" : 2340,
+   "ScreenWidth" : 1080,
+   "UUID" : "00008101-0011483A2EFA001E",
+   "WiFiAddress" : "18:e7:b0:70:b4:f7"
+}
+2022-07-31 14:57:29:449 -0 connect: begin moniter 
+2022-07-31 14:57:29:451 -0 connect: ConnectClient::isInBlackList path:/Users/eashanc/Library/Application Support/DrFoneApps/com.wondershare.drfonemac.virtuallocation/dr.fone-Virtual Location.app/Contents/MacOS/DrFoneVirtualLocation
+2022-07-31 14:57:30:974 -0 connect: localdevice.plist == /Users/eashanc/Library/Preferences/Wondershare/DrFoneVirtualLocation/localdevice.plist
+2022-07-31 14:57:30:975 -0 connect: device arrived 000081010011483a2efa001e
+2022-07-31 14:57:44:798 -0 connect: begin trace device thread
+2022-07-31 14:57:44:799 -0 connect: begin connect to device 000081010011483a2efa001e with connect type 1
+2022-07-31 14:57:44:799 -0 connect: device mode is 0
+2022-07-31 14:57:44:799 -0 connect: Step: Init
+2022-07-31 14:57:44:799 -0 connect: Step: WaitDevice
+2022-07-31 14:57:45:805 -0 connect: device come from service with uuid 00008101-0011483a2efa001e ,connect_type:USB
+2022-07-31 14:57:45:805 -0 connect: device found from services 00008101-0011483a2efa001e
+2022-07-31 14:57:45:805 -0 connect: Step: Ready
+2022-07-31 14:57:45:905 -0 connect: lockdown return LOCKDOWN_E_SUCCESS -- id:10
+2022-07-31 14:57:46:150 -0 connect: Step: Finished
+2022-07-31 14:57:46:150 -0 connect: makeNode USB 
+2022-07-31 14:57:47:520 -0 connect: trace device exited
+2022-07-31 14:57:47:520 -0 connect: ~BaseConnection
+2022-07-31 14:57:47:551 -0 connect: GetIosBaseInfo :{
+   "ConnectType" : 0,
+   "DeviceClass" : "Apple Inc.",
+   "DeviceColor" : "1",
+   "DeviceName" : "Eashan’s iPhone",
+   "DiskTotalCapacity" : 64,
+   "IMEI" : "352420742453743",
+   "ProductType" : "iPhone13,1",
+   "ProductVersion" : "15.5",
+   "ScreenHeight" : 2340,
+   "ScreenWidth" : 1080,
+   "UUID" : "00008101-0011483A2EFA001E",
+   "WiFiAddress" : "18:e7:b0:70:b4:f7"
+}
+2022-07-31 15:20:12:354 -0 connect: begin moniter 
+2022-07-31 15:20:12:356 -0 connect: ConnectClient::isInBlackList path:/Users/eashanc/Library/Application Support/DrFoneApps/com.wondershare.drfonemac.virtuallocation/dr.fone-Virtual Location.app/Contents/MacOS/DrFoneVirtualLocation
+2022-07-31 15:20:13:879 -0 connect: localdevice.plist == /Users/eashanc/Library/Preferences/Wondershare/DrFoneVirtualLocation/localdevice.plist
+2022-07-31 15:20:13:880 -0 connect: device arrived 000081010011483a2efa001e
+2022-07-31 15:20:22:534 -0 connect: begin trace device thread
+2022-07-31 15:20:22:534 -0 connect: begin connect to device 000081010011483a2efa001e with connect type 1
+2022-07-31 15:20:22:534 -0 connect: device mode is 0
+2022-07-31 15:20:22:534 -0 connect: Step: Init
+2022-07-31 15:20:22:534 -0 connect: Step: WaitDevice
+2022-07-31 15:20:23:538 -0 connect: device come from service with uuid 00008101-0011483a2efa001e ,connect_type:USB
+2022-07-31 15:20:23:538 -0 connect: device found from services 00008101-0011483a2efa001e
+2022-07-31 15:20:23:538 -0 connect: Step: Ready
+2022-07-31 15:20:23:643 -0 connect: lockdown return LOCKDOWN_E_SUCCESS -- id:14
+2022-07-31 15:20:23:896 -0 connect: Step: Finished
+2022-07-31 15:20:23:897 -0 connect: makeNode USB 
+2022-07-31 15:20:25:256 -0 connect: trace device exited
+2022-07-31 15:20:25:256 -0 connect: ~BaseConnection
+2022-07-31 15:20:25:401 -0 connect: GetIosBaseInfo :{
+   "ConnectType" : 0,
+   "DeviceClass" : "Apple Inc.",
+   "DeviceColor" : "1",
+   "DeviceName" : "Eashan’s iPhone",
+   "DiskTotalCapacity" : 64,
+   "IMEI" : "352420742453743",
+   "ProductType" : "iPhone13,1",
+   "ProductVersion" : "15.5",
+   "ScreenHeight" : 2340,
+   "ScreenWidth" : 1080,
+   "UUID" : "00008101-0011483A2EFA001E",
+   "WiFiAddress" : "18:e7:b0:70:b4:f7"
+}
