@@ -122,7 +122,7 @@ sketchybar -m \
 ############## RIGHT ITEMS ############## 
 
 sketchybar -m --add       item               time             right                                        \
-              --set       time               update_freq=2                                                 \
+              --set       time               update_freq=1                                                 \
                                              icon.padding_right=0                                          \
                                              label.padding_left=0                                          \
                                              script="~/.config/sketchybar/plugins/time.sh"                 \
@@ -142,6 +142,7 @@ sketchybar -m --add item battery right                                     \
               --set battery update_freq=3                                  \
               --set battery icon=                                         \
               --set battery script="~/.config/sketchybar/plugins/power.sh" \
+              --set battery click_script="~/.config/sketchybar/plugins/caffeinate.sh"\
               --set battery icon.font="Hack Nerd Font Mono:Regular:12"     
 
 sketchybar --add item wifi right                         \
@@ -209,4 +210,3 @@ sketchybar -m --add item ram_label right \
 sketchybar -m --update
 
 echo "sketchybar configuration loaded.."
-#echo "$(locale)"

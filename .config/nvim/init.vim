@@ -24,6 +24,8 @@ call plug#begin()
  Plug 'terryma/vim-multiple-cursors'
  Plug 'prettier/prettier'
  Plug 'w0rp/ale'
+ Plug 'honza/vim-snippets' "Boilerplate autocomplete
+ Plug 'SirVer/ultisnips'
  " Languages 
  Plug 'pangloss/vim-javascript'
  Plug 'elzr/vim-json'
