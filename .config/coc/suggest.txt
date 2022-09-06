@@ -1,3 +1,7 @@
+ray|raycast|file|
+thefu|thefuck|file|
+|coc|file|
+W|Wondershare|file|
 param|param|around|
 Ske|SketchPad|around|
 house|houseHeight|around|
