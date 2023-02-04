@@ -1,14 +1,14 @@
 {
-  "LastBrowseCategoryId": 80.0,
+  "LastBrowseCategoryId": 66.0,
   "LastBrowseCategoryType": "artist",
   "LastBrowseDirectoryRoot": "/Users/eashanc/Music/ytmdl/",
   "LastBrowseFilter": "",
   "LastBrowseFilterVisible": false,
   "LastCategoryFilter": "",
   "LastCategoryFilterMatchType": 1,
-  "LastLibraryView": "TrackFilter",
-  "LastPlayQueueIndex": -1,
-  "LastPlayQueueTime": 0.0,
-  "LastTrackFilter": " ",
+  "LastLibraryView": "Browse",
+  "LastPlayQueueIndex": 0,
+  "LastPlayQueueTime": 112.0,
+  "LastTrackFilter": "",
   "LastTrackFilterMatchType": 1
 }

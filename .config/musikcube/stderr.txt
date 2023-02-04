@@ -1,4 +1,21 @@
-[2022-08-21 08:23:44] [info] asio async_connect error: system:61 (Connection refused)
-[2022-08-21 08:23:44] [info] Error getting remote endpoint: system:22 (Invalid argument)
-[2022-08-21 08:23:44] [error] handle_connect error: Underlying Transport Error
-[2022-08-21 08:23:54] [error] handle_read_frame error: websocketpp.transport:7 (End of File)
+[2022-12-18 20:41:53] [info] asio async_connect error: asio.system:61 (Connection refused)
+[2022-12-18 20:41:53] [info] Error getting remote endpoint: asio.system:22 (Invalid argument)
+[2022-12-18 20:41:53] [error] handle_connect error: Connection refused
+[mp3float @ 0x138874b10] Could not update timestamps for skipped samples.
+[mp3float @ 0x138b19b80] Could not update timestamps for skipped samples.
+[mp3float @ 0x138b12070] Could not update timestamps for skipped samples.
+[mp3float @ 0x137f21570] Could not update timestamps for skipped samples.
+[mp3float @ 0x138c06bd0] Could not update timestamps for skipped samples.
+[mp3float @ 0x137f20770] Could not update timestamps for skipped samples.
+[mp3float @ 0x107e11020] Could not update timestamps for skipped samples.
+[mp3float @ 0x138b154b0] Could not update timestamps for skipped samples.
+[mp3float @ 0x13887ee80] Could not update timestamps for skipped samples.
+[mp3float @ 0x138b13bb0] Could not update timestamps for skipped samples.
+[mp3float @ 0x107e050e0] Could not update timestamps for skipped samples.
+[mp3 @ 0x107e113d0] Estimating duration from bitrate, this may be inaccurate
+[mp3 @ 0x107e113d0] Estimating duration from bitrate, this may be inaccurate
+[mp3float @ 0x138b16e00] Could not update timestamps for skipped samples.
+[mp3float @ 0x138c0d950] Could not update timestamps for skipped samples.
+[mp3float @ 0x13887bcc0] Could not update timestamps for skipped samples.
+[mp3float @ 0x138b179f0] Could not update timestamps for skipped samples.
+[2022-12-18 20:46:50] [error] handle_read_frame error: websocketpp.transport:7 (End of File)

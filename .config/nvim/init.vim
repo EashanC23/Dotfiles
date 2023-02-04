@@ -26,6 +26,7 @@ call plug#begin()
  Plug 'w0rp/ale'
  Plug 'honza/vim-snippets' "Boilerplate autocomplete
  Plug 'SirVer/ultisnips'
+ Plug 'vim-autoformat/vim-autoformat'
  " Languages 
  Plug 'pangloss/vim-javascript'
  Plug 'elzr/vim-json'
@@ -41,6 +42,8 @@ set completeopt-=preview
 nnoremap <C-f> :NERDTreeFocus<CR>
 nnoremap <C-n> :NERDTree<CR>
 nnoremap <C-t> :NERDTreeToggle<CR>
+nnoremap <C-s> :w<CR>
+nnoremap <C-a> :Autoformat<CR>
 
 let g:NERDTreeDirArrowExpandable="+"
 let g:NERDTreeDirArrowCollapsible="~"

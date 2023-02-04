@@ -88,6 +88,9 @@ ctrl - left : yabai -m window --focus prev
 shift + cmd - return : open -a Terminal
 shift + ctrl + cmd - c : open -a Visual\ Studio\ Code
 
+fn + alt + cmd - v : zsh /Users/eashanc/.config/sketchybar/plugins/toggleVPN.sh
+ 
+
 # move managed window
 shift + cmd - j : yabai -m window --warp west
 shift + cmd - l : yabai -m window --warp east
@@ -100,6 +103,8 @@ shift + alt - space : \
     yabai -m window --toggle border
 #Stack Window 
 shift + alt + cmd - space : yabai -m window --stack prev
+ctrl - n : yabai -m window --focus stack.next || yabai -m window --focus stack.first
+ctrl - p : yabai -m window --focus stack.prev || yabai -m window --focus stack.last
 
 
 # Move focus container to workspace

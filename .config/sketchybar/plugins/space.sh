@@ -1,14 +1,10 @@
-#!/bin/bash
+#!/bin/sh
 
-args=()
-while read -r index window
-do
-  if [ "$window" = "null" ]
-  then
-    args+=(--set "space${index}" "icon=${index}")
-  else
-    args+=(--set "space${index}" "icon=${index}°")
-  fi
-done <<< "$(yabai -m query --spaces | jq -r '.[] | [.index, .windows[0]] | @sh')"
+# The $SELECTED variable is available for space components and indicates if
+# the space invoking this script (with name: $NAME) is currently selected:
+# https://felixkratz.github.io/SketchyBar/config/components#space----associate-mission-control-spaces-with-an-item
 
-sketchybar -m "${args[@]}"
+color=0xff55dfe7
+
+sketchybar --set $NAME background.drawing=$SELECTED   \
+                       label.color=$color 
