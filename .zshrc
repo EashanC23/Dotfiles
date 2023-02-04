@@ -2,7 +2,7 @@
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
 
 # Path to your oh-my-zsh installation.
-export ZSH="$HOME/.oh-my-zsh"
+export ZSH="/Users/eashanc/.oh-my-zsh"
 
 
 # Set name of the theme to load --- if set to "random", it will
@@ -10,7 +10,7 @@ export ZSH="$HOME/.oh-my-zsh"
 # to know which specific one was loaded, run: echo $RANDOM_THEME
 # See https://github.com/ohmyzsh/ohmyzsh/wiki/Themes
 ZSH_THEME=""
-
+ZSH_DISABLE_COMPFIX=true
 # Set list of themes to pick from when loading at random
 # Setting this variable when ZSH_THEME=random will cause zsh to load
 # a theme from this variable instead of looking in $ZSH/themes/
@@ -108,16 +108,43 @@ fpath=($fpath "~/.zfunctions")
 # type written configs
 
 
-#User Aliases 
+#User Aliases and Functions
 alias startYabai="brew services start yabai"
 alias stopYabai="brew services stop yabai"
 alias songDL="sh ~/songDL.sh"
-alias tree="tree -h --sort size"
+alias tree="tree -h --sort size --du"
+alias bsr="brew services restart" 
+function jcr() {
+    r=$(echo $1 | cut -d'.' -f 1)
+    javac $1 && java $r
+}
+function jcrd() {
+    r=$(echo $1 | cut -d'.' -f 1)
+    javac -cp ".:/Users/eashanc/Developments/Java/libraries/gpdraw.jar" $1 && java -classpath ".:/Users/eashanc/Developments/Java/libraries/gpdraw.jar" $r
 
+}
+function jcri(){
+    r=$(echo $1 | cut -d'.' -f 1)
+    javac -cp ".:/Users/eashanc/Developments/Java/libraries/gpdraw.jar:$2" $1 && java -classpath ".:/Users/eashanc/Developments/Java/libraries/gpdraw.jar:$2" $r
+}
+function bassBoost(){
+    d=$(echo $1 | cut -d'.' -f 1)
+    r=$(echo "$d" + "temp")
+    ffmpeg -i $1 -af "$filter64 $2 $filter400 $3" $r.mp3
+    rm $1
+    mv $r.mp3 $1
+}
 #macfeh cli integration
 function macfeh() {
     open -b "drabweb.macfeh" "$@"
 }
+
+export filter64="equalizer=f=64:width_type=o:w=3.3:g="
+export filter400="equalizer=f=400:width_type=o:w=2.0:g="
+export filter1250="equalizer=f=1250:width_type=o:w=1.3:g="
+export filter2830="equalizer=f=2830:width_type=o:w=1.0:g="
+export filter5600="equalizer=f=5600:width_type=o:w=1.0:g="
+
 
 export HISTCONTROL=ignoreboth
 
@@ -125,10 +152,10 @@ export HISTCONTROL=ignoreboth
 #eval $(thefuck --alias)
 #eval "$(rbenv init - zsh)"
 # Add RVM to PATH for scripting. Make sure this is the last PATH variable change.
-export PATH=/opt/homebrew/bin:~/.rvm/gems/ruby-3.0.0/bin:~/.rvm/gems/ruby-3.0.0@global/bin:~/.rvm/rubies/ruby-3.0.0/bin:/opt/local/bin:/opt/local/sbin:/Library/Frameworks/Python.framework/Versions/3.10/bin:/Library/Frameworks/Python.framework/Versions/3.9/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/Library/Apple/usr/bin:~/.rvm/bin
+#export PATH=/opt/homebrew/bin:~/.rvm/gems/ruby-3.0.0/bin:~/.rvm/gems/ruby-3.0.0@global/bin:~/.rvm/rubies/ruby-3.0.0/bin:/opt/local/bin:/opt/local/sbin:/Library/Frameworks/Python.framework/Versions/3.10/bin:/Library/Frameworks/Python.framework/Versions/3.9/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/Library/Apple/usr/bin:~/.rvm/bin
 
 # Add RVM to PATH for scripting. Make sure this is the last PATH variable change.
-export PATH="$PATH:$HOME/.rvm/bin"
+#export PATH="$PATH:$HOME/.rvm/bin"
 alias config='/usr/bin/git --git-dir=~/.cfg/ --work-tree=/~'
 
 export PATH="$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:$PATH"
@@ -136,8 +163,9 @@ export PATH="$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:$PATH"
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
-pfetch
 
+
+export PATH="$PATH:$HOME/.rvm/bin"
 
 # Set typewritten ZSH as a prompt
 autoload -U promptinit; promptinit
