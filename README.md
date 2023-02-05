@@ -22,3 +22,11 @@ Below are references to the tools that I use.
 <b>Process viewer/Activity monitor:</b> <a href=https://htop.dev> htop </a>
 
 All of the above listed tools can be installed using homebrew.
+
+Below are some screenshots of how my configuration looks in daily usage.
+
+<img src="./.config/screenshots/Screen Shot 2023-02-04 at 16.05.53.png"/> 
+<img src="./.config/screenshots/Screen Shot 2023-02-04 at 15.54.51.png"/>
+<img src="./.config/screenshots/Screen Shot 2023-02-04 at 16.02.37.png"/> 
+<img src="./.config/screenshots/Screen Shot 2023-02-04 at 16.03.45.png"/> 
+<img src="./.config/screenshots/Screen Shot 2023-02-04 at 16.10.40.png"/>
