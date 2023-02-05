@@ -2,7 +2,7 @@
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
 
 # Path to your oh-my-zsh installation.
-export ZSH="/Users/eashanc/.oh-my-zsh"
+export ZSH="$HOME/.oh-my-zsh"
 
 
 # Set name of the theme to load --- if set to "random", it will
@@ -120,12 +120,12 @@ function jcr() {
 }
 function jcrd() {
     r=$(echo $1 | cut -d'.' -f 1)
-    javac -cp ".:/Users/eashanc/Developments/Java/libraries/gpdraw.jar" $1 && java -classpath ".:/Users/eashanc/Developments/Java/libraries/gpdraw.jar" $r
+    javac -cp ".:~/Developments/Java/libraries/gpdraw.jar" $1 && java -classpath ".:~/Developments/Java/libraries/gpdraw.jar" $r
 
 }
 function jcri(){
     r=$(echo $1 | cut -d'.' -f 1)
-    javac -cp ".:/Users/eashanc/Developments/Java/libraries/gpdraw.jar:$2" $1 && java -classpath ".:/Users/eashanc/Developments/Java/libraries/gpdraw.jar:$2" $r
+    javac -cp ".:~/Developments/Java/libraries/gpdraw.jar:$2" $1 && java -classpath ".:~/Developments/Java/libraries/gpdraw.jar:$2" $r
 }
 function bassBoost(){
     d=$(echo $1 | cut -d'.' -f 1)
