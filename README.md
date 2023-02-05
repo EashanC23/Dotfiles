@@ -1,4 +1,4 @@
-#My MacOS Dotfiles 🖥️
+<h1>My MacOS Dotfiles 🖥️</h1>
 
 What are dotfiles?
 Dotfiles are configuration files for Unix systems. They're used to store settings/preferences for command line tools, applications, and services, and are especially used to customize the behavior/appearance of the user's environment.
