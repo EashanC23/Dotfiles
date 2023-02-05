@@ -19,7 +19,7 @@ fi
 
 sketchybar -m --bar height=25        \
                     blur_radius=50   \
-                    position=top     \
+                    position=top     \ 
                     padding_left=6 \
                     padding_right=6 \
                     color='#282A35' \
