@@ -11,7 +11,7 @@ Below are references to the tools that I use.
 
 <b>Custom keybindings:</b> <a href=https://github.com/koekeishiya/skhd>Skhd<a>
 
-<b>Top menu/status bar</b> <a href=https://github.com/FelixKratz> Sketchybar </a>
+<b>Top menu/status bar</b> <a href=https://github.com/FelixKratz/SketchyBar> Sketchybar </a>
 
 <b>IDEs/Editors:</b> <a href=https://neovim.io> Neovim (NVIM) </a> and <a href=https://code.visualstudio.com> VSCode </a>
 
