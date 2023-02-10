@@ -2,7 +2,7 @@
 
 
 status=$(warp-cli status | grep nected)
-status=${RAA#"Status update: "}
+status=${status#"Status update: "}
 if [[ $status != "Connected" ]];then
 	# echo "here"
 	/usr/local/bin/warp-cli connect
