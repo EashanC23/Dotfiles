@@ -131,8 +131,6 @@ do
 done
 
 
-
-
 ############## RIGHT ITEMS ############## 
 
 sketchybar -m --add       item               time             right                                        \

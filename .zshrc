@@ -109,11 +109,13 @@ fpath=($fpath "~/.zfunctions")
 
 
 #User Aliases and Functions
+# aliases 
 alias startYabai="brew services start yabai"
 alias stopYabai="brew services stop yabai"
 alias songDL="sh ~/songDL.sh"
 alias tree="tree -h --sort size --du"
 alias bsr="brew services restart" 
+# User functions for development 
 function jcr() {
     r=$(echo $1 | cut -d'.' -f 1)
     javac $1 && java $r
@@ -126,6 +128,10 @@ function jcrd() {
 function jcri(){
     r=$(echo $1 | cut -d'.' -f 1)
     javac -cp ".:~/Developments/Java/libraries/gpdraw.jar:$2" $1 && java -classpath ".:~/Developments/Java/libraries/gpdraw.jar:$2" $r
+}
+function rcr(){
+    f=$(echo $1 | cut -d'.' -f 1)
+    rustc $1 && ./$f 
 }
 function bassBoost(){
     d=$(echo $1 | cut -d'.' -f 1)
@@ -172,3 +178,4 @@ autoload -U promptinit; promptinit
 prompt typewritten
 
 export TYPEWRITTEN_CURSOR="block"
+export PATH="/opt/homebrew/opt/ruby/bin:$PATH"

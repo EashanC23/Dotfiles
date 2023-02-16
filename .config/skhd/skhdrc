@@ -86,7 +86,7 @@ ctrl - left : yabai -m window --focus prev
 #Open Apps 
 
 shift + cmd - return : open -a Terminal
-shift + ctrl + cmd - c : open -a Visual\ Studio\ Code
+shift + ctrl + cmd - c : open -a VSCodium
 
 fn + alt + cmd - v : zsh /Users/eashanc/.config/sketchybar/plugins/toggleVPN.sh
  
