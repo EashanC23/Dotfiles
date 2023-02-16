@@ -1,19 +1,19 @@
-# node_modules
-# .config/mpv/watch_later
-# *.DS_Store
-# .config/Wondershare/
-# .config/coc/
-# .config/thefuck/
-#.config/deluge/
-# .config/raycast/
-# .config/ytfzf/
-# *.DS_Store
+ node_modules
+ .config/mpv/watch_later
+ *.DS_Store
+ .config/Wondershare/
+ .config/coc/
+ .config/thefuck/
+.config/deluge/
+ .config/raycast/
+ .config/ytfzf/
+ *.DS_Store
 
-*
-!.config/
-!.gitignore
-!.zshrc
-!.yabairc
-!.gitignore
-!README.md
-!Brewfile
+
+#!.config/
+#!.gitignore
+#!.zshrc
+#!.yabairc
+#!.gitignore
+#!README.md
+#!Brewfile
