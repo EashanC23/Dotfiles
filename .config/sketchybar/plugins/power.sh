@@ -37,8 +37,6 @@ case ${BATT_PERCENT} in
     1[0-9]) ICON="" ;;
     *) ICON=""
 esac
-echo $BATT_PERCENT
-echo $ICON
 
 
 

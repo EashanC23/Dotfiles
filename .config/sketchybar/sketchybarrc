@@ -49,10 +49,6 @@ sketchybar -m --default label.padding_left=4  \
                         icon.padding_left=2   \
                         icon.padding_right=2
 
-############## PRIMARY DISPLAY SPACES ############## 
-## sketchybar -m --add space left                              \
- 
-
 
 ############## SECONDARY DISPLAY SPACES ############## 
 sketchybar -m --add space misc left                              \
@@ -78,8 +74,6 @@ sketchybar -m --default background.padding_left=3                               
 
 # ############## LEFT ITEMS ############## 
 
-
-
 # APPLE LOGO THINGI
 sketchybar -m --add item apple.logo left                                                      \
               --set apple.logo icon=                                                         \
@@ -102,18 +96,6 @@ sketchybar -m --add item apple.logo left                                        
                               label="Lock Screen"                                            \
                               click_script="pmset displaysleepnow;                           
                                             sketchybar -m --set apple.logo popup.drawing=off"
-# sketchybar -m \
-#   --add item dummy left \
-#   --set dummy script="~/.config/sketchybar/plugins/space.sh" \
-#               icon.padding_right=0                           \
-#               icon.padding_left=0                            \
-#   --subscribe dummy space_change \
-#   "${spaces[@]}"                                     
-# sketchybar -m --add item space_info left \
-# --set space_info script="$PLUGIN_DIR/space_info.sh" \
-#         icon.padding_right=2                  \
-#         icon.padding_left=2                   \
-# --subscribe space_info space_change
 SPACE_ICONS=("1" "2" "3" "4")
 for i in "${!SPACE_ICONS[@]}"
 do
@@ -129,7 +111,12 @@ do
                               script="$PLUGIN_DIR/space.sh"              \
                               click_script="yabai -m space --focus $sid" 
 done
-
+##### 
+sketchybar --add item system.label left \
+           --set system.label script="sketchybar --set \$NAME label=\">\$INFO<\"" \
+                              label.font="SF Pro:Semibold:14"\
+                              background.padding_left=-15\
+           --subscribe system.label front_app_switched
 
 ############## RIGHT ITEMS ############## 
 
@@ -253,8 +240,11 @@ sketchybar -m --add item ram_label right \
                                     y_offset=-3 \
                                     update_freq=2 \
                                     script="~/.config/sketchybar/plugins/ram.sh"
-sketchybar --add alias 
-
+sketchybar -m --add event bluetooth_change "com.apple.bluetooth.status" \
+              --add item headphones right \
+              --set headphones icon=" " \
+              script="~/.config/sketchybar/plugins/airpods_battery.sh" \
+              --subscribe headphones bluetooth_change
 
 sketchybar --add alias "Cloudflare WARP" right \
            --rename "Cloudflare WARP" warpAlias \
@@ -262,10 +252,6 @@ sketchybar --add alias "Cloudflare WARP" right \
                             icon.padding_right=0\
                             background.padding_right=-4\
                             label.padding_right=0
-
-sketchybar --add item music right             \
-           --set music      icon.font="SF Pro:Heavy:12" \
-                            script="$PLUGIN_DIR/music.sh"
 
 ###################### CENTER ITEMS ###################
 ############## FINALIZING THE SETUP ##############
