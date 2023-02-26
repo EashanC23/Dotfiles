@@ -1,4 +1,4 @@
- node_modules
+ node_modules/
  .config/mpv/watch_later
  *.DS_Store
  .config/Wondershare/

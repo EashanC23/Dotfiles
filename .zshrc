@@ -108,14 +108,14 @@ fpath=($fpath "~/.zfunctions")
 # type written configs
 
 
-#User Aliases and Functions
+##### User Aliases and Functions
 # aliases 
 alias startYabai="brew services start yabai"
 alias stopYabai="brew services stop yabai"
 alias songDL="sh ~/songDL.sh"
 alias tree="tree -h --sort size --du"
 alias bsr="brew services restart" 
-# User functions for development 
+# Java functions for development 
 function jcr() {
     r=$(echo $1 | cut -d'.' -f 1)
     javac $1 && java $r
@@ -129,10 +129,12 @@ function jcri(){
     r=$(echo $1 | cut -d'.' -f 1)
     javac -cp ".:~/Developments/Java/libraries/gpdraw.jar:$2" $1 && java -classpath ".:~/Developments/Java/libraries/gpdraw.jar:$2" $r
 }
+# Rust functions for development
 function rcr(){
     f=$(echo $1 | cut -d'.' -f 1)
     rustc $1 && ./$f 
 }
+# Basic function using ffmpeg to bassBoost audiofiles
 function bassBoost(){
     d=$(echo $1 | cut -d'.' -f 1)
     r=$(echo "$d" + "temp")
@@ -140,11 +142,19 @@ function bassBoost(){
     rm $1
     mv $r.mp3 $1
 }
+# Ease of life for pandoc because I cant be bothered to type allat 
+function pdc(){
+# pandoc -s --pdf-engine=xelatex --metadata=title:"Acids and Bases" -V mainfont="Arial" Acids\ and\ Bases.wiki -o Acids\ and\ Bases.pdf
+  f=$(echo $1|cut -d'.' -f 1)
+  pandoc -s --pdf-engine=xelatex --metadata-file=$HOME/vimwiki/basicMetadata.yaml "${@:2}" $f.wiki -o $f.pdf
+}
+
 #macfeh cli integration
 function macfeh() {
     open -b "drabweb.macfeh" "$@"
 }
 
+# Global Variables used in audio editing 
 export filter64="equalizer=f=64:width_type=o:w=3.3:g="
 export filter400="equalizer=f=400:width_type=o:w=2.0:g="
 export filter1250="equalizer=f=1250:width_type=o:w=1.3:g="
@@ -155,13 +165,6 @@ export filter5600="equalizer=f=5600:width_type=o:w=1.0:g="
 export HISTCONTROL=ignoreboth
 
 
-#eval $(thefuck --alias)
-#eval "$(rbenv init - zsh)"
-# Add RVM to PATH for scripting. Make sure this is the last PATH variable change.
-#export PATH=/opt/homebrew/bin:~/.rvm/gems/ruby-3.0.0/bin:~/.rvm/gems/ruby-3.0.0@global/bin:~/.rvm/rubies/ruby-3.0.0/bin:/opt/local/bin:/opt/local/sbin:/Library/Frameworks/Python.framework/Versions/3.10/bin:/Library/Frameworks/Python.framework/Versions/3.9/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/Library/Apple/usr/bin:~/.rvm/bin
-
-# Add RVM to PATH for scripting. Make sure this is the last PATH variable change.
-#export PATH="$PATH:$HOME/.rvm/bin"
 alias config='/usr/bin/git --git-dir=~/.cfg/ --work-tree=/~'
 
 export PATH="$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:$PATH"
