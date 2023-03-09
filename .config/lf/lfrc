@@ -1,0 +1,83 @@
+# Basic Settings
+set hidden true
+set ignorecase true
+
+# Custom Functions
+cmd mkdir ${{
+  printf "Directory Name: "
+  read ans
+  mkdir $ans
+}}
+
+cmd mkfile ${{
+  printf "File Name: "
+  read ans
+  $EDITOR $ans
+}}
+
+
+# Archive bindings
+cmd unarchive ${{
+  case "$f" in
+      *.zip) unzip "$f" ;;
+      *.tar.gz) tar -xzvf "$f" ;;
+      *.tar.bz2) tar -xjvf "$f" ;;
+      *.tar) tar -xvf "$f" ;;
+      *) echo "Unsupported format" ;;
+  esac
+}}
+
+cmd move_trash ${{
+  set -f
+  mv $fx ~/.Trash 
+}}
+
+
+cmd restore_trash ${{
+  trash-restore
+}}
+
+cmd openFunc ${{
+  case "$f" in
+      *) cd $f;;
+  esac
+}}
+
+# Bindings
+# Remove some defaults
+map m
+map o
+map n
+map "'"
+map '"'
+map d
+
+map c $vscodium "$f"
+
+map au unarchive
+
+# Basic Functions
+map . set hidden!
+map p paste
+map x cut
+map y copy
+map <enter> openFunc
+map R reload
+map mf mkfile
+map md mkdir
+map C clear
+map <backspace2> move_trash
+
+map dd trash
+map dr restore_trash
+
+# Movement
+map gdd cd ~/Developments
+map gdc cd ~/Developments/Java/apcsAssignments/
+map gD cd ~/downloads
+map gp cd ~/pictures
+map gc cd ~/.config
+map gr cd ~/repos
+map gv cd ~/videos/recordings
+map gs cd ~/.local/bin
+map gt cd ~/.local/share/Trash/files

@@ -3,6 +3,7 @@
 
 # Path to your oh-my-zsh installation.
 export ZSH="$HOME/.oh-my-zsh"
+export EDITOR="nvim"
 
 
 # Set name of the theme to load --- if set to "random", it will
@@ -71,7 +72,7 @@ DISABLE_AUTO_TITLE="true"
 # Custom plugins may be added to $ZSH_CUSTOM/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git macos zsh-syntax-highlighting zsh-autosuggestions)
+plugins=(git macos zsh-syntax-highlighting zsh-autosuggestions quoter-zsh)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -115,10 +116,31 @@ alias stopYabai="brew services stop yabai"
 alias songDL="sh ~/songDL.sh"
 alias tree="tree -h --sort size --du"
 alias bsr="brew services restart" 
-# Java functions for development 
+# Java development 
+export JAVA_HOME="/Library/Java/JavaVirtualMachines/jdk1.8.0_221.jdk"
+# export JAVA_HOME="/opt/homebrew/opt/openjdk@17/"
+function toggleJavaVers(){
+    jh=$(env | grep JAVA_HOME | cut -d'=' -f 2)
+    # echo $jh
+    if [[ "$jh" == "/Library/Java/JavaVirtualMachines/jdk1.8.0_221.jdk" ]];then
+        export JAVA_HOME="/opt/homebrew/opt/openjdk@17/"
+    else
+        export JAVA_HOME="/Library/Java/JavaVirtualMachines/jdk1.8.0_221.jdk"
+    fi
+    java -version
+}
 function jcr() {
+    swap=false
+    jh=$(env | grep JAVA_HOME | cut -d'=' -f 2)
+    if [[ "$jh" != "/Library/Java/JavaVirtualMachines/jdk1.8.0_221.jdk" ]]; then
+        toggleJavaVers
+        swap=true
+    fi
     r=$(echo $1 | cut -d'.' -f 1)
     javac $1 && java $r
+    if [ $swap = true ]; then
+        toggleJavaVers
+    fi
 }
 function jcrd() {
     r=$(echo $1 | cut -d'.' -f 1)
@@ -144,9 +166,8 @@ function bassBoost(){
 }
 # Ease of life for pandoc because I cant be bothered to type allat 
 function pdc(){
-# pandoc -s --pdf-engine=xelatex --metadata=title:"Acids and Bases" -V mainfont="Arial" Acids\ and\ Bases.wiki -o Acids\ and\ Bases.pdf
   f=$(echo $1|cut -d'.' -f 1)
-  pandoc -s --pdf-engine=xelatex --metadata-file=$HOME/vimwiki/basicMetadata.yaml "${@:2}" $f.wiki -o $f.pdf
+  pandoc -s --pdf-engine=xelatex --from=vimwiki --metadata-file=$HOME/vimwiki/basicMetadata.yaml "${@:2}" $f.wiki -o $f.pdf
 }
 
 #macfeh cli integration

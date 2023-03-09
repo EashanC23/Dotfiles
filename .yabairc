@@ -62,31 +62,26 @@ yabai -m config window_gap 08
 
 # app settings
 
-yabai -m rule --add app="^FaceTime$" manage=off 
-yabai -m rule --add app="^System Preferences$" manage=off border=off
-yabai -m rule --add app="^Books$" manage=off 
-yabai -m rule --add app="^MPV$" manage=off border=off
-yabai -m rule --add app="^QuickTime Player$" manage=off 
+yabai -m rule --add app="^FaceTime$" manage=off border=off 
+yabai -m rule --add app="^System Preferences$" manage=off border=off 
+yabai -m rule --add app="^Books$" manage=off border=off 
+yabai -m rule --add app="^MPV$" manage=off border=off 
+yabai -m rule --add app="^QuickTime Player$" manage=off border=off 
 yabai -m rule --add app="Code" opacity=0.90 
-yabai -m rule --add app="^Rectangle$" manage=off
+yabai -m rule --add app="^Rectangle$" manage=off border=off
 yabai -m rule --add app="^VSCodium$" opacity=0.92
-yabai -m rule --add app="^mpv$" manage=off
-yabai -m rule --add app="Finder" manage=off
-yabai -m rule --add app="zoom.us" manage=off border=off
-yabai -m rule --add app="^Messages$" manage=off 
-yabai -m rule --add app="^Bloons TD Battles$" manage=off 
-yabai -m rule --add app="^Preview$" manage=off
+yabai -m rule --add app="^mpv$" manage=off border=off
+yabai -m rule --add app="Finder" manage=off border=off
+yabai -m rule --add app="zoom.us" manage=off border=off 
+yabai -m rule --add app="^Messages$" manage=off border=off 
+yabai -m rule --add app="^Bloons TD Battles$" manage=off border=off 
+yabai -m rule --add app="^Preview$" manage=off border=off
 yabai -m rule --add app="Notion" opacity=0.97
-yabai -m rule --add app="^Finder$" manage=off
+yabai -m rule --add app="^Finder$" manage=off border=off
 yabai -m rule --add app="^Mail$" border=off manage=off grid=1:1:0:0:1:1
-yabai -m rule --add app="^Molar$" manage=off
-yabai -m rule --add app="^Wondershare Filmora 11$" manage=off
-yabai -m rule --add app="eqMac" manage=off border=off
-
-
-
-
-
+yabai -m rule --add app="^Molar$" manage=off border=off
+yabai -m rule --add app="^Wondershare Filmora 11$" manage=off border=off
+yabai -m rule --add app="eqMac" manage=off border=off 
 
 sudo yabai --load-sa
 
