@@ -194,6 +194,27 @@ require('lazy').setup({
       require("nvim-ts-autotag").setup()
     end
   },
+  {
+    "dcampos/nvim-snippy",
+    dependencies = {
+      "dcampos/cmp-snippy",
+      "honza/vim-snippets",
+    },
+    config = function()
+      require('snippy').setup({
+        snippet_dirs = '$HOME/.config/nvim/snippets',
+        mappings = {
+          is = {
+            ['<Tab>'] = 'expand_or_advance',
+            ['<S-Tab>'] = 'previous',
+          },
+          nx = {
+            ['<leader>x'] = 'cut_text',
+          },
+        },
+      })
+    end
+  },
   { 'ThePrimeagen/vim-be-good' },
   -- NOTE: Next Step on Your Neovim Journey: Add/Configure additional "plugins" for kickstart
   --       These are some example plugins that I've included in the kickstart repository.
@@ -381,6 +402,7 @@ vim.keymap.set('n', '<leader>q', vim.diagnostic.setloclist)
 
 --Quality of life keymaps
 vim.keymap.set('n', '<leader>pv', ":NeoTreeShowToggle<CR>")
+vim.keymap.set('n', '<leader>m', ":NeoTreeFocusToggle<CR>")
 vim.keymap.set('x', '<leader>pp', "\"_dP")
 vim.keymap.set("n", "<leader>sr", [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>]],
   { desc = "[S]earch and [R]eplace" })
