@@ -78,8 +78,8 @@
 
 # focus window
 # alt - h : yabai -m window --focus west
-ctrl - right : yabai -m window --focus next 
-ctrl - left : yabai -m window --focus prev 
+alt - 0x1E: yabai -m window --focus next 
+alt - 0x21: yabai -m window --focus prev 
 # swap managed window
 # shift + alt - h : yabai -m window --swap north 
 
@@ -87,8 +87,8 @@ ctrl - left : yabai -m window --focus prev
 
 shift + cmd - return : open -a iTerm
 shift + ctrl + cmd - c : open -a VSCodium
+shift + alt - o: open -a Obsidian
 
-fn + alt + cmd - v : zsh /Users/eashanc/.config/sketchybar/plugins/toggleVPN.sh
  
 
 # move managed window
@@ -96,6 +96,10 @@ shift + cmd - j : yabai -m window --warp west
 shift + cmd - l : yabai -m window --warp east
 shift + cmd - o : yabai -m window --warp north
 shift + cmd - k : yabai -m window --warp south
+
+#Full screen 
+alt - f : yabai -m window --toggle zoom-fullscreen
+shift + alt - f : yabai -m window --toggle native-fullscreen
 
 # Float / Unfloat window
 shift + alt - space : \

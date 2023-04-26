@@ -112,10 +112,9 @@ do
                               click_script="yabai -m space --focus $sid" 
 done
 ##### 
-sketchybar --add item system.label left \
+sketchybar --add item system.label center \
            --set system.label script="sketchybar --set \$NAME label=\">\$INFO<\"" \
-                              label.font="SF Pro:Semibold:14"\
-                              background.padding_left=-15\
+                              label.font="Trebuchet MS:Regular:14"\
            --subscribe system.label front_app_switched
 
 ############## RIGHT ITEMS ############## 

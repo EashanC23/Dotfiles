@@ -116,6 +116,8 @@ alias stopYabai="brew services stop yabai"
 alias songDL="sh ~/songDL.sh"
 alias tree="tree -h --sort size --du"
 alias bsr="brew services restart" 
+alias ytdlmp3="yt-dlp --audio-format mp3 -x --external-downloader aria2c --external-downloader-args '-c -j 5 -x 10 --summary-interval=0'"
+alias ytdl="yt-dlp -f mp4 --external-downloader aria2c --external-downloader-args '-c -j 5 -x 10 --summary-interval=0'"
 # Java development 
 export JAVA_HOME="/Library/Java/JavaVirtualMachines/jdk1.8.0_221.jdk"
 # export JAVA_HOME="/opt/homebrew/opt/openjdk@17/"

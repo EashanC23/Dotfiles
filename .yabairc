@@ -75,13 +75,14 @@ yabai -m rule --add app="Finder" manage=off border=off
 yabai -m rule --add app="zoom.us" manage=off border=off 
 yabai -m rule --add app="^Messages$" manage=off border=off 
 yabai -m rule --add app="^Bloons TD Battles$" manage=off border=off 
-yabai -m rule --add app="^Preview$" manage=off border=off
+yabai -m rule --add app="^Preview$" manage=off border=off grid=1:1:0:0:1:1
 yabai -m rule --add app="Notion" opacity=0.97
 yabai -m rule --add app="^Finder$" manage=off border=off
 yabai -m rule --add app="^Mail$" border=off manage=off grid=1:1:0:0:1:1
 yabai -m rule --add app="^Molar$" manage=off border=off
 yabai -m rule --add app="^Wondershare Filmora 11$" manage=off border=off
 yabai -m rule --add app="eqMac" manage=off border=off 
+yabai -m rule --add app="Python" manage=off border=off 
 
 sudo yabai --load-sa
 
