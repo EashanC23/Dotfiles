@@ -162,9 +162,9 @@ function rcr(){
 function bassBoost(){
     d=$(echo $1 | cut -d'.' -f 1)
     r=$(echo "$d" + "temp")
-    ffmpeg -i $1 -af "$filter64 $2 $filter400 $3" $r.mp3
-    rm $1
-    mv $r.mp3 $1
+    ffmpeg -i "$1" -loglevel error -af "$filter64 $2 , $filter400 $3" "$r.mp3"
+    rm "$1"
+    mv "$r.mp3" "$1"
 }
 # Ease of life for pandoc because I cant be bothered to type allat 
 function pdc(){
