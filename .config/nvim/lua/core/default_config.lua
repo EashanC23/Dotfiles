@@ -11,7 +11,7 @@ M.ui = {
   hl_override = {},
   changed_themes = {},
   theme_toggle = { "onedark", "one_light" },
-  theme = "onedark", -- default theme
+  theme = "nord", -- default theme
   transparency = false,
   lsp_semantic_tokens = false, -- needs nvim v0.9, just adds highlight groups for lsp semantic tokens
 
@@ -34,7 +34,7 @@ M.ui = {
     theme = "default", -- default/vscode/vscode_colored/minimal
     -- default/round/block/arrow separators work only for default statusline theme
     -- round and block will work for minimal theme only
-    separator_style = "default",
+    separator_style = "block",
     overriden_modules = nil,
   },
 
@@ -42,7 +42,7 @@ M.ui = {
   tabufline = {
     show_numbers = false,
     enabled = true,
-    lazyload = true,
+    lazyload = false,
     overriden_modules = nil,
   },
 

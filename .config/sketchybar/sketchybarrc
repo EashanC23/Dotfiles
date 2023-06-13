@@ -51,14 +51,14 @@ sketchybar -m --default label.padding_left=4  \
 
 
 ############## SECONDARY DISPLAY SPACES ############## 
-sketchybar -m --add space misc left                              \
-              --set misc associated_display=2                    \
-                         associated_space=5                      \
-                         icon.font="Hack Nerd Font:Bold:20.0"    \
-                         icon=                                  \
-                         icon.highlight_color=0xff48aa2a         \
-                         label=misc                              \
-                         click_script="yabai -m space --focus 5"
+# sketchybar -m --add space left                              \
+#              --set misc associated_display=2                    \
+#                         associated_space=5                      \
+#                         icon.font="Hack Nerd Font:Bold:20.0"    \
+#                         icon=                                  \
+#                         icon.highlight_color=0xff48aa2a         \
+#                         label=misc                              \
+#                         click_script="yabai -m space --focus 5"
 
 ############## ITEM DEFAULTS ###############
 sketchybar -m --default label.padding_left=2  \
@@ -96,7 +96,7 @@ sketchybar -m --add item apple.logo left                                        
                               label="Lock Screen"                                            \
                               click_script="pmset displaysleepnow;                           
                                             sketchybar -m --set apple.logo popup.drawing=off"
-SPACE_ICONS=("1" "2" "3" "4")
+SPACE_ICONS=("1" "2" "3" "4" "5" "6")
 for i in "${!SPACE_ICONS[@]}"
 do
   sid=$(($i+1))
@@ -165,9 +165,9 @@ sketchybar --add       item            ical right                         \
 
 sketchybar -m --add item battery right                                     \
               --set battery update_freq=3                                  \
-              --set battery icon=                                         \
+              --set battery icon=󰁹                                         \
               --set battery script="~/.config/sketchybar/plugins/power.sh" \
-              --set battery icon.font="Hack Nerd Font Mono:Regular:12"     
+              --set battery icon.font="Hack Nerd Font:Regular:12"     
 
 
 sketchybar --add alias  "Control Center,WiFi" right                      \
@@ -251,6 +251,14 @@ sketchybar --add alias "Cloudflare WARP" right \
                             icon.padding_right=0\
                             background.padding_right=-4\
                             label.padding_right=0
+media=(
+  script="$PLUGIN_DIR/media.sh"
+  updates=on
+)
+
+sketchybar --add item media center \
+           --set media "${media[@]}" \
+           --subscribe media media_change
 
 ###################### CENTER ITEMS ###################
 ############## FINALIZING THE SETUP ##############
