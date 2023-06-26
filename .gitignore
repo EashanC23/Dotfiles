@@ -9,9 +9,16 @@
 # .config/ytfzf/
 # *.DS_Store
 # node_modules
-*/** 
+/* 
 
-!.config/
+!.config/htop
+!.config/lf
+!.config/mpv
+!.config/neofetch
+!.config/nvim
+!.config/screenshots
+!.config/sketchybar
+!.config/skhd
 !.gitignore
 !.zshrc
 !.yabairc
