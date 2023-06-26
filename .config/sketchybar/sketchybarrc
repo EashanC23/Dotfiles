@@ -1,6 +1,3 @@
-# This is a demo config to bring across some of the most important commands more easily.
-# For a more advanced configuration example see https://github.com/FelixKratz/SketchyBar/discussions/47#discussion-3587958
-
 ITEM_DIR="~/.config/sketchybar/items" # Directory where the items are configured
 PLUGIN_DIR="~/.config/sketchybar/plugins" # Directory where all the plugin scripts are stored
 
@@ -256,9 +253,9 @@ media=(
   updates=on
 )
 
-sketchybar --add item media center \
-           --set media "${media[@]}" \
-           --subscribe media media_change
+#sketchybar --add item media center \
+#           --set media "${media[@]}" \
+#           --subscribe media media_change
 
 ###################### CENTER ITEMS ###################
 ############## FINALIZING THE SETUP ##############
@@ -267,3 +264,4 @@ sketchybar -m --update
 echo "sketchybar configuration loaded.."
 
 sketchybar --trigger toggle_stats
+
