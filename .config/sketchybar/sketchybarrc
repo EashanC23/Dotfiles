@@ -93,7 +93,7 @@ sketchybar -m --add item apple.logo left                                        
                               label="Lock Screen"                                            \
                               click_script="pmset displaysleepnow;                           
                                             sketchybar -m --set apple.logo popup.drawing=off"
-SPACE_ICONS=("1" "2" "3" "4" "5" "6")
+SPACE_ICONS=("1" "2" "3" "4" "5" "6" "7")
 for i in "${!SPACE_ICONS[@]}"
 do
   sid=$(($i+1))
@@ -135,28 +135,39 @@ sketchybar -m --add       item               time             right             
 
 POPUP_CLICK_SCRIPT="sketchybar --set \$NAME popup.drawing=toggle"
 
-sketchybar --add       item            ical right                         \
-           --set       ical            update_freq=50                     \
-                                       icon=􀉉                             \
-                                       popup.align=right                  \
-                                       popup.background.drawing=on        \
-                                       popup.background.border_width=2    \
-                                       popup.background.corner_radius=5   \
-                                       popup.background.color=0xbb000000 \
-                                       popup.background.border_color=0xff8893f7 \
-                                       script="~/.config/sketchybar/plugins/ical.sh"\
-                                       click_script="$POPUP_CLICK_SCRIPT" \
-           --subscribe ical            mouse.entered                      \
-                                       mouse.exited                       \
-                                       mouse.exited.global                \
-                                                                          \
-           --add       item            ical.template popup.ical           \
-           --set       ical.template   drawing=off                        \
-                                       background.corner_radius=12        \
-                                       padding_left=7                     \
-                                       padding_right=7                    \
-                                       icon.background.height=2           \
-                                       icon.background.y_offset=-12
+
+sketchybar  --add   item slack right \
+            --set   slack \
+                    update_freq=5 \
+                    script="$PLUGIN_DIR/slack.sh" \
+                    background.padding_left=5 \
+                    background.padding_right=5 \
+                    click_script="open -a Vivaldi" \
+                    icon.font.size=18 \
+           --subscribe slack system_woke
+
+# sketchybar --add       item            ical right                         \
+#            --set       ical            update_freq=50                     \
+#                                        icon=􀉉                             \
+#                                        popup.align=right                  \
+#                                        popup.background.drawing=on        \
+#                                        popup.background.border_width=2    \
+#                                        popup.background.corner_radius=5   \
+#                                        popup.background.color=0xbb000000 \
+#                                        popup.background.border_color=0xff8893f7 \
+#                                        script="~/.config/sketchybar/plugins/ical.sh"\
+#                                        click_script="$POPUP_CLICK_SCRIPT" \
+#            --subscribe ical            mouse.entered                      \
+#                                        mouse.exited                       \
+#                                        mouse.exited.global                \
+#                                                                           \
+#            --add       item            ical.template popup.ical           \
+#            --set       ical.template   drawing=off                        \
+#                                        background.corner_radius=12        \
+#                                        padding_left=7                     \
+#                                        padding_right=7                    \
+#                                        icon.background.height=2           \
+#                                        icon.background.y_offset=-12
 
 
 
@@ -209,19 +220,21 @@ sketchybar   --add item 	stats_separator right                                  
                               							background.padding_left=5                        \
                               							background.padding_right=0                       \
                               							label.drawing=off                                 \
-                              							associated_display=active                         \
+                              							associated_display=2                         \
                               							click_script='sketchybar --trigger toggle_stats'  
 
 sketchybar -m --add       item               cpu_label right                                               \
               --set       cpu_label          label.font="SF Pro:Semibold:7"                                \
                                              label=CPU                                                     \
                                              y_offset=7                                                    \
+                              							 associated_display=2                         \
                                              width=0                                                       \
                                                                                                            \
               --add       item               cpu_percent right                                             \
               --set       cpu_percent        label.font="SF Pro:Heavy:12"                                  \
                                              y_offset=-3                                                   \
                                              update_freq=2                                                 \
+                              							 associated_display=2                         \
                                              script="~/.config/sketchybar/plugins/cpu.sh"
 
 
@@ -229,13 +242,17 @@ sketchybar -m --add item ram_label right \
               --set ram_label label.font="SF Pro:Semibold:7" \
                                label=RAM \
                                y_offset=7 \
+                               associated_display=2 \
                                width=0 \
                                icon.padding_right= 0\
               --add item ram_percentage right \
               --set ram_percentage label.font="SF Pro:Heavy:12" \
                                     y_offset=-3 \
+                                    associated_display=2 \
                                     update_freq=2 \
                                     script="~/.config/sketchybar/plugins/ram.sh"
+
+
 sketchybar -m --add event bluetooth_change "com.apple.bluetooth.status" \
               --add item headphones right \
               --set headphones icon=" " \

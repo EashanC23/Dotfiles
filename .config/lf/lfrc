@@ -39,7 +39,7 @@ cmd restore_trash ${{
 
 cmd openFunc ${{
   case "$f" in
-      *) cd $f;;
+      *) cd $f || $EDITOR $f || open $f;;
   esac
 }}
 

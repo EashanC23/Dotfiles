@@ -20,28 +20,29 @@ sudo yabai --load-sa
 # - https://github.com/koekeishiya/yabai/wiki/Installing-yabai-(latest-release)
 # app settings
 
-yabai -m rule --add app="^FaceTime$" manage=off border=off 
-yabai -m rule --add app="^System Preferences$" manage=off border=off 
-yabai -m rule --add app="^Books$" manage=off border=off 
-yabai -m rule --add app="^MPV$" manage=off border=off 
-yabai -m rule --add app="^QuickTime Player$" manage=off border=off 
+yabai -m rule --add app="^FaceTime$" manage=off  
+yabai -m rule --add app="^System Preferences$" manage=off  
+yabai -m rule --add app="^Books$" manage=off  
+yabai -m rule --add app="^MPV$" manage=off  
+yabai -m rule --add app="^QuickTime Player$" manage=off  
 yabai -m rule --add app="Code" opacity=0.90 
-yabai -m rule --add app="^Rectangle$" manage=off border=off
+yabai -m rule --add app="^Rectangle$" manage=off 
 yabai -m rule --add app="^VSCodium$" opacity=0.92
-yabai -m rule --add app="^mpv$" manage=off border=off
-yabai -m rule --add app="Finder" manage=off border=off
-yabai -m rule --add app="zoom.us" manage=off border=off 
-yabai -m rule --add app="^Messages$" manage=off border=off 
-yabai -m rule --add app="^Bloons TD Battles$" manage=off border=off 
-yabai -m rule --add app="^Preview$" manage=off border=off grid=1:1:0:0:1:1
+yabai -m rule --add app="^mpv$" manage=off sticky=on
+yabai -m rule --add app="Finder" manage=off 
+yabai -m rule --add app="zoom.us" manage=off  
+yabai -m rule --add app="^Messages$" manage=off  
+yabai -m rule --add app="^Bloons TD Battles$" manage=off  
+yabai -m rule --add app="^Preview$" manage=off  grid=1:1:0:0:1:1
 yabai -m rule --add app="Notion" opacity=0.97
-yabai -m rule --add app="^Finder$" manage=off border=off
-yabai -m rule --add app="^Mail$" border=off manage=off grid=1:1:0:0:1:1
-yabai -m rule --add app="^Minecraft$" border=off manage=off grid=1:1:0:0:1:1
-yabai -m rule --add app="^Molar$" manage=off border=off
-yabai -m rule --add app="^Wondershare Filmora 11$" manage=off border=off
-yabai -m rule --add app="eqMac" manage=off border=off 
-yabai -m rule --add app="Python" manage=off border=off 
+yabai -m rule --add app="^Finder$" manage=off 
+yabai -m rule --add app="^Mail$"  manage=off grid=1:1:0:0:1:1
+yabai -m rule --add app="^Minecraft$"  manage=off grid=1:1:0:0:1:1
+yabai -m rule --add app="^Molar$" manage=off 
+yabai -m rule --add app="^Wondershare Filmora 11$" manage=off 
+yabai -m rule --add app="eqMac" manage=off  
+yabai -m rule --add app="Python" manage=off  
+yabai -m rule --add app="McEngine" manage=off  
 
 #
 
@@ -49,20 +50,19 @@ yabai -m signal --add event=dock_did_restart action="sudo yabai --load-sa"
 
 # global settings
 
-yabai -m config mouse_follows_focus off \
-yabai -m config focus_follows_mouse off \
-yabai -m config window_origin_display default \
-yabai -m config window_placement second_child \
+yabai -m config mouse_follows_focus on 
+yabai -m config focus_follows_mouse autofocus 
+yabai -m config window_origin_display focused 
+yabai -m config window_placement cursor \
         window_topmost off \
         window_shadow off \
         window_opacity off \
-        window_animation_duration 0.00 \
+        window_animation_duration 0.04 \
         active_window_opacity 1.0 \
-        normal_window_opacity 1.0 \
+        normal_window_opacity 0.8 \
         window_border off \
         window_border_width 3 \
         active_window_border_color 0xaa8893f7 \
-        insert_window_border_color 0xffd75f5f \
         split_ratio 0.50 \
         auto_balance on \
         mouse_modifier fn \
@@ -74,11 +74,7 @@ yabai -m config window_placement second_child \
 
 # general space settings
 
-yabai -m config layout bsp   \
- top_padding 0               \
- bottom_padding 0            \
- left_padding 0              \ 
- right_padding 0             
+yabai -m config layout bsp   \ top_padding 0               \ bottom_padding 0            \ left_padding 0              \ right_padding 0             
 yabai -m config window_gap 08              
 
 

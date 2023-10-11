@@ -22,8 +22,7 @@ ZSH_DISABLE_COMPFIX=true
 # CASE_SENSITIVE="true"
 
 # Uncomment the following line to use hyphen-insensitive completion.
-# Case-sensitive completion must be off. _ and - will be interchangeable.
-# HYPHEN_INSENSITIVE="true"
+# Case-sensitive completion must be off. _ and - will be interchangeable. HYPHEN_INSENSITIVE="true"
 
 # Uncomment one of the following lines to change the auto-update behavior
 # zstyle ':omz:update' mode disabled  # disable automatic updates
@@ -61,13 +60,16 @@ alias stopYabai="brew services stop yabai"
 alias songDL="sh ~/songDL.sh"
 alias tree="tree -h --sort size --du"
 alias bsr="brew services restart" 
-alias ytdlmp3="yt-dlp --audio-format mp3 -x --external-downloader aria2c --external-downloader-args '-c -j 5 -x 10 --summary-interval=0'"
-alias ytdl="yt-dlp -f mp4 --external-downloader aria2c --external-downloader-args '-c -j 5 -x 10 --summary-interval=0'"
+alias ytdlmp3="yt-dlp --audio-format mp3 -x --external-downloader aria2c --external-downloader-args '-c -j 5 -x 10 --summary-interval=0'  -o \"%(title)s.%(ext)s\""
+alias ytdl="yt-dlp -f mp4 --external-downloader aria2c --external-downloader-args '-c -j 5 -x 10 --summary-interval=0' -o \"%(title)s.%(ext)s\""
 alias ls='lsd'
 alias lt='lsd --tree'
 alias reload="source $HOME/.zshrc"
 alias cat='bat'
 alias oo='open .'
+alias wipe='~/wipe.sh'
+alias unwipe='~/unwipe.sh'
+alias python='python3'
 
 
 # Java development 
@@ -118,10 +120,32 @@ function bassBoost(){
     rm "$1"
     mv "$r.mp3" "$1"
 }
-# Ease of life for pandoc because I cant be bothered to type allat 
+function vlength(){
+  ffmpeg -i $1 2>&1 | grep Duration | cut -d ' ' -f 4 | sed s/,//
+}
+# Ease of life for pandoc because I cant be bothered to type all that
 function pdc(){
   f=$(echo $1|cut -d'.' -f 1)
   pandoc -s --pdf-engine=xelatex --from=vimwiki --metadata-file=$HOME/vimwiki/basicMetadata.yaml "${@:2}" $f.wiki -o $f.pdf
+}
+
+function copy(){
+  cat $1 | pbcopy
+}
+function dls(){
+  song=$(echo $(osascript -l JavaScript ~/Music/dev/getSong.js) )
+  artist=$(osascript -l JavaScript ~/Music/dev/getArtist.js | tr -d '\r\n')
+  full_name=$(echo "$song - $artist")
+  echo $full_name
+  spotdl download "$full_name"
+}
+
+function aytdll(){
+  python ~/Developments/JavaScript/test/a.py
+  ytdl -a tmp_list.txt
+  ls *.mp4 | sort -t '.' -k2 -n > playlist.txt
+  mpv --playlist=playlist.txt
+  rm tmp_list.txt
 }
 
 #macfeh cli integration
@@ -144,6 +168,7 @@ alias config='/usr/bin/git --git-dir=~/.cfg/ --work-tree=/~'
 
 export PATH="$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:$PATH"
 
+
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
@@ -161,4 +186,4 @@ TYPEWRITTEN_LEFT_PROMPT_PREFIX_FUNCTION=($date +%H:%M:%S)
 TYPEWRITTEN_ARROW_SYMBOL="➜"
 
 export PATH="/opt/homebrew/opt/ruby/bin:$PATH"
-
+eval "$(zoxide init zsh)"

@@ -45,8 +45,10 @@ M.general = {
     -- new buffer
     ["<leader>b"] = { "<cmd> enew <CR>", "new buffer" },
     ["<leader>ch"] = { "<cmd> NvCheatsheet <CR>", "Mapping cheatsheet" },
+    --User added
     ["<leader>fr"] = {" vim.lsp.buf.format "},
     ["gpd"] = {"<cmd>lua require('goto-preview').goto_preview_definition()<CR>"},
+    ["<leader>tt"] = {"<cmd> TroubleToggle <CR>", "Trouble toggle"}
   },
 
   t = {
