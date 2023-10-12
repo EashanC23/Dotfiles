@@ -34,15 +34,14 @@ sketchybar --add event lock   "com.apple.screenIsLocked"   \
 ############## GLOBAL DEFAULTS ############## 
 sketchybar -m --default updates=when_shown                    \
                         drawing=on                            \
-                        cache_scripts=on                      \
                         icon.font="Hack Nerd Font:Regular:17.0"  \
                         icon.color=0xffffffff                 \
                         label.font="Hack Nerd Font:Regular:13.0" \
                         label.color=0xffffffff
 
 ############## SPACE DEFAULTS ############## 
-sketchybar -m --default label.padding_left=4  \
-                        label.padding_right=4 \
+sketchybar -m --default label.padding_left=2  \
+                        label.padding_right=2 \
                         icon.padding_left=2   \
                         icon.padding_right=2
 
@@ -135,40 +134,30 @@ sketchybar -m --add       item               time             right             
 
 POPUP_CLICK_SCRIPT="sketchybar --set \$NAME popup.drawing=toggle"
 
+sketchybar --add item  ip_address right                              \
+             --set       ip_address script="$PLUGIN_DIR/ip_address.sh" \
+             update_freq=3                     \
+             padding_left=8                     \
+             padding_right=8                    \
+             background.border_width=0          \
+             background.corner_radius=4         \
+             background.height=15               \
+             icon.highlight=on                  \
+             label.highlight=on   \
+             icon.font="Hack Nerd Font:Bold:13.0"   \
+             label.font="SF Pro:Semibold:12.0"  \
+             click_script="$PLUGIN_DIR/warp.sh" \ 
+             --subscribe ip_address wifi_change                        \
 
 sketchybar  --add   item slack right \
             --set   slack \
                     update_freq=5 \
                     script="$PLUGIN_DIR/slack.sh" \
                     background.padding_left=5 \
-                    background.padding_right=5 \
+                    background.padding_right=0 \
                     click_script="open -a Vivaldi" \
                     icon.font.size=18 \
            --subscribe slack system_woke
-
-# sketchybar --add       item            ical right                         \
-#            --set       ical            update_freq=50                     \
-#                                        icon=􀉉                             \
-#                                        popup.align=right                  \
-#                                        popup.background.drawing=on        \
-#                                        popup.background.border_width=2    \
-#                                        popup.background.corner_radius=5   \
-#                                        popup.background.color=0xbb000000 \
-#                                        popup.background.border_color=0xff8893f7 \
-#                                        script="~/.config/sketchybar/plugins/ical.sh"\
-#                                        click_script="$POPUP_CLICK_SCRIPT" \
-#            --subscribe ical            mouse.entered                      \
-#                                        mouse.exited                       \
-#                                        mouse.exited.global                \
-#                                                                           \
-#            --add       item            ical.template popup.ical           \
-#            --set       ical.template   drawing=off                        \
-#                                        background.corner_radius=12        \
-#                                        padding_left=7                     \
-#                                        padding_right=7                    \
-#                                        icon.background.height=2           \
-#                                        icon.background.y_offset=-12
-
 
 
 sketchybar -m --add item battery right                                     \
@@ -178,29 +167,6 @@ sketchybar -m --add item battery right                                     \
               --set battery icon.font="Hack Nerd Font:Regular:12"     
 
 
-sketchybar --add alias  "Control Center,WiFi" right                      \
-           --rename     "Control Center,WiFi" wifi_alias                 \
-           --set        wifi_alias    icon.drawing=off                   \
-                                      alias.color="$WHITE"              \
-                                      background.padding_right=0         \
-                                      background.padding_left=-5         \
-                                      icon.padding_right=0               \
-                                      align=right                        \
-                                      click_script="$POPUP_CLICK_SCRIPT1" \
-                                      update_freq=1                      \
-                                      script="$PLUGIN_DIR/wifi.sh"       \
-                                      background.padding_left=1         \
-           --subscribe  wifi_alias    mouse.entered                      \
-                                      mouse.exited                       \
-                                      mouse.exited.global                \
-                                                                         \
-            --add       item          wifi.details popup.wifi_alias      \
-            --set       wifi.details  background.corner_radius=12        \
-                                      background.padding_left=7          \
-                                      background.padding_right=7         \
-                                      icon.background.height=2           \
-                                      icon.background.y_offset=-12       \
-                                      click_script="sketchybar --set wifi.alias popup.drawing=off"
 
 sketchybar 	--add event 				hide_stats   					                                      \
            	--add event 				show_stats 					                                        \
@@ -259,12 +225,6 @@ sketchybar -m --add event bluetooth_change "com.apple.bluetooth.status" \
               script="~/.config/sketchybar/plugins/airpods_battery.sh" \
               --subscribe headphones bluetooth_change
 
-sketchybar --add alias "Cloudflare WARP" right \
-           --rename "Cloudflare WARP" warpAlias \
-           --set warpAlias click_script="$PLUGIN_DIR/warp.sh"\
-                            icon.padding_right=0\
-                            background.padding_right=-4\
-                            label.padding_right=0
 media=(
   script="$PLUGIN_DIR/media.sh"
   updates=on
