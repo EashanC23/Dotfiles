@@ -19,53 +19,29 @@ sketchybar -m --bar height=25        \
                     position=top     \
                     padding_left=6 \
                     padding_right=6 \
-                    color='#282A35' \
+                    color=0xff29303A \
                     popup.drawing=on \
                     popup.background.color=0xff000000 
-sketchybar --add event lock   "com.apple.screenIsLocked"   \
-           --add event unlock "com.apple.screenIsUnlocked" \
-                                                           \
-           --add item         animator left                \
-           --set animator     drawing=off                  \
-                              updates=on                   \
-                              script="$PLUGIN_DIR/wake.sh" \
-           --subscribe        animator lock unlock
+
 
 ############## GLOBAL DEFAULTS ############## 
 sketchybar -m --default updates=when_shown                    \
                         drawing=on                            \
-                        icon.font="Hack Nerd Font:Regular:17.0"  \
                         icon.color=0xffffffff                 \
-                        label.font="Hack Nerd Font:Regular:13.0" \
-                        label.color=0xffffffff
-
-############## SPACE DEFAULTS ############## 
-sketchybar -m --default label.padding_left=2  \
+                        label.color=0xffffffff \
+                        label.padding_left=2  \
                         label.padding_right=2 \
                         icon.padding_left=2   \
-                        icon.padding_right=2
-
-
-############## SECONDARY DISPLAY SPACES ############## 
-# sketchybar -m --add space left                              \
-#              --set misc associated_display=2                    \
-#                         associated_space=5                      \
-#                         icon.font="Hack Nerd Font:Bold:20.0"    \
-#                         icon=                                  \
-#                         icon.highlight_color=0xff48aa2a         \
-#                         label=misc                              \
-#                         click_script="yabai -m space --focus 5"
-
-############## ITEM DEFAULTS ###############
-sketchybar -m --default label.padding_left=2  \
+                        icon.padding_right=2 \
+                        label.padding_left=2  \
                         icon.padding_right=2  \
                         icon.padding_left=6   \
                         label.padding_right=6 \
-                        label.font="Hack Nerd Font:Regular:13.0"
-sketchybar -m --default background.padding_left=3                                             \
+                        label.font="Hack Nerd Font:Regular:13.0" \
+                       background.padding_left=3                                             \
                        background.padding_right=3                                            \
                        icon.padding_right=6                                                  \
-                       icon.font="SF Pro:Bold:16.0"                                          \
+                       icon.font="SF Pro:Semibold:16.0"                                          \
                        label.font="SF Pro:Semibold:13.0"                                     
 
 # ############## LEFT ITEMS ############## 
@@ -107,7 +83,7 @@ do
                               script="$PLUGIN_DIR/space.sh"              \
                               click_script="yabai -m space --focus $sid" 
 done
-##### 
+
 sketchybar --add item system.label center \
            --set system.label script="sketchybar --set \$NAME label=\">\$INFO<\"" \
                               label.font="Trebuchet MS:Regular:14"\
@@ -236,6 +212,7 @@ media=(
 
 ###################### CENTER ITEMS ###################
 ############## FINALIZING THE SETUP ##############
+sketchybar --hotload true
 sketchybar -m --update
 
 echo "sketchybar configuration loaded.."

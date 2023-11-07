@@ -21,6 +21,7 @@ sudo yabai --load-sa
 # app settings
 
 yabai -m rule --add app="^FaceTime$" manage=off  
+yabai -m rule --add app="^ATLauncher$" manage=off grid=1:1:0:0:1:1
 yabai -m rule --add app="^System Preferences$" manage=off  
 yabai -m rule --add app="^Books$" manage=off  
 yabai -m rule --add app="^MPV$" manage=off  
@@ -76,6 +77,9 @@ yabai -m config window_placement cursor \
 
 yabai -m config layout bsp   \ top_padding 0               \ bottom_padding 0            \ left_padding 0              \ right_padding 0             
 yabai -m config window_gap 08              
+
+yabai -m signal --add event=window_created action="sketchybar -m --trigger window_change &> /dev/null"
+yabai -m signal --add event=window_destroyed action="sketchybar -m --trigger window_change &> /dev/null"
 
 
 sudo yabai --load-sa
