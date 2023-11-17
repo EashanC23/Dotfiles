@@ -8,6 +8,7 @@ alt - h: yabai -m window --focus prev || yabai -m window --focus last
 #Open Apps 
 
 shift + cmd - return : open -a iTerm || open -a Terminal
+shift + alt - o: open -a Obsidian
 
  
 
