@@ -76,7 +76,7 @@ do
              --set space.$sid associated_space=$sid                      \
                               icon=${SPACE_ICONS[i]}                     \
                               background.color=0x7755dfe7                \
-                              background.corner_radius=5                 \
+                              background.corner_radius=9                 \
                               background.height=20                       \
                               background.drawing=off                     \
                               label.drawing=off                          \
@@ -98,7 +98,7 @@ sketchybar -m --add       item               time             right             
                                              script="~/.config/sketchybar/plugins/time.sh"                 \
                                                                                                            \
               --add       item               date             right                                        \
-              --set       date               update_freq=60                                                \
+              --set       date               update_freq=120                                                \
                                              background.color=0xffe8e8e9                                   \
                                              label.color=0xff000000                                        \
                                              label.font="SF Pro:Semibold:12"                               \
@@ -107,6 +107,7 @@ sketchybar -m --add       item               time             right             
                                              background.height=15                                          \
                                              background.corner_radius=4                                    \
                                              script="~/.config/sketchybar/plugins/date.sh"
+            --subscribe  date system_woke
 
 POPUP_CLICK_SCRIPT="sketchybar --set \$NAME popup.drawing=toggle"
 
@@ -137,7 +138,7 @@ sketchybar  --add   item slack right \
 
 
 sketchybar -m --add item battery right                                     \
-              --set battery update_freq=3                                  \
+              --set battery update_freq=30                                  \
               --set battery icon=󰁹                                         \
               --set battery script="~/.config/sketchybar/plugins/power.sh" \
               --set battery icon.font="Hack Nerd Font:Regular:12"     
@@ -195,11 +196,11 @@ sketchybar -m --add item ram_label right \
                                     script="~/.config/sketchybar/plugins/ram.sh"
 
 
-sketchybar -m --add event bluetooth_change "com.apple.bluetooth.status" \
-              --add item headphones right \
-              --set headphones icon=" " \
-              script="~/.config/sketchybar/plugins/airpods_battery.sh" \
-              --subscribe headphones bluetooth_change
+#sketchybar -m --add event bluetooth_change "com.apple.bluetooth.status" \
+#              --add item headphones right \
+#              --set headphones icon=" " \
+#              script="~/.config/sketchybar/plugins/airpods_battery.sh" \
+#              --subscribe headphones bluetooth_change
 
 media=(
   script="$PLUGIN_DIR/media.sh"

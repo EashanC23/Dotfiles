@@ -41,7 +41,7 @@ ZSH_DISABLE_COMPFIX=true
 # Uncomment the following line to disable auto-setting terminal title.
 DISABLE_AUTO_TITLE="true"
 
-plugins=(git macos zsh-syntax-highlighting zsh-autosuggestions rust)
+plugins=(git macos zsh-syntax-highlighting zsh-autosuggestions rust fzf brew thefuck zsh-interactive-cd zoxide) 
 
 source $ZSH/oh-my-zsh.sh
 
@@ -147,6 +147,9 @@ function aytdll(){
   mpv --playlist=playlist.txt
   rm tmp_list.txt
 }
+function qrcode(){
+  curl -d "$1" qrcode.show
+}
 
 #macfeh cli integration
 function macfeh() {
@@ -175,6 +178,9 @@ export NVM_DIR="$HOME/.nvm"
 
 
 export PATH="$PATH:$HOME/.rvm/bin"
+
+# python-click>=8.0
+eval "$(_PYMOBILEDEVICE3_COMPLETE=zsh_source pymobiledevice3)"
 
 # Set typewritten ZSH as a prompt
 autoload -U promptinit; promptinit
