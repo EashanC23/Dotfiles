@@ -23,5 +23,7 @@
 !.zshrc
 !.yabairc
 !.gitignore
+!.tmux/
+!.tmux.conf
 !README.md
 !Brewfile
