@@ -70,6 +70,8 @@ alias oo='open .'
 alias wipe='~/wipe.sh'
 alias unwipe='~/unwipe.sh'
 alias python='python3'
+alias cr='cargo run'
+alias rmld='rm -rf $(1)'
 
 
 # Java development 
@@ -193,3 +195,10 @@ TYPEWRITTEN_ARROW_SYMBOL="➜"
 
 export PATH="/opt/homebrew/opt/ruby/bin:$PATH"
 eval "$(zoxide init zsh)"
+
+# bun completions
+[ -s "/Users/eashanc/.bun/_bun" ] && source "/Users/eashanc/.bun/_bun"
+
+# bun
+export BUN_INSTALL="$HOME/.bun"
+export PATH="$BUN_INSTALL/bin:$PATH"

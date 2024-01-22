@@ -7,7 +7,7 @@
 #.config/deluge/
 # .config/raycast/
 # .config/ytfzf/
-# *.DS_Store
+*.DS_Store
 # node_modules
 /* 
 

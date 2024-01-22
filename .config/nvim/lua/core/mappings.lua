@@ -48,7 +48,10 @@ M.general = {
     --User added
     ["<leader>fr"] = {" vim.lsp.buf.format "},
     ["gpd"] = {"<cmd>lua require('goto-preview').goto_preview_definition()<CR>"},
-    ["<leader>tt"] = {"<cmd> TroubleToggle <CR>", "Trouble toggle"}
+    ["<leader>tt"] = {"<cmd> TroubleToggle <CR>", "Trouble toggle"},
+    ["L"] = {"$"},
+    ["H"] = {"^"},
+    ["U"] = {"<C-R>", "redo"},
   },
 
   t = {
