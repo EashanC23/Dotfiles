@@ -1,6 +1,5 @@
 local options = {
-  ensure_installed = { "lua", "rust", "toml" },
-  auto_install = true,
+  ensure_installed = { "lua" },
 
   highlight = {
     enable = true,

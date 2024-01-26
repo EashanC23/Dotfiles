@@ -7,10 +7,10 @@ source ~/.config/sketchybar/colors.sh
 
 
 if defaults read -g AppleInterfaceStyle | grep -iq "Dark"; then
-	BG_COLOR="0xff333333"
+	BG_COLOR="0xff2012130"
 	FONT_COLOR="0xffffffff"
 else
-	BG_COLOR="0xffcdcdcd"
+	BG_COLOR="0xff2012130"
 	FONT_COLOR="0xff00000"
 fi
 
@@ -19,7 +19,7 @@ sketchybar -m --bar height=25        \
                     position=top     \
                     padding_left=6 \
                     padding_right=6 \
-                    color=0xff29303A \
+                    color=#2012130 \
                     popup.drawing=on \
                     popup.background.color=0xff000000 
 
