@@ -128,7 +128,8 @@ function vlength(){
 # Ease of life for pandoc because I cant be bothered to type all that
 function pdc(){
   f=$(echo $1|cut -d'.' -f 1)
-  pandoc -s --pdf-engine=xelatex --from=vimwiki --metadata-file=$HOME/vimwiki/basicMetadata.yaml "${@:2}" $f.wiki -o $f.pdf
+  pandoc $1 -o $f.pdf --pdf-engine=xelatex -V geometry:"left=25mm,right=25mm,top=10mm,bottom=25mm" -V fontsize=15pt -V monofont="Courier New" --include-in-header ~/Documents/header.tex --toc
+  # pandoc -s --pdf-engine=xelatex --from=vimwiki --metadata-file=$HOME/vimwiki/basicMetadata.yaml "${@:2}" $1 -o $f.pdf
 }
 
 function copy(){

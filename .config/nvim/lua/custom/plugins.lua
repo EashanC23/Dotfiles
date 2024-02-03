@@ -57,7 +57,7 @@ local plugins = {
   -- To make a plugin not be loaded
   {
     "NvChad/nvim-colorizer.lua",
-    -- enabled = false,
+    enabled = false,
   },
   -- All NvChad plugins are lazy-loaded by default
   -- For a plugin to be loaded, you will need to set either `ft`, `cmd`, `keys`, `event`, or set `lazy = false`
@@ -70,14 +70,14 @@ local plugins = {
     "christoomey/vim-tmux-navigator",
     event = "VeryLazy",
   },
-  {
-    "startup-nvim/startup.nvim",
-    requires = { "nvim-telescope/telescope.nvim", "nvim-lua/plenary.nvim" },
-    lazy = false,
-    config = function()
-      require("startup").setup()
-    end,
-  },
+  -- {
+  --   "startup-nvim/startup.nvim",
+  --   requires = { "nvim-telescope/telescope.nvim", "nvim-lua/plenary.nvim" },
+  --   lazy = false,
+  --   config = function()
+  --     require("startup").setup()
+  --   end,
+  -- },
   {
     "windwp/nvim-ts-autotag",
     config = function()
@@ -150,6 +150,141 @@ local plugins = {
         -- Configuration here, or leave empty to use defaults
       }
     end,
+  },
+  {
+    "folke/trouble.nvim",
+    dependencies = { "nvim-tree/nvim-web-devicons" },
+    event = "VeryLazy",
+    opts = {
+      -- your configuration comes here
+      -- or leave it empty to use the default settings
+      -- refer to the configuration section below
+    },
+  },
+  {
+    "epwalsh/obsidian.nvim",
+    version = "*", -- recommended, use latest release instead of latest commit
+    lazy = true,
+    ft = "markdown",
+    event = {
+      "BufReadPre path/to/my-vault/**.md",
+      "BufNewFile path/to/my-vault/**.md",
+    },
+    dependencies = {
+      "nvim-lua/plenary.nvim",
+    },
+    opts = {
+      workspaces = {
+        {
+          name = "personal",
+          path = "~/Documents/Obsidian Vault/",
+        },
+      },
+    },
+  },
+  {
+    "epwalsh/pomo.nvim",
+    version = "*", -- Recommended, use latest release instead of latest commit
+    lazy = true,
+    cmd = { "TimerStart", "TimerRepeat" },
+    dependencies = {
+      "rcarriga/nvim-notify",
+    },
+    opts = {
+      notifiers = {
+        {
+          name = "Default",
+          opts = {
+            sticky = true,
+            title_icon = "󱎫",
+            text_icon = "󰄉",
+          },
+        },
+
+        { name = "System" },
+      },
+    },
+  },
+  {
+    "pocco81/true-zen.nvim",
+    lazy = false,
+    opts = {
+      modes = { -- configurations per mode
+        ataraxis = {
+          shade = "dark", -- if `dark` then dim the padding windows, otherwise if it's `light` it'll brighten said windows
+          backdrop = 0, -- percentage by which padding windows should be dimmed/brightened. Must be a number between 0 and 1. Set to 0 to keep the same background color
+          minimum_writing_area = { -- minimum size of main window
+            width = 70,
+            height = 44,
+          },
+          quit_untoggles = true, -- type :q or :qa to quit Ataraxis mode
+          padding = { -- padding windows
+            left = 52,
+            right = 52,
+            top = 0,
+            bottom = 0,
+          },
+          callbacks = { -- run functions when opening/closing Ataraxis mode
+            open_pre = nil,
+            open_pos = nil,
+            close_pre = nil,
+            close_pos = nil,
+          },
+        },
+        minimalist = {
+          ignored_buf_types = { "nofile" }, -- save current options from any window except ones displaying these kinds of buffers
+          options = { -- options to be disabled when entering Minimalist mode
+            number = false,
+            relativenumber = false,
+            showtabline = 0,
+            signcolumn = "no",
+            statusline = "",
+            cmdheight = 1,
+            laststatus = 0,
+            showcmd = false,
+            showmode = false,
+            ruler = false,
+            numberwidth = 1,
+          },
+          callbacks = { -- run functions when opening/closing Minimalist mode
+            open_pre = nil,
+            open_pos = nil,
+            close_pre = nil,
+            close_pos = nil,
+          },
+        },
+        narrow = {
+          folds_style = "informative",
+          run_ataraxis = true, -- display narrowed text in a Ataraxis session
+          callbacks = { -- run functions when opening/closing Narrow mode
+            open_pre = nil,
+            open_pos = nil,
+            close_pre = nil,
+            close_pos = nil,
+          },
+        },
+        focus = {
+          callbacks = { -- run functions when opening/closing Focus mode
+            open_pre = nil,
+            open_pos = nil,
+            close_pre = nil,
+            close_pos = nil,
+          },
+        },
+      },
+      integrations = {
+        tmux = true, -- hide tmux status bar in (minimalist, ataraxis)
+        twilight = true, -- enable twilight (ataraxis)
+        lualine = false, -- hide nvim-lualine (ataraxis)
+      },
+    },
+  },
+  { -- Lua
+    {
+      "folke/twilight.nvim",
+      lazy=false,
+      opts = {},
+    },
   },
 }
 

@@ -12,7 +12,7 @@ g.transparency = config.ui.transparency
 opt.laststatus = 3 -- global statusline
 opt.showmode = false
 
-opt.clipboard = "unnamedplus"
+-- opt.clipboard = "unnamed"
 opt.cursorline = true
 
 -- Indenting
