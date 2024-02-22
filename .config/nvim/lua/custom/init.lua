@@ -9,3 +9,12 @@
 
 vim.opt.relativenumber = true
 
+-- Autocommand to open nvim-tree if Neovim is started with a directory
+--
+
+vim.cmd([[
+augroup NvimTreeAutoOpen
+    autocmd!
+    autocmd VimEnter * if argc() == 1 && isdirectory(argv()[0]) | NvimTreeToggle | endif
+augroup END
+]])

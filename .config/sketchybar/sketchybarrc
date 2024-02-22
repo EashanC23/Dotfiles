@@ -19,9 +19,7 @@ sketchybar -m --bar height=25        \
                     position=top     \
                     padding_left=6 \
                     padding_right=6 \
-                    color=#2012130 \
-                    popup.drawing=on \
-                    popup.background.color=0xff000000 
+                    color=#212130 \
 
 
 ############## GLOBAL DEFAULTS ############## 
@@ -52,10 +50,10 @@ sketchybar -m --add item apple.logo left                                        
                                icon.font="SF Pro:Black:20.0"                                  \
                                label.drawing=off                                              \
                                click_script="sketchybar -m --set \$NAME popup.drawing=toggle" \
-                              popup.background.border_width=2                                \
+                              popup.background.border_width=1                                \
                               popup.background.corner_radius=3                                \
                               popup.background.border_color=0xaa8893f7                           \
-                              popup.background.border_width=3                               \
+                              popup.background.border_width=1                               \
                               popup.background.color=0xf0000000                             \
                                                                                              \
              --add item apple.activity popup.apple.logo                                      \
@@ -69,6 +67,7 @@ sketchybar -m --add item apple.logo left                                        
                               click_script="pmset displaysleepnow;                           
                                             sketchybar -m --set apple.logo popup.drawing=off"
 SPACE_ICONS=("1" "2" "3" "4" "5" "6" "7")
+SPACE_PADDING=4
 for i in "${!SPACE_ICONS[@]}"
 do
   sid=$(($i+1))
@@ -76,18 +75,29 @@ do
              --set space.$sid associated_space=$sid                      \
                               icon=${SPACE_ICONS[i]}                     \
                               background.color=0x7755dfe7                \
-                              background.corner_radius=9                 \
-                              background.height=20                       \
-                              background.drawing=off                     \
+                              background.height=17 \
+                              background.corner_radius=37                 \
+                              icon.padding_left=$SPACE_PADDING \
+                              icon.padding_right=$SPACE_PADDING \
+                              label.padding_left=$SPACE_PADDING \
+                              label.padding_right=$SPACE_PADDING \
                               label.drawing=off                          \
                               script="$PLUGIN_DIR/space.sh"              \
                               click_script="yabai -m space --focus $sid" 
 done
 
+sketchybar --add bracket spaces '/space\..*/'               \
+           --set         spaces background.color=0xff1c1c29 \
+                                background.corner_radius=4  \
+                                background.height=20
+
+
 sketchybar --add item system.label center \
            --set system.label script="sketchybar --set \$NAME label=\">\$INFO<\"" \
                               label.font="Trebuchet MS:Regular:14"\
+                              click_script="sketchybar --reload" \
            --subscribe system.label front_app_switched
+
 
 ############## RIGHT ITEMS ############## 
 
@@ -196,25 +206,12 @@ sketchybar -m --add item ram_label right \
                                     script="~/.config/sketchybar/plugins/ram.sh"
 
 
-#sketchybar -m --add event bluetooth_change "com.apple.bluetooth.status" \
-#              --add item headphones right \
-#              --set headphones icon=" " \
-#              script="~/.config/sketchybar/plugins/airpods_battery.sh" \
-#              --subscribe headphones bluetooth_change
-
-media=(
-  script="$PLUGIN_DIR/media.sh"
-  updates=on
-)
-
-#sketchybar --add item media center \
-#           --set media "${media[@]}" \
-#           --subscribe media media_change
 
 ###################### CENTER ITEMS ###################
 ############## FINALIZING THE SETUP ##############
 sketchybar --hotload true
 sketchybar -m --update
+sketchydate || sketchydate --reload
 
 echo "sketchybar configuration loaded.."
 

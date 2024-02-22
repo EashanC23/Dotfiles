@@ -23,6 +23,7 @@ local plugins = {
       "rust-analyzer",
       "typescript-language-server",
       "eslint-lsp",
+      "bash-language-server",
     },
   },
 
@@ -30,11 +31,11 @@ local plugins = {
     "nvim-treesitter/nvim-treesitter",
     opts = overrides.treesitter,
   },
-
-  {
-    "nvim-tree/nvim-tree.lua",
-    opts = overrides.nvimtree,
-  },
+  --
+  -- {
+  --   "nvim-tree/nvim-tree.lua",
+  --   opts = overrides.nvimtree,
+  -- },
 
   -- Install a plugin
   {
@@ -279,11 +280,22 @@ local plugins = {
       },
     },
   },
-  { -- Lua
+  {
     {
       "folke/twilight.nvim",
-      lazy=false,
+      lazy = false,
       opts = {},
+    },
+  },
+  {
+    "folke/noice.nvim",
+    event = "VeryLazy",
+    opts = {
+      -- add any options here
+    },
+    dependencies = {
+      "MunifTanjim/nui.nvim",
+      "rcarriga/nvim-notify",
     },
   },
 }

@@ -1,4 +1,4 @@
----@type MappingsTable
+--@type MappingsTable
 local M = {}
 
 M.general = {
@@ -30,16 +30,18 @@ M.general = {
     ["L"] = { "$", "end of line" },
 
     -- Trouble.nvim
-    ["<leader>tt"] = {":TroubleToggle<Return>","Toggle Trouble.nvim"},
+    ["<leader>tt"] = { ":TroubleToggle<Return>", "Toggle Trouble.nvim" },
 
     -- True zen
-    ["<leader>tzm"] = {":TZMinimalist <Return>","Toggle True-zen Minimalist"},
-    ["<leader>tza"] = {":TZAtaraxis <Return>","Toggle True-zen Ataraxis"},
-    ["<leader>tzn"] = {":TZNarrow <Return>","Toggle True-zen Narrow"},
+    ["<leader>tzm"] = { ":TZMinimalist <Return>", "Toggle True-zen Minimalist" },
+    ["<leader>tza"] = { ":TZAtaraxis <Return>", "Toggle True-zen Ataraxis" },
+    ["<leader>tzn"] = { ":TZNarrow <Return>", "Toggle True-zen Narrow" },
 
     -- Twilight reading
-    ["<leader>tw"] = {":Twilight <Return>","Toggle True-zen"},
+    ["<leader>tw"] = { ":Twilight <Return>", "Toggle True-zen" },
 
+    -- Clearing notifications
+    ["<leader>nd"] = { ":NoiceDismiss<CR>", "dismiss all noice messages" },
   },
   v = {
     [">"] = { ">gv", "indent" },

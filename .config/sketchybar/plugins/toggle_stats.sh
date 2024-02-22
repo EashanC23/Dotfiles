@@ -38,7 +38,6 @@ hide_stats() {
 
 		toggle_stats() {
 			state=$(sketchybar --query stats_separator | jq -r .icon.value)
-			echo $state
 			case $state in
 				"") show_stats
 					;;

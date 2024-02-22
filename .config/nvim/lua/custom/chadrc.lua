@@ -29,7 +29,7 @@ M.ui = {
 
     buttons = {
       { "󰈚  Recent Files", "Space F O", "Telescope oldfiles" },
-      { "󰍉  Find File", "Space F F", "Telescope find_files" },
+      { "󰍉  Find File", "Space F L", "Telescope find_files" },
       { "󰈭  Find Word", "Space F W", "Telescope live_grep" },
       { "  Bookmarks", "Space M A", "Telescope marks" },
       { "  Mappings", "Space C H", "NvCheatsheet" },

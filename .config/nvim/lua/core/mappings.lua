@@ -345,14 +345,14 @@ M.nvterm = {
     -- new
     ["<leader>h"] = {
       function()
-        require("nvterm.terminal").new "horizontal"
+        require("nvterm.terminal").toggle "horizontal"
       end,
       "New horizontal term",
     },
 
     ["<leader>v"] = {
       function()
-        require("nvterm.terminal").new "vertical"
+        require("nvterm.terminal").toggle "vertical"
       end,
       "New vertical term",
     },
