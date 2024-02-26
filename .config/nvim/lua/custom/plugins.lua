@@ -31,11 +31,6 @@ local plugins = {
     "nvim-treesitter/nvim-treesitter",
     opts = overrides.treesitter,
   },
-  --
-  -- {
-  --   "nvim-tree/nvim-tree.lua",
-  --   opts = overrides.nvimtree,
-  -- },
 
   -- Install a plugin
   {
@@ -48,21 +43,16 @@ local plugins = {
 
   {
     "stevearc/conform.nvim",
-    --  for users those who want auto-save conform + lazyloading!
     event = "BufWritePre",
     config = function()
       require "custom.configs.conform"
     end,
   },
 
-  -- To make a plugin not be loaded
   {
     "NvChad/nvim-colorizer.lua",
     enabled = false,
   },
-  -- All NvChad plugins are lazy-loaded by default
-  -- For a plugin to be loaded, you will need to set either `ft`, `cmd`, `keys`, `event`, or set `lazy = false`
-  -- If you want a plugin to load on startup, add `lazy = false` to a plugin spec, for example
   {
     "mg979/vim-visual-multi",
     lazy = false,
@@ -143,11 +133,7 @@ local plugins = {
     "folke/trouble.nvim",
     dependencies = { "nvim-tree/nvim-web-devicons" },
     event = "VeryLazy",
-    opts = {
-      -- your configuration comes here
-      -- or leave it empty to use the default settings
-      -- refer to the configuration section below
-    },
+    opts = {},
   },
   {
     "epwalsh/obsidian.nvim",
@@ -170,8 +156,8 @@ local plugins = {
     version = "*", -- Recommended, use latest release instead of latest commit
     lazy = true,
     cmd = { "TimerStart", "TimerRepeat" },
-    config=function()
-      require"custom.configs.pomo"
+    config = function()
+      require "custom.configs.pomo"
     end,
     dependencies = {
       "rcarriga/nvim-notify",
@@ -202,6 +188,15 @@ local plugins = {
       "rcarriga/nvim-notify",
     },
     after = "nvim-lspconfig",
+  },
+  {
+    "kdheepak/lazygit.nvim",
+    lazy=false,
+    config = function()
+    end,
+    dependencies = {
+      "nvim-lua/plenary.nvim",
+    },
   },
 }
 

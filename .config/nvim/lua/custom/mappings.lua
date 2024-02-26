@@ -42,6 +42,9 @@ M.general = {
 
     -- Clearing notifications
     ["<leader>nd"] = { ":NoiceDismiss<CR>", "dismiss all noice messages" },
+
+    --lazy git
+    ["<leader>lg"] = { ":LazyGit<CR>", "open LazyGit "}
   },
   v = {
     [">"] = { ">gv", "indent" },
