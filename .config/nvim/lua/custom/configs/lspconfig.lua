@@ -5,7 +5,7 @@ local util = require "lspconfig/util"
 local lspconfig = require "lspconfig"
 
 -- if you just want default config for the servers then put them in a table
-local servers = { "html", "cssls", "tsserver", "clangd", "bash-language-server", "python_lsp_server" }
+local servers = { "html", "cssls", "tsserver", "clangd", "bashls", "marksman" }
 
 for _, lsp in ipairs(servers) do
   lspconfig[lsp].setup {
@@ -18,8 +18,18 @@ end
   -- filetypes = {"sh","zsh"},
 -- }
 
-lspconfig.python_lsp_server.setup {
-  filetypes = {"py"}
+lspconfig.pylsp.setup {
+  filetypes = {"python"},
+  settings = {
+    pylsp = {
+      plugins = {
+        pycodestyle = {
+          ignore = {'W391'},
+          maxLineLength = 100
+        }
+      }
+    }
+  }
 }
 
 

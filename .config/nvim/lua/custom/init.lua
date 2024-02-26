@@ -15,6 +15,6 @@ vim.opt.relativenumber = true
 vim.cmd([[
 augroup NvimTreeAutoOpen
     autocmd!
-    autocmd VimEnter * if argc() == 1 && isdirectory(argv()[0]) | NvimTreeToggle | endif
+    autocmd VimEnter * if argc() == 1 && isdirectory(argv()[0]) | NvimTreeToggle (argv()[0]) | endif
 augroup END
 ]])
