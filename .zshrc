@@ -54,9 +54,6 @@ fpath=($fpath "~/.zfunctions")
 ##### User Aliases and Functions
 eval $(thefuck --alias)
 # aliases 
-alias shit="fuck"
-alias startYabai="brew services start yabai"
-alias stopYabai="brew services stop yabai"
 alias songDL="sh ~/songDL.sh"
 alias tree="tree -h --sort size --du"
 alias bsr="brew services restart" 
@@ -69,9 +66,10 @@ alias cat='bat'
 alias oo='open .'
 alias wipe='~/wipe.sh'
 alias unwipe='~/unwipe.sh'
-alias python='python3'
+alias python='python3.11'
 alias cr='cargo run'
 alias rmld='rm -rf $(1)'
+alias lg='lazygit'
 
 
 # Java development 
