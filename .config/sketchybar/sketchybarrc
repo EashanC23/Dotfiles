@@ -144,6 +144,7 @@ sketchybar  --add   item slack right \
                     background.padding_right=0 \
                     click_script="open -a Vivaldi" \
                     icon.font.size=18 \
+                    updates=on \
            --subscribe slack system_woke
 
 
