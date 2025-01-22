@@ -17,6 +17,8 @@ M.general = {
     ["<leader>ff"] = { "<cmd> Telescope current_buffer_fuzzy_find <CR>", "Find in current buffer" },
     ["<leader>fl"] = { "<cmd> Telescope find_files <CR>", "Find files" },
 
+    ["<leader>ra"] = { "vim.lsp.buf.rename()", "rename" },
+
     --increment/decrement
     ["+"] = { "<C-a>", "increment" },
     ["-"] = { "<C-x>", "decrement" },

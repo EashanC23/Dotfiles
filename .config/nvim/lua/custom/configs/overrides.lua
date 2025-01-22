@@ -27,6 +27,8 @@ M.mason = {
     -- lua stuff
     "lua-language-server",
     "stylua",
+    -- Java stuff,
+    "jdtls",
 
     -- web dev stuff
     "css-lsp",
