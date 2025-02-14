@@ -58,7 +58,7 @@ alias songDL="sh ~/songDL.sh"
 alias tree="tree -h --sort size --du"
 alias bsr="brew services restart" 
 alias ytdlmp3="yt-dlp --audio-format mp3 -x --external-downloader aria2c --external-downloader-args '-c -j 5 -x 10 --summary-interval=0'  -o \"%(title)s.%(ext)s\""
-alias ytdl="yt-dlp -f mp4 --external-downloader aria2c --external-downloader-args '-c -j 5 -x 10 --summary-interval=0' -o \"%(title)s.%(ext)s\""
+alias ytdl="yt-dlp --external-downloader aria2c --external-downloader-args '-c -j 5 -x 10 --summary-interval=0' -o \"%(title)s.%(ext)s\""
 alias ls='lsd'
 alias lt='lsd --tree'
 alias reload="source $HOME/.zshrc"
@@ -70,6 +70,8 @@ alias python='python3.11'
 alias cr='cargo run'
 alias rmld='rm -rf $(1)'
 alias lg='lazygit'
+alias simulate='sudo python3.11 ~/Developments/python/tkinterLocation/main.py'
+source ~/.env
 
 
 # Java development 
@@ -81,7 +83,7 @@ function toggleJavaVers(){
     if [[ "$jh" == "/Library/Java/JavaVirtualMachines/jdk1.8.0_221.jdk" ]];then
         export JAVA_HOME="/opt/homebrew/opt/openjdk@17/"
     else
-        export JAVA_HOME="/Library/Java/JavaVirtualMachines/jdk1.8.0_221.jdk"
+        export JAVA_HOME="/Library/Java/JavaVirtualMachines/temurin-8.jdk/"
     fi
     java -version
 }
@@ -103,6 +105,32 @@ function jcrd() {
     javac -cp ".:~/Developments/Java/libraries/gpdraw.jar" $1 && java -classpath ".:~/Developments/Java/libraries/gpdraw.jar" $r
 
 }
+
+function javatest () {
+    # Set the directory to the first argument or default to the current directory
+    local directory="${1:-.}"
+    cwd=$(pwd)
+    wd="$cwd/$directory"
+    # Remove any existing .class files in the specified directory
+    rm -f "$wd"/*.class
+    # Compile all .java files in the specified directory, preserving the package structure
+    javac -cp .:/Users/eashanc/Developments/java/libraries/junit-4.13.2.jar:/Users/eashanc/Developments/java/libraries/hamcrest-core-1.3.jar "$wd"/*.java
+    # Check if compilation was successful
+    if [[ $? -eq 0 ]]; then
+        # Replace slashes with dots in the directory path to construct the package name
+        package_name=$(echo "$directory" | sed 's/\//./g')
+        
+        # Run the compiled class using the package name
+        java -cp .:/Users/eashanc/Developments/java/libraries/junit-4.13.2.jar:/Users/eashanc/Developments/java/libraries/hamcrest-core-1.3.jar "$package_name".RunLocalTest
+    else
+        echo "Compilation failed with errors."
+    fi
+}
+
+
+
+
+
 function jcri(){
     r=$(echo $1 | cut -d'.' -f 1)
     javac -cp ".:~/Developments/Java/libraries/gpdraw.jar:$2" $1 && java -classpath ".:~/Developments/Java/libraries/gpdraw.jar:$2" $r
@@ -148,6 +176,44 @@ function aytdll(){
   mpv --playlist=playlist.txt
   rm tmp_list.txt
 }
+
+function stitch_videos() {
+    # Check if at least one file is provided
+    if [ "$#" -lt 1 ]; then
+        echo "Error: No video files provided."
+        return 1
+    fi
+    echo "past checking args"
+
+    # Create a temporary text file for the list of video files
+    video_list="video_list.txt"
+
+    # Loop through each argument and check if it's a valid video file
+    for video in "$@"; do
+        if [[ ! -f "$video" || ! "$video" =~ \.(mp4|avi|mkv|MOV|flv)$ ]]; then
+            echo "Error: '$video' is not a valid video file."
+            return 1
+        fi
+        echo "file '$video'" >> "$video_list"
+    done
+
+    echo "Video list created successfully."
+
+    # Run the FFmpeg command to concatenate the videos
+    output_video="output_video.mp4"
+    echo "Running FFmpeg command to stitch videos."
+    ffmpeg -f concat -safe 0 -i "$video_list" -c copy "$output_video"
+    if [ $? -ne 0 ]; then
+        echo "Error: FFmpeg failed to concatenate videos."
+        return 1
+    fi
+
+    # Clean up the temporary text file
+    rm "$video_list"
+    
+    echo "Videos stitched successfully into '$output_video'."
+}
+
 function qrcode(){
   curl -d "$1" qrcode.show
 }
