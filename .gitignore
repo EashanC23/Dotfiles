@@ -1,13 +1,14 @@
 # node_modules/
 # .config/mpv/watch_later
-# **/.DS_Store
+**/.DS_Store
+**/**.DS_Store
 # .config/Wondershare/
 # .config/coc/
 # .config/thefuck/
 #.config/deluge/
 # .config/raycast/
 # .config/ytfzf/
-# *.DS_Store
+*.DS_Store
 # node_modules
 /* 
 
@@ -24,9 +25,7 @@
 !.zshrc
 !.yabairc
 !.gitignore
-!.tmux/
+# !.tmux/
 !.tmux.conf
 !README.md
 !Brewfile
-
-.tmux/plugins
