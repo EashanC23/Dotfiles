@@ -3,69 +3,68 @@ PLUGIN_DIR="~/.config/sketchybar/plugins" # Directory where all the plugin scrip
 
 source ~/.config/sketchybar/colors.sh
 
-############## BAR ############## 
-
-
-if defaults read -g AppleInterfaceStyle | grep -iq "Dark"; then
-	BG_COLOR="0xff2012130"
-	FONT_COLOR="0xffffffff"
-else
-	BG_COLOR="0xff2012130"
-	FONT_COLOR="0xff00000"
-fi
-
+#################### BAR ####################
 sketchybar -m --bar height=25        \
                     blur_radius=50   \
                     position=top     \
-                    padding_left=6 \
-                    padding_right=6 \
-                    color=#212130 \
+                    padding_left=6   \
+                    padding_right=6  \
+                    color=#212130    \
 
 
-############## GLOBAL DEFAULTS ############## 
-sketchybar -m --default updates=when_shown                    \
-                        drawing=on                            \
-                        icon.color=0xffffffff                 \
-                        label.color=0xffffffff \
-                        label.padding_left=2  \
-                        label.padding_right=2 \
-                        icon.padding_left=2   \
-                        icon.padding_right=2 \
-                        label.padding_left=2  \
-                        icon.padding_right=2  \
-                        icon.padding_left=6   \
-                        label.padding_right=6 \
-                        label.font="Hack Nerd Font:Regular:13.0" \
-                       background.padding_left=3                                             \
-                       background.padding_right=3                                            \
-                       icon.padding_right=6                                                  \
-                       icon.font="SF Pro:Semibold:16.0"                                          \
-                       label.font="SF Pro:Semibold:13.0"                                     
+############## GLOBAL DEFAULTS ##############
+sketchybar -m --default updates=when_shown                           \
+                        drawing=on                                   \
+                        icon.color=0xffffffff                        \
+                        label.color=0xffffffff                       \
+                        label.padding_left=2                         \
+                        label.padding_right=2                        \
+                        icon.padding_left=2                          \
+                        icon.padding_right=2                         \
+                        label.padding_left=2                         \
+                        icon.padding_right=2                         \
+                        icon.padding_left=6                          \
+                        label.padding_right=6                        \
+                        label.font="Hack Nerd Font:Regular:13.0"     \
+                        background.padding_left=3                    \
+                        background.padding_right=3                   \
+                        icon.padding_right=6                         \
+                        icon.font="SF Pro:Semibold:16.0"             \
+                        label.font="SF Pro:Semibold:13.0"
 
-# ############## LEFT ITEMS ############## 
 
-# APPLE LOGO THINGI
+###$$########### CENTER ITEMS ###############
+sketchybar --add item system.label center                                         \
+           --set system.label script="sketchybar --set \$NAME label=\">\$INFO<\"" \
+                              label.font="Trebuchet MS:Regular:14"                \
+                              click_script="sketchybar --reload"                  \
+           --subscribe system.label front_app_switched
+
+
+################ LEFT ITEMS #################
 sketchybar -m --add item apple.logo left                                                      \
               --set apple.logo icon=                                                         \
                                icon.font="SF Pro:Black:20.0"                                  \
                                label.drawing=off                                              \
                                click_script="sketchybar -m --set \$NAME popup.drawing=toggle" \
-                              popup.background.border_width=1                                \
+                              popup.background.border_width=1                                 \
                               popup.background.corner_radius=3                                \
-                              popup.background.border_color=0xaa8893f7                           \
-                              popup.background.border_width=1                               \
-                              popup.background.color=0xf0000000                             \
-                                                                                             \
-             --add item apple.activity popup.apple.logo                                      \
-             --set apple.activity icon=􀒓                                                     \
-                              label="Activity"                                               \
-                              click_script="open -a 'Activity Monitor';                       
-                                            sketchybar -m --set apple.logo popup.drawing=off"\
-             --add item apple.lock popup.apple.logo                                          \
-             --set apple.lock icon=􀒳                                                         \
-                              label="Lock Screen"                                            \
-                              click_script="pmset displaysleepnow;                           
+                              popup.background.border_color=0xaa8893f7                        \
+                              popup.background.border_width=1                                 \
+                              popup.background.color=0xf0000000                               \
+                                                                                              \
+             --add item apple.activity popup.apple.logo                                       \
+             --set apple.activity icon=􀒓                                                      \
+                              label="Activity"                                                \
+                              click_script="open -a 'Activity Monitor';
+                                            sketchybar -m --set apple.logo popup.drawing=off" \
+             --add item apple.lock popup.apple.logo                                           \
+             --set apple.lock icon=􀒳                                                          \
+                              label="Lock Screen"                                             \
+                              click_script="pmset displaysleepnow;
                                             sketchybar -m --set apple.logo popup.drawing=off"
+
+############# SPACE INDICATOR ###############
 SPACE_ICONS=("1" "2" "3" "4" "5" "6" "7")
 SPACE_PADDING=4
 for i in "${!SPACE_ICONS[@]}"
@@ -75,15 +74,15 @@ do
              --set space.$sid associated_space=$sid                      \
                               icon=${SPACE_ICONS[i]}                     \
                               background.color=0x7755dfe7                \
-                              background.height=17 \
-                              background.corner_radius=37                 \
-                              icon.padding_left=$SPACE_PADDING \
-                              icon.padding_right=$SPACE_PADDING \
-                              label.padding_left=$SPACE_PADDING \
-                              label.padding_right=$SPACE_PADDING \
+                              background.height=17                       \
+                              background.corner_radius=37                \
+                              icon.padding_left=$SPACE_PADDING           \
+                              icon.padding_right=$SPACE_PADDING          \
+                              label.padding_left=$SPACE_PADDING          \
+                              label.padding_right=$SPACE_PADDING         \
                               label.drawing=off                          \
                               script="$PLUGIN_DIR/space.sh"              \
-                              click_script="yabai -m space --focus $sid" 
+                              click_script="yabai -m space --focus $sid"
 done
 
 sketchybar --add bracket spaces '/space\..*/'               \
@@ -92,67 +91,60 @@ sketchybar --add bracket spaces '/space\..*/'               \
                                 background.height=20
 
 
-sketchybar --add item system.label center \
-           --set system.label script="sketchybar --set \$NAME label=\">\$INFO<\"" \
-                              label.font="Trebuchet MS:Regular:14"\
-                              click_script="sketchybar --reload" \
-           --subscribe system.label front_app_switched
+############## RIGHT ITEMS ##############
 
-
-############## RIGHT ITEMS ############## 
-
-sketchybar -m --add       item               time             right                                        \
-              --set       time               update_freq=1                                                 \
-                                             icon.padding_right=0                                          \
-                                             label.padding_left=0                                          \
-                                             script="~/.config/sketchybar/plugins/time.sh"                 \
-                                                                                                           \
-              --add       item               date             right                                        \
-              --set       date               update_freq=120                                                \
-                                             background.color=0xffe8e8e9                                   \
-                                             label.color=0xff000000                                        \
-                                             label.font="SF Pro:Semibold:12"                               \
-                                             icon.padding_right=0                                          \
-                                             label.padding_left=0                                          \
-                                             background.height=15                                          \
-                                             background.corner_radius=4                                    \
-                                             script="~/.config/sketchybar/plugins/date.sh"
-            --subscribe  date system_woke
+sketchybar -m --add item               time right                                                    \
+              --set time               update_freq=1                                                 \
+                                       icon.padding_right=0                                          \
+                                       label.padding_left=0                                          \
+                                       script="~/.config/sketchybar/plugins/time.sh"                 \
+                                                                                                     \
+              --add item               date right                                                    \
+              --set date               update_freq=120                                               \
+                                       background.color=0xffe8e8e9                                   \
+                                       label.color=0xff000000                                        \
+                                       label.font="SF Pro:Semibold:12"                               \
+                                       icon.padding_right=0                                          \
+                                       label.padding_left=0                                          \
+                                       background.height=15                                          \
+                                       background.corner_radius=4                                    \
+                                       script="~/.config/sketchybar/plugins/date.sh"                 \
+            --subscribe date system_woke
 
 POPUP_CLICK_SCRIPT="sketchybar --set \$NAME popup.drawing=toggle"
 
-sketchybar --add item  ip_address right                              \
-             --set       ip_address script="$PLUGIN_DIR/ip_address.sh" \
-             update_freq=3                     \
-             padding_left=8                     \
-             padding_right=8                    \
-             background.border_width=0          \
-             background.corner_radius=4         \
-             background.height=15               \
-             icon.highlight=on                  \
-             label.highlight=on   \
-             icon.font="Hack Nerd Font:Bold:13.0"   \
-             label.font="SF Pro:Semibold:12.0"  \
-             click_script="$PLUGIN_DIR/warp.sh" \ 
-             --subscribe ip_address wifi_change                        \
+sketchybar --add item  ip_address right                                     \
+             --set     ip_address script="$PLUGIN_DIR/ip_address.sh"        \
+                                     update_freq=60                         \
+                                     padding_left=8                         \
+                                     padding_right=8                        \
+                                     background.border_width=0              \
+                                     background.corner_radius=4             \
+                                     background.height=15                   \
+                                     icon.highlight=on                      \
+                                     label.highlight=on                     \
+                                     icon.font="Hack Nerd Font:Bold:13.0"   \
+                                     label.font="SF Pro:Semibold:12.0"      \
+                                     click_script="$PLUGIN_DIR/warp.sh"     \
+             --subscribe ip_address wifi_change                             \
 
-sketchybar  --add   item slack right \
-            --set   slack \
-                    update_freq=5 \
-                    script="$PLUGIN_DIR/slack.sh" \
-                    background.padding_left=5 \
-                    background.padding_right=0 \
-                    click_script="open -a Vivaldi" \
-                    icon.font.size=18 \
-                    updates=on \
+sketchybar  --add   item slack right                    \
+            --set   slack                               \
+                    update_freq=5                       \
+                    script="$PLUGIN_DIR/slack.sh"       \
+                    background.padding_left=5           \
+                    background.padding_right=0          \
+                    click_script="open -a Vivaldi"      \
+                    icon.font.size=18                   \
+                    updates=on                          \
            --subscribe slack system_woke
 
 
-sketchybar -m --add item battery right                                     \
+sketchybar -m --add item battery right                                      \
               --set battery update_freq=30                                  \
-              --set battery icon=󰁹                                         \
-              --set battery script="~/.config/sketchybar/plugins/power.sh" \
-              --set battery icon.font="Hack Nerd Font:Regular:12"     
+                    script="~/.config/sketchybar/plugins/power.sh"          \
+                    icon.font="Hack Nerd Font:Regular:12"                   \
+              --subscribe battery power_source_change
 
 
 
@@ -160,59 +152,70 @@ sketchybar 	--add event 				hide_stats   					                                  
            	--add event 				show_stats 					                                        \
            	--add event 				toggle_stats 					                                      \
                                                            										              \
-           	--add item         	animatorStats right                									            \
-           	--set animatorStats     	drawing=off                  									              \
+           	--add item         	animatorStats right                							            \
+           	--set animatorStats drawing=off                 						                    \
                               	updates=on                   									              \
-                              	script="$PLUGIN_DIR/toggle_stats.sh"                      \
+                              	script="$PLUGIN_DIR/toggle_stats.sh"                        \
            	--subscribe        	animatorStats hide_stats show_stats toggle_stats
 
 
-sketchybar   --add item 	stats_separator right                                               \
-             --set 				stats_separator  	icon=                                            \
-                              							icon.font="Hack Nerd Font:Regular:18.0"               \
-                                            icon.color=0xff55dfe7 \
-                              							background.padding_left=5                        \
-                              							background.padding_right=0                       \
-                              							label.drawing=off                                 \
-                              							associated_display=2                         \
-                              							click_script='sketchybar --trigger toggle_stats'  
+sketchybar   --add item 	stats_separator right                                             \
+             --set 				stats_separator icon=                                            \
+                              						icon.font="Hack Nerd Font:Regular:18.0"           \
+                                          icon.color=0xff55dfe7                             \
+                              						background.padding_left=5                         \
+                              						background.padding_right=0                        \
+                              						label.drawing=off                                 \
+                              						associated_display=2                              \
+                              						click_script='sketchybar --trigger toggle_stats'
 
-sketchybar -m --add       item               cpu_label right                                               \
-              --set       cpu_label          label.font="SF Pro:Semibold:7"                                \
-                                             label=CPU                                                     \
-                                             y_offset=7                                                    \
-                              							 associated_display=2                         \
-                                             width=0                                                       \
-                                                                                                           \
-              --add       item               cpu_percent right                                             \
-              --set       cpu_percent        label.font="SF Pro:Heavy:12"                                  \
-                                             y_offset=-3                                                   \
-                                             update_freq=2                                                 \
-                              							 associated_display=2                         \
-                                             script="~/.config/sketchybar/plugins/cpu.sh"
+sketchybar -m --add item               cpu_label right                                               \
+              --set cpu_label          label.font="SF Pro:Semibold:7"                                \
+                                       label=CPU                                                     \
+                                       y_offset=7                                                    \
+                        							 associated_display=2                                          \
+                                       width=0                                                       \
+                                                                                                     \
+              --add item               cpu_percent right                                             \
+              --set cpu_percent        label.font="SF Pro:Heavy:12"                                  \
+                                       y_offset=-3                                                   \
+                                       update_freq=2                                                 \
+                        							 associated_display=2                                          \
+                                       script="~/.config/sketchybar/plugins/cpu.sh"
 
 
-sketchybar -m --add item ram_label right \
-              --set ram_label label.font="SF Pro:Semibold:7" \
-                               label=RAM \
-                               y_offset=7 \
-                               associated_display=2 \
-                               width=0 \
-                               icon.padding_right= 0\
-              --add item ram_percentage right \
+sketchybar -m --add item ram_label right                        \
+              --set ram_label label.font="SF Pro:Semibold:7"    \
+                              label=RAM                         \
+                              y_offset=7                        \
+                              associated_display=2              \
+                              width=0                           \
+                              icon.padding_right=0              \
+              --add item ram_percentage right                   \
               --set ram_percentage label.font="SF Pro:Heavy:12" \
-                                    y_offset=-3 \
-                                    associated_display=2 \
-                                    update_freq=2 \
+                                    y_offset=-3                 \
+                                    associated_display=2        \
+                                    update_freq=2               \
                                     script="~/.config/sketchybar/plugins/ram.sh"
 
 
 
-###################### CENTER ITEMS ###################
+#### SCRIPTING INTERFACING
+sketchybar --add event lock   "com.apple.screenIsLocked"     \
+           --add event unlock "com.apple.screenIsUnlocked"
+
+sketchybar --add item scripting right                        \
+           --set scripting                                   \
+                 drawing=off                                 \
+                 script="$PLUGIN_DIR/scripting.sh"           \
+                 updates=on                                  \
+                 update_freq=0                               \
+           --subscribe scripting power_source_change lock unlock
+
 ############## FINALIZING THE SETUP ##############
 sketchybar --hotload true
 sketchybar -m --update
-sketchydate || sketchydate --reload
+sketchydate 2> /dev/null || sketchydate --reload
 
 echo "sketchybar configuration loaded.."
 

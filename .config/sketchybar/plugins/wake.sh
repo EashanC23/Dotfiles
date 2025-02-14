@@ -11,7 +11,7 @@ lock() {
 }
 
 unlock() {
-  sketchybar --animate sin 25 \
+  sketchybar --animate tanh 45 \
              --bar y_offset=0 \
                    notch_width=200 \
                    margin=0 \
