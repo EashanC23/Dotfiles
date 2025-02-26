@@ -1,60 +1,41 @@
-# scripting-addition must be loaded manually if
-sudo yabai --load-sa
-
-# you are running yabai on macOS Big Sur. Uncomment
-
-# the following line to have the injection performed
-
-# when the config is executed during startup.
-
-#
-
-# for this to work you must configure sudo such that
-
-# it will be able to run the command without password
-
-#
-
-# see this wiki page for information:
-
-# - https://github.com/koekeishiya/yabai/wiki/Installing-yabai-(latest-release)
+#!/usr/bin/env sh
 # app settings
 
-yabai -m rule --add app="^FaceTime$" manage=off  
+manage_off=(
+  "^FaceTime$"
+  "^System Settings$"
+  "^Books$"
+  "^QuickTime Player$"
+  "Finder"
+  "zoom.us"
+  "^Messages$"
+  "^Bloons TD Battles$"
+  "Molar"
+  "^Wondershare Filmora 11$"
+  "eqMac"
+  "Python"
+  "McEngine"
+)
+
+for app in "${manage_off[@]}"; do
+  yabai -m rule --add app="$app" manage=off
+done
+
 yabai -m rule --add app="^ATLauncher$" manage=off grid=1:1:0:0:1:1
-yabai -m rule --add app="^System Preferences$" manage=off  
-yabai -m rule --add app="^Books$" manage=off  
-yabai -m rule --add app="^MPV$" manage=off  
-yabai -m rule --add app="^QuickTime Player$" manage=off  
-yabai -m rule --add app="Code" opacity=0.90 
-yabai -m rule --add app="^Rectangle$" manage=off 
-yabai -m rule --add app="^VSCodium$" opacity=0.92
 yabai -m rule --add app="^mpv$" manage=off sticky=on
-yabai -m rule --add app="Finder" manage=off 
-yabai -m rule --add app="zoom.us" manage=off  
-yabai -m rule --add app="^Messages$" manage=off  
-yabai -m rule --add app="^Bloons TD Battles$" manage=off  
-yabai -m rule --add app="^Preview$" manage=off  grid=1:1:0:0:1:1
-yabai -m rule --add app="Notion" opacity=0.97
-yabai -m rule --add app="^Finder$" manage=off 
-yabai -m rule --add app="^Mail$"  manage=off grid=1:1:0:0:1:1
-yabai -m rule --add app="^Minecraft$"  manage=off grid=1:1:0:0:1:1
-yabai -m rule --add app="^Molar$" manage=off 
-yabai -m rule --add app="^Wondershare Filmora 11$" manage=off 
-yabai -m rule --add app="eqMac" manage=off  
-yabai -m rule --add app="Python" manage=off  
-yabai -m rule --add app="McEngine" manage=off  
+yabai -m rule --add app="^Preview$" manage=off grid=1:1:0:0:1:1
+yabai -m rule --add app="^Mail$" manage=off grid=1:1:0:0:1:1
+yabai -m rule --add app="^Minecraft$" manage=off grid=1:1:0:0:1:1
 
-#
 
-yabai -m signal --add event=dock_did_restart action="sudo yabai --load-sa"
+
 
 # global settings
 
-yabai -m config mouse_follows_focus on 
-yabai -m config focus_follows_mouse autofocus 
-yabai -m config window_origin_display focused 
-yabai -m config window_placement cursor               \
+yabai -m config mouse_follows_focus on                \
+                focus_follows_mouse autofocus         \
+                window_origin_display focused         \
+                window_placement cursor               \
                 window_topmost off                    \
                 window_shadow off                     \
                 window_opacity off                    \
@@ -78,10 +59,10 @@ yabai -m rule --add sub-layer normal
 # general space settings
 
 yabai -m config layout bsp                  \ 
-                top_padding 0               \ 
+                top_padding    0            \ 
                 bottom_padding 0            \
-                left_padding 0              \
-                right_padding 0             
+                left_padding   0            \
+                right_padding  0             
 yabai -m config window_gap 08              
 
 yabai -m signal --add event=window_created action="sketchybar -m --trigger window_change &> /dev/null"
