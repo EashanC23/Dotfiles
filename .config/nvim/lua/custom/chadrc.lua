@@ -4,7 +4,7 @@ local M = {}
 -- Path to overriding theme and highlights files
 local highlights = require "custom.highlights"
 
-local headers = require "custom.headers"
+local headers = require "custom.headers_lewd"
 
 local function selectRandomHeader()
   math.randomseed(os.time()) -- Seed the random number generator
@@ -24,15 +24,18 @@ M.ui = {
 
     header = selectRandomHeader(),
 
-    -- header = {
-    -- },
-
     buttons = {
       { "󰈚  Recent Files", "Space F O", "Telescope oldfiles" },
       { "󰍉  Find File", "Space F L", "Telescope find_files" },
-      { "󰈭  Find Word", "Space F W", "Telescope live_grep" },
       { "  Bookmarks", "Space M A", "Telescope marks" },
       { "  Mappings", "Space C H", "NvCheatsheet" },
+    },
+
+    tabufline = {
+      enabled = true,
+      order = { "treeOffset", "buffers", "tabs", "btns" },
+      modules = nil,
+      bufwidth = 21,
     },
   },
 }

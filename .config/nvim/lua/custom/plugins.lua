@@ -3,8 +3,6 @@ local overrides = require "custom.configs.overrides"
 ---@type NvPluginSpec[]
 local plugins = {
 
-  -- Override plugin definition options
-
   {
     "neovim/nvim-lspconfig",
     config = function()
@@ -31,8 +29,6 @@ local plugins = {
     "nvim-treesitter/nvim-treesitter",
     opts = overrides.treesitter,
   },
-
-  -- Install a plugin
   {
     "max397574/better-escape.nvim",
     event = "InsertEnter",
@@ -80,38 +76,7 @@ local plugins = {
     "folke/trouble.nvim",
     opts = {}, -- for default options, refer to the configuration section for custom setup.
     cmd = "Trouble",
-    keys = {
-      {
-        "<leader>tt",
-        "<cmd>Trouble diagnostics toggle<cr>",
-        desc = "Diagnostics (Trouble)",
-      },
-      {
-        "<leader>tX",
-        "<cmd>Trouble diagnostics toggle filter.buf=0<cr>",
-        desc = "Buffer Diagnostics (Trouble)",
-      },
-      {
-        "<leader>cs",
-        "<cmd>Trouble symbols toggle focus=false<cr>",
-        desc = "Symbols (Trouble)",
-      },
-      {
-        "<leader>cl",
-        "<cmd>Trouble lsp toggle focus=false win.position=right<cr>",
-        desc = "LSP Definitions / references / ... (Trouble)",
-      },
-      {
-        "<leader>xL",
-        "<cmd>Trouble loclist toggle<cr>",
-        desc = "Location List (Trouble)",
-      },
-      {
-        "<leader>xQ",
-        "<cmd>Trouble qflist toggle<cr>",
-        desc = "Quickfix List (Trouble)",
-      },
-    },
+    keys = require "custom.keys.trouble",
   },
   {
     "m-demare/hlargs.nvim",
@@ -121,12 +86,13 @@ local plugins = {
       }
     end,
   },
-  -- rust tools
-  {
 
+  -- rust tools
+
+  {
     "mrcjkb/rustaceanvim",
     version = "^4", -- Recommended
-    ft = { "rust" },
+    ft = "rust",
   },
   {
     "rust-lang/rust.vim",
@@ -135,12 +101,8 @@ local plugins = {
       vim.g.rustfmt_autosave = 1
     end,
   },
-  {
-    "puremourning/vimspector",
-  },
-  {
-    "willthbill/opener.nvim",
-  },
+  { "puremourning/vimspector" },
+  { "willthbill/opener.nvim" },
   {
     "m-demare/hlargs.nvim",
     lazy = false,
@@ -155,16 +117,13 @@ local plugins = {
     version = "*", -- Use for stability; omit to use `main` branch for the latest features
     event = "VeryLazy",
     config = function()
-      require("nvim-surround").setup {
-        -- Configuration here, or leave empty to use defaults
-      }
+      require("nvim-surround").setup {}
     end,
   },
   {
     "folke/trouble.nvim",
     dependencies = { "nvim-tree/nvim-web-devicons" },
     event = "VeryLazy",
-    opts = {},
   },
   {
     "epwalsh/obsidian.nvim",
@@ -180,6 +139,13 @@ local plugins = {
     },
     config = function()
       require "custom.configs.obsidian"
+    end,
+  },
+  {
+    "rcarriga/nvim-notify",
+    event = "VeryLazy",
+    config = function()
+      require "custom.configs.nvim-notify"
     end,
   },
   {
@@ -205,7 +171,6 @@ local plugins = {
     {
       "folke/twilight.nvim",
       lazy = false,
-      opts = {},
     },
   },
   {
@@ -245,8 +210,6 @@ local plugins = {
     "akinsho/toggleterm.nvim",
     event = "VeryLazy",
     version = "*",
-    opts = {--[[ things you want to change go here]]
-    },
   },
   {
     "mfussenegger/nvim-jdtls",
@@ -260,14 +223,33 @@ local plugins = {
     event = "VeryLazy",
     ---@type Flash.Config
     opts = {},
-  -- stylua: ignore
-  keys = {
-    { "s", mode = { "n", "x", "o" }, function() require("flash").jump() end, desc = "Flash" },
-    { "S", mode = { "n", "x", "o" }, function() require("flash").treesitter() end, desc = "Flash Treesitter" },
-    { "r", mode = "o", function() require("flash").remote() end, desc = "Remote Flash" },
-    { "R", mode = { "o", "x" }, function() require("flash").treesitter_search() end, desc = "Treesitter Search" },
-    { "<c-s>", mode = { "c" }, function() require("flash").toggle() end, desc = "Toggle Flash Search" },
+    keys = require "custom.keys.flash",
   },
+  {
+    "sphamba/smear-cursor.nvim",
+    event = "VeryLazy",
+    opts = {
+      cursor_color = "#c4ebf2",
+      stiffness = 0.7,
+      trailing_stiffness = 0.2,
+      distance_stop_animating = 0.1,
+    },
+  },
+  {
+    "karb94/neoscroll.nvim",
+    event = "VeryLazy",
+    opts = {},
+  },
+  {
+    "utilyre/barbecue.nvim",
+    name = "barbecue",
+    version = "*",
+    dependencies = {
+      "SmiteshP/nvim-navic",
+      "nvim-tree/nvim-web-devicons", -- optional dependency
+    },
+    event = "VeryLazy",
+    opts = {},
   },
 }
 

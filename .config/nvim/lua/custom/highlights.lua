@@ -4,14 +4,14 @@
 
 local M = {}
 
----@type Base46HLGroupsList
+-- -@type Base46HLGroupsList
 M.override = {
   Comment = {
     italic = true,
   },
   NvDashAscii = {
     fg = "nord_blue",
-    bg = "black2"
+    bg = "black2",
   },
   NvDashButtons = {
     fg = "nord_blue",
