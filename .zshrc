@@ -1,59 +1,38 @@
-# If you come from bash you might have to change your $PATH.
-# export PATH=$HOME/bin:/usr/local/bin:$PATH
-
-# Path to your oh-my-zsh installation.
+### Path to our oh-my-zsh installation.
 export ZSH="$HOME/.oh-my-zsh"
 export EDITOR="nvim"
 
+### Options
+setopt hist_ignore_dups
+setopt hist_ignore_space
+fpath+=(~/.zfunctions)
 
-# Set name of the theme to load --- if set to "random", it will
-# load a random theme each time oh-my-zsh is loaded, in which case,
-# to know which specific one was loaded, run: echo $RANDOM_THEME
-# See https://github.com/ohmyzsh/ohmyzsh/wiki/Themes
+### Prompt
+autoload -U promptinit; promptinit
+prompt typewritten; 
+
+# prompt customization
+TYPEWRITTEN_CURSOR="block"
+TYPEWRITTEN_LEFT_PROMPT_PREFIX_FUNCTION=($date +%H:%M:%S)
+TYPEWRITTEN_ARROW_SYMBOL="➜"
+
+# Initializing zoxide
+eval "$(zoxide init zsh)"
+
+### oh-my-zsh settings.
 ZSH_THEME=""
 ZSH_DISABLE_COMPFIX=true
-# Set list of themes to pick from when loading at random
-# Setting this variable when ZSH_THEME=random will cause zsh to load
-# a theme from this variable instead of looking in $ZSH/themes/
-# If set to an empty array, this variable will have no effect.
-# ZSH_THEME_RANDOM_CANDIDATES=( "robbyrussell" "agnoster" )
-
-# Uncomment the following line to use case-sensitive completion.
-# CASE_SENSITIVE="true"
-
-# Uncomment the following line to use hyphen-insensitive completion.
-# Case-sensitive completion must be off. _ and - will be interchangeable. HYPHEN_INSENSITIVE="true"
-
-# Uncomment one of the following lines to change the auto-update behavior
-# zstyle ':omz:update' mode disabled  # disable automatic updates
-# zstyle ':omz:update' mode auto      # update automatically without asking
-# zstyle ':omz:update' mode reminder  # just remind me to update when it's time
-
-# Uncomment the following line to change how often to auto-update (in days).
-# zstyle ':omz:update' frequency 13
-
-# Uncomment the following line if pasting URLs and other text is messed up.
-# DISABLE_MAGIC_FUNCTIONS="true"
-
-# Uncomment the following line to disable colors in ls.
-# DISABLE_LS_COLORS="true"
-
-# Uncomment the following line to disable auto-setting terminal title.
 DISABLE_AUTO_TITLE="true"
 
 plugins=(git macos zsh-syntax-highlighting zsh-autosuggestions rust fzf brew thefuck zsh-interactive-cd zoxide) 
 
+zstyle ':omz:update' mode reminder  # just remind me to update when it's time to update
 source $ZSH/oh-my-zsh.sh
 
-# Example aliases
-# alias zshconfig="mate ~/.zshrc"
-# alias ohmyzsh="mate ~/.oh-my-zsh"
-fpath=($fpath "~/.zfunctions")
 
 
-##### User Aliases and Functions
+### User Aliases
 eval $(thefuck --alias)
-# aliases 
 alias songDL="sh ~/songDL.sh"
 alias tree="tree -h --sort size --du"
 alias bsr="brew services restart" 
@@ -71,15 +50,18 @@ alias cr='cargo run'
 alias rmld='rm -rf $(1)'
 alias lg='lazygit'
 alias simulate='sudo python3.11 ~/Developments/python/tkinterLocation/main.py'
+alias config='/usr/bin/git --git-dir=~/.cfg/ --work-tree=/~'
 source ~/.env
 
 
+### User functions
+## Development
 # Java development 
-export JAVA_HOME="/Library/Java/JavaVirtualMachines/jdk1.8.0_221.jdk"
-# export JAVA_HOME="/opt/homebrew/opt/openjdk@17/"
+# export JAVA_HOME="/Library/Java/JavaVirtualMachines/jdk1.8.0_221.jdk"
+export JAVA_HOME="/opt/homebrew/opt/openjdk@21/"
+
 function toggleJavaVers(){
     jh=$(env | grep JAVA_HOME | cut -d'=' -f 2)
-    # echo $jh
     if [[ "$jh" == "/Library/Java/JavaVirtualMachines/jdk1.8.0_221.jdk" ]];then
         export JAVA_HOME="/opt/homebrew/opt/openjdk@17/"
     else
@@ -87,19 +69,12 @@ function toggleJavaVers(){
     fi
     java -version
 }
+
 function jcr() {
-    #swap=false
-    #jh=$(env | grep JAVA_HOME | cut -d'=' -f 2)
-    #if [[ "$jh" != "/Library/Java/JavaVirtualMachines/jdk1.8.0_221.jdk" ]]; then
-    #    toggleJavaVers
-    #    swap=true
-    #fi
     r=$(echo $1 | cut -d'.' -f 1)
     javac $1 && java $r
-    #if [ $swap = true ]; then
-    #    toggleJavaVers
-    #fi
 }
+
 function jcrd() {
     r=$(echo $1 | cut -d'.' -f 1)
     javac -cp ".:~/Developments/Java/libraries/gpdraw.jar" $1 && java -classpath ".:~/Developments/Java/libraries/gpdraw.jar" $r
@@ -107,40 +82,35 @@ function jcrd() {
 }
 
 function javatest () {
-    # Set the directory to the first argument or default to the current directory
     local directory="${1:-.}"
     cwd=$(pwd)
     wd="$cwd/$directory"
-    # Remove any existing .class files in the specified directory
     rm -f "$wd"/*.class
-    # Compile all .java files in the specified directory, preserving the package structure
     javac -cp .:/Users/eashanc/Developments/java/libraries/junit-4.13.2.jar:/Users/eashanc/Developments/java/libraries/hamcrest-core-1.3.jar "$wd"/*.java
-    # Check if compilation was successful
     if [[ $? -eq 0 ]]; then
-        # Replace slashes with dots in the directory path to construct the package name
         package_name=$(echo "$directory" | sed 's/\//./g')
-        
-        # Run the compiled class using the package name
         java -cp .:/Users/eashanc/Developments/java/libraries/junit-4.13.2.jar:/Users/eashanc/Developments/java/libraries/hamcrest-core-1.3.jar "$package_name".RunLocalTest
     else
         echo "Compilation failed with errors."
     fi
 }
 
-
-
-
-
 function jcri(){
     r=$(echo $1 | cut -d'.' -f 1)
     javac -cp ".:~/Developments/Java/libraries/gpdraw.jar:$2" $1 && java -classpath ".:~/Developments/Java/libraries/gpdraw.jar:$2" $r
 }
-# Rust functions for development
+
+# Rust development
+
 function rcr(){
     f=$(echo $1 | cut -d'.' -f 1)
     rustc $1 && ./$f 
 }
-# Basic function using ffmpeg to bassBoost audiofiles
+
+## Assorted Shell functions.
+
+# Takes in an audio file and returns a bassboosted version of the file
+# $1 Audio file, $2 deep pass, $3 higher pass
 function bassBoost(){
     d=$(echo $1 | cut -d'.' -f 1)
     r=$(echo "$d" + "temp")
@@ -148,27 +118,32 @@ function bassBoost(){
     rm "$1"
     mv "$r.mp3" "$1"
 }
+
+# Returns the length in minutes of a video file $1
 function vlength(){
   ffmpeg -i $1 2>&1 | grep Duration | cut -d ' ' -f 4 | sed s/,//
 }
-# Ease of life for pandoc because I cant be bothered to type all that
+
+# Pandoc compile command for notes.
 function pdc(){
   f=$(echo $1|cut -d'.' -f 1)
   pandoc $1 -o $f.pdf --pdf-engine=xelatex -V geometry:"left=25mm,right=25mm,top=10mm,bottom=25mm" -V fontsize=15pt -V monofont="Courier New" --include-in-header ~/Documents/header.tex --toc
-  # pandoc -s --pdf-engine=xelatex --from=vimwiki --metadata-file=$HOME/vimwiki/basicMetadata.yaml "${@:2}" $1 -o $f.pdf
 }
 
+# Puts the content of $1 into user clipboard.
 function copy(){
   cat $1 | pbcopy
 }
-function dls(){
-  song=$(echo $(osascript -l JavaScript ~/Music/dev/getSong.js) )
-  artist=$(osascript -l JavaScript ~/Music/dev/getArtist.js | tr -d '\r\n')
-  full_name=$(echo "$song - $artist")
-  echo $full_name
-  spotdl download "$full_name"
+
+function file-to-clipboard() {
+  osascript \
+      -e 'on run args' \
+      -e 'set the clipboard to POSIX file (first item of args)' \
+      -e end \
+      "$@"
 }
 
+# Mass downloads anime seasons. ( Probably deprecated )
 function aytdll(){
   python ~/Developments/JavaScript/test/a.py
   ytdl -a tmp_list.txt
@@ -177,18 +152,13 @@ function aytdll(){
   rm tmp_list.txt
 }
 
+# Returns a concatenated video given a variable amount of video file inputs
 function stitch_videos() {
-    # Check if at least one file is provided
     if [ "$#" -lt 1 ]; then
         echo "Error: No video files provided."
         return 1
     fi
-    echo "past checking args"
-
-    # Create a temporary text file for the list of video files
     video_list="video_list.txt"
-
-    # Loop through each argument and check if it's a valid video file
     for video in "$@"; do
         if [[ ! -f "$video" || ! "$video" =~ \.(mp4|avi|mkv|MOV|flv)$ ]]; then
             echo "Error: '$video' is not a valid video file."
@@ -199,7 +169,6 @@ function stitch_videos() {
 
     echo "Video list created successfully."
 
-    # Run the FFmpeg command to concatenate the videos
     output_video="output_video.mp4"
     echo "Running FFmpeg command to stitch videos."
     ffmpeg -f concat -safe 0 -i "$video_list" -c copy "$output_video"
@@ -207,15 +176,8 @@ function stitch_videos() {
         echo "Error: FFmpeg failed to concatenate videos."
         return 1
     fi
-
-    # Clean up the temporary text file
     rm "$video_list"
-    
     echo "Videos stitched successfully into '$output_video'."
-}
-
-function qrcode(){
-  curl -d "$1" qrcode.show
 }
 
 #macfeh cli integration
@@ -223,6 +185,8 @@ function macfeh() {
     open -b "drabweb.macfeh" "$@"
 }
 
+
+### Exports 
 # Global Variables used in audio editing 
 export filter64="equalizer=f=64:width_type=o:w=3.3:g="
 export filter400="equalizer=f=400:width_type=o:w=2.0:g="
@@ -230,44 +194,31 @@ export filter1250="equalizer=f=1250:width_type=o:w=1.3:g="
 export filter2830="equalizer=f=2830:width_type=o:w=1.0:g="
 export filter5600="equalizer=f=5600:width_type=o:w=1.0:g="
 
-
-export HISTCONTROL=ignoreboth
-
-
-alias config='/usr/bin/git --git-dir=~/.cfg/ --work-tree=/~'
-
+#Path stuff and acompanying subsidiary commands
 export PATH="$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:$PATH"
 
-
+# Node
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 
-
-export PATH="$PATH:$HOME/.rvm/bin"
-
-# python-click>=8.0
-eval "$(_PYMOBILEDEVICE3_COMPLETE=zsh_source pymobiledevice3)"
-
-# Set typewritten ZSH as a prompt
-autoload -U promptinit; promptinit
-prompt typewritten; 
-
-### PROMPT CUSTOMIZATION
-TYPEWRITTEN_CURSOR="block"
-TYPEWRITTEN_LEFT_PROMPT_PREFIX_FUNCTION=($date +%H:%M:%S)
-TYPEWRITTEN_ARROW_SYMBOL="➜"
-
-export PATH="/opt/homebrew/opt/ruby/bin:$PATH"
-eval "$(zoxide init zsh)"
-
-# bun completions
-[ -s "/Users/eashanc/.bun/_bun" ] && source "/Users/eashanc/.bun/_bun"
-
-# bun
+# Bun
 export BUN_INSTALL="$HOME/.bun"
 export PATH="$BUN_INSTALL/bin:$PATH"
+[ -s "/Users/eashanc/.bun/_bun" ] && source "/Users/eashanc/.bun/_bun"
 
-#mojo
+# Ruby
+export PATH="$PATH:$HOME/.rvm/bin"
+export PATH="/opt/homebrew/opt/ruby/bin:$PATH"
+
+# Python
+eval "$(_PYMOBILEDEVICE3_COMPLETE=zsh_source pymobiledevice3)"
+
+
+# Mojo
 export MODULAR_HOME="$HOME/.modular"
 export PATH="$MODULAR_HOME/pkg/packages.modular.com_mojo/bin:$PATH"
+export PATH="/opt/homebrew/opt/postgresql@18/bin:$PATH"
+
+# Added by Windsurf
+export PATH="/Users/eashanc/.codeium/windsurf/bin:$PATH"

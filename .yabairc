@@ -7,7 +7,7 @@ manage_off=(
   "^Books$"
   "^QuickTime Player$"
   "Finder"
-  "zoom.us"
+  "^zoom.us$"
   "^Messages$"
   "^Bloons TD Battles$"
   "Molar"
@@ -15,6 +15,7 @@ manage_off=(
   "eqMac"
   "Python"
   "McEngine"
+  "KiCad"
 )
 
 for app in "${manage_off[@]}"; do

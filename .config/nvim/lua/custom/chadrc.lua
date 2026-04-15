@@ -4,7 +4,7 @@ local M = {}
 -- Path to overriding theme and highlights files
 local highlights = require "custom.highlights"
 
-local headers = require "custom.headers_lewd"
+local headers = require "custom.headers"
 
 local function selectRandomHeader()
   math.randomseed(os.time()) -- Seed the random number generator

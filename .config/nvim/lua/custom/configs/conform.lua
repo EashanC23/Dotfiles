@@ -10,7 +10,7 @@ local options = {
     python = { "ruff" },
 
     sh = { "shfmt" },
-    java = {"astyle"},
+    java = { "ast-grep" },
   },
 
   -- adding same formatter for multiple filetypes can look too much work for some
@@ -25,8 +25,26 @@ local options = {
 }
 require("conform").formatters.astyle = {
   prepend_args = function(self, ctx)
-    return { "--style=google", "-f", "-t", "-p", "-C"}
+    return { "--style=google", "-f", "-t", "-p", "-C" }
   end,
+}
+
+require("conform").setup {
+  formatters_by_ft = {
+    java = { "ast-grep" },
+  },
+  format_on_save = { lsp_format = "fallback", timeout_ms = 500 },
+  formatters = {
+    ["ast-grep"] = {
+      command = "ast-grep",
+      args = { "scan", "-U", "$FILENAME" },
+      stdin = false, -- important: scan updates files, not stdout
+      -- cwd = function(self, ctx)
+      --   return require("conform.util").root_file { "sgconfig.yml", ".git" }(ctx)
+      -- end,
+      require_cwd = true, -- don’t run if there’s no project config
+    },
+  },
 }
 
 require("conform").setup(options)

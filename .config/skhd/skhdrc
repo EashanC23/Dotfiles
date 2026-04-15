@@ -11,7 +11,7 @@ shift + cmd - return : open -a iTerm || open -a Terminal
 shift + alt - o: open -a Obsidian
 
 #Now Playing
-shift + alt + cmd - p: terminal-notifier -message "$(nowplaying-cli get artist) - $(nowplaying-cli get title)" -title "Now Playing" -contentImage /tmp/cover.jpg -ignoreDnD; sketchydate --set rightholder popup.topmost=on; sleep 1; sketchydate --set rightholder popup.topmost=off; 
+shift + alt + cmd - p: ~/.config/skhd/togglednd.sh
 
 # move managed window
 shift + cmd - l : yabai -m window --warp east || yabai -m window --warp west
@@ -46,8 +46,9 @@ meh - 0x18 : yabai -m display --focus next || yabai -m display --focus prev
 # wiping 
 meh - 0x35 : ~/wipe.sh || ~/unwipe.sh
 
-#MINECRAFT LOL
-meh - c : kill -9 $(pgrep -f potato) || python3 ~/Developments/python/macros/potatofarm.py
+#Minecraft Macros
+meh - p : (pkill -f Potato && terminal-notifier -message "Killed Potato Macro") || ( terminal-notifier -message "Starting Potato Macro" && $(which python3.11) ~/Developments/python/macros/autoPotato.py )
+meh - c : (pkill -f Cane && terminal-notifier -message "Killed Cane Macro") || ( terminal-notifier -message "Starting Cane Macro" && $(which python3.11) ~/Developments/python/macros/autoCane.py )
 
 # Move focus container to workspace
 shift + alt - 1 : yabai -m window --space 1; yabai -m space --focus 1

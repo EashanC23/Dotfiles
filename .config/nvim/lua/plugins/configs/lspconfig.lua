@@ -1,3 +1,5 @@
+-- Silence deprecation warnings for Nightly 0.11+
+vim.deprecate = function() end
 dofile(vim.g.base46_cache .. "lsp")
 require "nvchad.lsp"
 
@@ -13,7 +15,7 @@ M.on_attach = function(client, bufnr)
     require("nvchad.signature").setup(client)
   end
 
-  if not utils.load_config().ui.lsp_semantic_tokens and client.supports_method "textDocument/semanticTokens" then
+  if not utils.load_config().ui.lsp_semantic_tokens and client:supports_method "textDocument/semanticTokens" then
     client.server_capabilities.semanticTokensProvider = nil
   end
 end
@@ -38,10 +40,12 @@ M.capabilities.textDocument.completion.completionItem = {
   },
 }
 
-require("lspconfig").lua_ls.setup {
-  on_attach = M.on_attach,
+-- Configure lua_ls with the new API
+vim.lsp.config('lua_ls', {
+  cmd = { 'lua-language-server' },
+  filetypes = { 'lua' },
+  root_markers = { '.luarc.json', '.luarc.jsonc', '.luacheckrc', '.git' },
   capabilities = M.capabilities,
-
   settings = {
     Lua = {
       diagnostics = {
@@ -59,7 +63,10 @@ require("lspconfig").lua_ls.setup {
       },
     },
   },
-}
+})
+
+-- Enable the LSP
+vim.lsp.enable('lua_ls')
 
 
 return M
