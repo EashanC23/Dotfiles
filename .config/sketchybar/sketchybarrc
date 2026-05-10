@@ -42,7 +42,7 @@ sketchybar --add item system.label center                                       
 
 
 ################ LEFT ITEMS #################
-sketchybar -m --add item apple.logo left                                                      \
+ sketchybar -m --add item apple.logo left                                                      \
               --set apple.logo icon=                                                         \
                                icon.font="SF Pro:Black:20.0"                                  \
                                label.drawing=off                                              \
@@ -62,7 +62,18 @@ sketchybar -m --add item apple.logo left                                        
              --set apple.lock icon=􀒳                                                          \
                               label="Lock Screen"                                             \
                               click_script="pmset displaysleepnow;
-                                            sketchybar -m --set apple.logo popup.drawing=off"
+#                                            sketchybar -m --set apple.logo popup.drawing=off"
+
+
+
+#sketchybar --add item apple.logo left \
+#           --set apple.logo \
+#           icon.font="sketchybar-app-font:Regular:16" \
+#           label.font="SF Pro:Bold:13.0" \
+#           script="$CONFIG_DIR/plugins/apple.sh" \
+#           --subscribe apple front_app_switched mouse.clicked
+
+
 
 ############# SPACE INDICATOR ###############
 SPACE_ICONS=("1" "2" "3" "4" "5" "6" "7")
@@ -215,7 +226,7 @@ sketchybar --add item scripting right                        \
 ############## FINALIZING THE SETUP ##############
 sketchybar --hotload true
 sketchybar -m --update
-sketchydate 2> /dev/null || sketchydate --reload
+# sketchydate 2> /dev/null || sketchydate --reload
 
 echo "sketchybar configuration loaded.."
 

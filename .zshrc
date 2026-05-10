@@ -72,7 +72,7 @@ function toggleJavaVers(){
 
 function jcr() {
     r=$(echo $1 | cut -d'.' -f 1)
-    javac $1 && java $r
+    javac $1 && java $r "$@"
 }
 
 function jcrd() {

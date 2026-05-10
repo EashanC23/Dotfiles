@@ -22,6 +22,44 @@ M.general = {
     --increment/decrement
     ["+"] = { "<C-a>", "increment" },
     ["-"] = { "<C-x>", "decrement" },
+    ["<leader>ti"] = {
+      function()
+        local line = vim.api.nvim_get_current_line()
+        local new_line = line:gsub("(%d%d?):(%d%d)", function(h, m)
+          local h_num, m_num = tonumber(h), tonumber(m)
+
+          m_num = m_num + 1
+
+          if m_num == 60 then
+            m_num = 0
+            h_num = (h_num + 1) % 24
+          end
+
+          return string.format("%02d:%02d", h_num, m_num)
+        end)
+        vim.api.nvim_set_current_line(new_line)
+      end,
+      "Increment timestamp by 1 min",
+    },
+    ["<leader>td"] = {
+      function()
+        local line = vim.api.nvim_get_current_line()
+        local new_line = line:gsub("(%d%d?):(%d%d)", function(h, m)
+          local h_num, m_num = tonumber(h), tonumber(m)
+
+          m_num = m_num - 1
+
+          if m_num < 0 then
+            m_num = 59
+            h_num = (h_num - 1) % 24
+          end
+
+          return string.format("%02d:%02d", h_num, m_num)
+        end)
+        vim.api.nvim_set_current_line(new_line)
+      end,
+      "Decrement timestamp by 1 min",
+    },
 
     --splitting windows
     ["<leader>sh"] = { ":split<Return>", "horizontal split" },
@@ -46,7 +84,7 @@ M.general = {
     ["<leader>nd"] = { ":NoiceDismiss<CR>", "dismiss all noice messages" },
 
     --lazy git
-    ["<leader>lg"] = { ":LazyGit<CR>", "open LazyGit "}
+    ["<leader>lg"] = { ":LazyGit<CR>", "open LazyGit " },
   },
   v = {
     [">"] = { ">gv", "indent" },
