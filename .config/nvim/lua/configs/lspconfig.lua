@@ -1,26 +1,7 @@
-local M = require("plugins.configs.lspconfig")
-local capabilities = M.capabilities
-local util = require "lspconfig/util"
+require("nvchad.configs.lspconfig").defaults()
 
--- Move on_attach logic to LspAttach autocmd (new way)
-vim.api.nvim_create_autocmd('LspAttach', {
-  group = vim.api.nvim_create_augroup('UserLspConfig', { clear = true }),
-  callback = function(args)
-    -- Call NVChad's on_attach if it exists
-    if M.on_attach then
-      M.on_attach(vim.lsp.get_client_by_id(args.data.client_id), args.buf)
-    end
-  end
-})
-
--- Configure servers with default settings
-local servers = { "html", "cssls", "ts_ls", "clangd", "bashls", "marksman" }
-
-for _, lsp in ipairs(servers) do
-  vim.lsp.config(lsp, {
-    capabilities = capabilities,
-  })
-end
+local servers = { "stylua", "ruff", "html", "cssls" }
+vim.lsp.enable(servers)
 
 -- Configure pylsp with custom settings
 vim.lsp.config('pylsp', {
