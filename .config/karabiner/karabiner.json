@@ -3,7 +3,35 @@
     "profiles": [
         {
             "complex_modifications": {
+                "parameters": { "basic.to_if_held_down_threshold_milliseconds": 250 },
                 "rules": [
+                    {
+                        "description": "Hyper Key: Tab (held down) → left control + left command (⌃⌘)",
+                        "manipulators": [
+                            {
+                                "from": { "key_code": "tab" },
+                                "to_after_key_up": [
+                                    {
+                                        "set_variable": {
+                                            "name": "hyper_tab_held_down",
+                                            "value": 0
+                                        }
+                                    }
+                                ],
+                                "to_if_alone": [{ "key_code": "tab" }],
+                                "to_if_held_down": [
+                                    {
+                                        "set_variable": {
+                                            "name": "hyper_tab_held_down",
+                                            "value": 1
+                                        }
+                                    },
+                                    { "key_code": "left_control" }
+                                ],
+                                "type": "basic"
+                            }
+                        ]
+                    },
                     {
                         "description": "Press twice caps_lock to activate caps_lock & otherwise held_down and use as CTRL",
                         "manipulators": [
