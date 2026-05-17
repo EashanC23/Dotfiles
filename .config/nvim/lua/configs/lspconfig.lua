@@ -1,6 +1,6 @@
 require("nvchad.configs.lspconfig").defaults()
 
-local servers = { "stylua", "ruff", "html", "cssls" }
+local servers = { "stylua", "ruff", "html", "cssls", "bashls" }
 vim.lsp.enable(servers)
 
 -- Configure pylsp with custom settings

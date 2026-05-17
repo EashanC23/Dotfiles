@@ -51,6 +51,8 @@ alias rmld='rm -rf $(1)'
 alias lg='lazygit'
 alias simulate='sudo python3.11 ~/Developments/python/tkinterLocation/main.py'
 alias config='/usr/bin/git --git-dir=~/.cfg/ --work-tree=/~'
+alias rm='trash'
+alias dot='git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME'
 source ~/.env
 
 

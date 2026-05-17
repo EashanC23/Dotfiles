@@ -1,0 +1,48 @@
+categories:
+  Photos:
+    - jpg 
+    - png 
+    - heic 
+    - jpeg 
+    - webp
+  Videos:
+    - mp4 
+    - mov 
+    - webm 
+    - mkv 
+    - avi
+  PDFs:
+    - pdf 
+    - txt 
+    - md 
+    - docx 
+    - epub
+    - pptx
+  Developments:
+    - rs 
+    - js 
+    - jsx 
+    - css 
+    - java 
+    - jar 
+    - html 
+    - log 
+    - json
+    - tex
+    - nfc
+    - gpx
+    - lua
+    - stl
+  Audios:
+    - mp3 
+    - m4a 
+    - aac 
+    - flac 
+    - wav
+  Compressed:
+    - zip 
+    - iso 
+    - rar 
+    - ipa 
+    - dmg
+    - tgz

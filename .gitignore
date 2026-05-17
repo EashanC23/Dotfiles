@@ -1,32 +1,27 @@
-# node_modules/
-# .config/mpv/watch_later
-**/.DS_Store
-**/**.DS_Store
-# .config/Wondershare/
-# .config/coc/
-# .config/thefuck/
-#.config/deluge/
-# .config/raycast/
-# .config/ytfzf/
+.config/Wondershare/
+.config/coc/
+.config/thefuck/
+.config/deluge/
+.config/raycast/
+.config/ytfzf/
+.config/spicetify/
+.config/cava
+.config/fish
+.config/flipperdevices.com
+.conifg/gtk-*
+.config/iterm2
+.config/jgit
+.config/karabiner/automatic_backups
+.config/musikcube
+.config/raycast
+.config/rstudio
+.config/safari
+.config/spicetify
+.config/thefuck
+.config/Wondershare
+.config/xonsh
+.config/ytmdl
+.config/mpv/watch_later
 *.DS_Store
-# node_modules
-!.config/nvim
-!.config/nvim/**/*
-!.config/htop
-!.config/lf
-!.config/mpv
-!.config/neofetch
-!.config/nvim
-!.config/screenshots
-!.config/sketchybar
-!.config/skhd
-!.gitignore
-!.zshrc
-!.yabairc
-!.gitignore
-# !.tmux/
-!.tmux.conf
-!README.md
-!Brewfile
-
-/* 
+*.log
+.stowignore
