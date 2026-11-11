@@ -1,10 +1,10 @@
 require("nvchad.configs.lspconfig").defaults()
 
-local servers = { "stylua", "ruff", "html", "cssls", "bashls" }
+local servers = { "stylua", "clangd", "ruff", "html", "cssls", "bashls", "typescript-language-server" , "jdtls", "prismals"}
 vim.lsp.enable(servers)
 
 -- Configure pylsp with custom settings
-vim.lsp.config('pylsp', {
+vim.lsp.config("pylsp", {
   capabilities = capabilities,
   filetypes = { "python" },
   settings = {
@@ -20,7 +20,7 @@ vim.lsp.config('pylsp', {
 })
 
 -- Configure tailwindcss with extensive custom settings
-vim.lsp.config('tailwindcss', {
+vim.lsp.config("tailwindcss", {
   capabilities = capabilities,
   cmd = { "tailwindcss-language-server", "--stdio" },
   filetypes = {
@@ -84,4 +84,3 @@ vim.lsp.config('tailwindcss', {
 
 -- Enable all configured servers
 vim.lsp.enable(vim.tbl_extend("force", servers, { "pylsp", "tailwindcss" }))
-

@@ -5,7 +5,7 @@ source ~/.config/sketchybar/colors.sh
 
 #################### BAR ####################
 sketchybar -m --bar height=25        \
-                    blur_radius=50   \
+                    blur_radius=0    \
                     position=top     \
                     padding_left=6   \
                     padding_right=6  \

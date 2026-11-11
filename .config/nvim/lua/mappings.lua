@@ -3,9 +3,14 @@ require "nvchad.mappings"
 local map = vim.keymap.set
 
 
--- default
+-- Default
 map("n", ";", ":", { desc = "CMD enter command mode" })
 map("i", "jk", "<ESC>")
+map("t", "jk", "<ESC>")
+
+
+-- Git
+map("n", "<leader>lg", "<cmd> LazyGit <CR>", { desc = "Open lazy git" })
 
 
 -- QOL
@@ -17,10 +22,10 @@ map("n", "<leader>fm",
 map("v", "J", ":m '>+1<CR>gv=gv")
 map("v", "K", ":m '<-2<CR>gv=gv")
 
-map("n", "<leader>sh", ":split<CR>", { desc = "horizontal split pane" })
-map("n", "<leader>sv", ":vsplit<CR>", { desc = "vertical split pane" })
+map("n", "<leader>sh", "<cmd> split<CR>", { desc = "horizontal split pane" })
+map("n", "<leader>sv", "<cmd> vsplit<CR>", { desc = "vertical split pane" })
 
-map("n", "<leader>nd", ":NoiceDismiss<CR>", { desc = "dismiss all noice messages" })
+map("n", "<leader>nd", "<cmd> NoiceDismiss<CR>", { desc = "dismiss all noice messages" })
 
 
 -- Obsidian
@@ -64,9 +69,16 @@ map("n", "<leader>td",
     )
 
 
---neo tree
+--NeoTree
 map("n", "<leader>pv", "<cmd> Neotree toggle<cr>", { desc = "Toggle neo tree open/close" })
 
+--NvTerm
+map("n", "<leader>h",function() require("nvchad.term").toggle { pos = "sp", id = "htoggleTerm" } end, { desc = "Toggle horizontal terminal "})
+map("t", "<A-h>",function() require("nvchad.term").toggle { pos = "sp", id = "htoggleTerm" } end, { desc = "Toggle horizontal terminal "})
+map("t", "<C-h>", "<C-\\><C-n><Cmd>NvimTmuxNavigateLeft<CR>")
+map("t", "<C-j>", "<C-\\><C-n><Cmd>NvimTmuxNavigateDown<CR>")
+map("t", "<C-k>", "<C-\\><C-n><Cmd>NvimTmuxNavigateUp<CR>")
+map("t", "<C-l>", "<C-\\><C-n><Cmd>NvimTmuxNavigateRight<CR>")
 
 -- trouble 
 map("n", "<leader>tt", "<cmd>Trouble diagnostics toggle<cr>", { desc = "Diagnostics (Trouble)" })

@@ -3,8 +3,10 @@ local options = {
     css = { "prettier" },
     html = { "prettier" },
     js = { "prettier" },
+    ts = { "prettier" },
     lua = { "stylua" },
     sh = { "beautysh" },
+    c = { "clang-format" }
   },
 
   format_on_save = {

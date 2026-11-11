@@ -46,3 +46,9 @@ categories:
     - ipa 
     - dmg
     - tgz
+  3D:
+    - obj
+    - 3mf
+  Sheet:
+    - xlsx
+    - csv

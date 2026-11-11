@@ -7,7 +7,7 @@ local M = {}
 
 M.base46 = {
   theme = "onenord",
-  theme_toggle = { "onenord", "one_light" },
+  theme_toggle = { "onenord", "onenord" },
 
   hl_override = {
     Comment = { italic = true },

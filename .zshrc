@@ -3,8 +3,8 @@
 ###################################################
 
 export ZSH="$HOME/.oh-my-zsh"
-export EDITOR="nvim"
-export VISUAL="nvim"
+export EDITOR="$(which nvim)"
+export VISUAL="$(which nvim)"
 
 setopt hist_ignore_dups
 setopt hist_ignore_space
@@ -44,19 +44,19 @@ TYPEWRITTEN_ARROW_SYMBOL="➜"
 ###################################################
 ##########            Aliases            ##########
 ###################################################
-source .aliases.zsh
+source ~/.aliases.zsh
 
 
 ###################################################
 ##########           Bindings            ##########
 ###################################################
-source .bindings.zsh
+source ~/.bindings.zsh
 
 
 ###################################################
 ##########             fzf              ###########
 ###################################################
-source .fzf.zsh
+source ~/.fzf.zsh
 
 ###################################################
 ##########            Exports            ##########
@@ -90,3 +90,6 @@ export PATH="/opt/homebrew/opt/postgresql@18/bin:$PATH"
 
 # Added by Windsurf
 export PATH="/Users/eashanc/.codeium/windsurf/bin:$PATH"
+
+# Created by `pipx` on 2026-09-04 15:35:06
+export PATH="$PATH:/Users/eashanc/.local/bin"

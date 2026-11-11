@@ -3,6 +3,7 @@
 
 manage_off=(
   "^FaceTime$"
+  "osu"
   "^System Settings$"
   "^Books$"
   "^QuickTime Player$"
